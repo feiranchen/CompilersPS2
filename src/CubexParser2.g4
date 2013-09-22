@@ -1,18 +1,13 @@
 parser grammar CubexParser2;
 options { tokenVocab = CubexLexer2; }
 
-vv returns [CuVv v]
-	: VAR {$v = new VarFunc($VAR.text);}
-	| op = (EQUAL | STAR | SLASH | PERCENT | PLUS | DASH | BANG | LANGLE | RANGLE | THR | LTHR | RTHR | LRTHR | ONW | LONW | APPEND | LTE | GTE | EQEQUAL | INEQUAL | AMPERSAND | PIPE)
-		{$v = new Operation($op.text);};
 vvc returns [CuVvc v]
-	: CLSINTF {$v = new Vvc($CLSINTF.text);}
-	| vs = vv {$v = new Vvc($vv.v);};
+	: vv= (CLSINTF | VAR) {$v = new Vvc($vv.text);};
 
 kindcontext returns [CuKindContext kc]
 	: { $kc = new KindContext(); } (LANGLE (TPARA { $kc.add($TPARA.text); } (COMMA TPARA { $kc.add($TPARA.text); })*)? RANGLE)?;
 typecontext returns [CuTypeContext tc]
-	: { $tc = new TypeContext(); } LPAREN (v=vv COLON t=type { $tc.add($v.v, $t.t); } (COMMA v=vv COLON t=type { $tc.add($v.v, $t.t); })*)? RPAREN;
+	: { $tc = new TypeContext(); } LPAREN (VAR COLON t=type { $tc.add($VAR.text, $t.t); } (COMMA VAR COLON t=type { $tc.add($VAR.text, $t.t); })*)? RPAREN;
 
 paratype returns [CuParaType pt]
 	: {$pt = new ParaType(); } (LANGLE (t=type {$pt.add($t.t);} (COMMA t=type {$pt.add($t.t);})*)? RANGLE)?;	
@@ -23,7 +18,7 @@ type returns [CuType t]
 typescheme returns [CuTypeScheme ts]
 	: kc=kindcontext tc=typecontext COLON t=type {$ts = new TypeScheme($kc.kc, $tc.tc, $t.t);};
 expr returns [CuExpr e]
-	: v=vv {$e = new VvExp($v.v);}
+	: VAR {$e = new VvExp($VAR.text);}
 	| v=vvc pt=paratype es=exprs {$e = new VvcExp($v.v, $pt.pt, $es.cu);}
 	| ex=expr VAR pt=paratype LPAREN es=exprs RPAREN {$e = new VarExpr($ex.e, $VAR.text, $pt.pt, $es.cu);} 
 	| ex=expr op=(DASH | BANG) 
@@ -54,21 +49,21 @@ exprs returns [List<CuExpr> cu]
 	: {$cu = new ArrayList<CuExpr>();} (e=expr {$cu.add($e.e);} (COMMA e=expr {$cu.add($e.e);})*)?;
 stat returns [CuStat s]
 	: LBRACE ss=stats RBRACE {$s = new Stats($ss.cu);}
-	| v=vv ASSIGN e=expr SEMICOLON {$s = new AssignStat($v.v, $e.e);} 
+	| VAR ASSIGN e=expr SEMICOLON {$s = new AssignStat($VAR.text, $e.e);} 
 	| IF LPAREN e=expr RPAREN l=stat {$s = new IfStat($e.e, $l.s);} (ELSE r=stat {$s.add($r.s);})? 
 	| WHILE LPAREN e=expr RPAREN st=stat {$s = new WhileStat($e.e, $st.s);}
-	| FOR LPAREN v=vv IN e=expr RPAREN st=stat {$s = new ForStat($v.v, $e.e, $st.s);}
+	| FOR LPAREN VAR IN e=expr RPAREN st=stat {$s = new ForStat($VAR.text, $e.e, $st.s);}
 	| (RETURN | EQUAL) e=expr {$s = new ReturnStat($e.e);};
 stats returns [List<CuStat> cu] 
 	: {$cu = new ArrayList<CuStat>();} (s=stat {$cu.add($s.s);} (COMMA s=stat {$cu.add($s.s);})*)?;
 intf returns [CuInterface i]
-	: INTERFACE CLSINTF p=kindcontext {$i = new Intf($CLSINTF.text, $p.kc);} (EXTENDS t=type {$i.add($t.t);} LBRACE (FUN v=vv ts=typescheme SEMICOLON {$i.add($v.v, $ts.ts);})* RBRACE)?;
+	: INTERFACE CLSINTF p=kindcontext {$i = new Intf($CLSINTF.text, $p.kc);} (EXTENDS t=type {$i.add($t.t);} LBRACE (FUN VAR ts=typescheme SEMICOLON {$i.add($VAR.text, $ts.ts);})* RBRACE)?;
 cls returns [CuClass c]
-	: CLASS CLSINTF pk=kindcontext pt=typecontext {$c = new Cls($v.v, $pk.kc, $pt.tc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (s=stat {$c.add($s.s);})* (SUPER LPAREN? ex=expr {$c.add($ex.e);} (COMMA ex=expr {$c.add($ex.e);})* RPAREN?)? SEMICOLON (FUN v=vv ts=typescheme s=stat {$c.add($v.v, $ts.ts, $s.s);})* RBRACE)?;
+	: CLASS CLSINTF pk=kindcontext pt=typecontext {$c = new Cls($CLSINTF.text, $pk.kc, $pt.tc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (s=stat {$c.add($s.s);})* (SUPER LPAREN? ex=expr {$c.add($ex.e);} (COMMA ex=expr {$c.add($ex.e);})* RPAREN?)? SEMICOLON (FUN VAR ts=typescheme s=stat {$c.add($VAR.text, $ts.ts, $s.s);})* RBRACE)?;
 program returns [CuProgr p]
 	: s=stat {$p = new StatPrg($s.s);} 
 	| s=stat ss=stats pr=program {$p = new StatsPrg($s.s, $ss.cu, $pr.p);}
-	| FUN v=vv ts=typescheme s=stat {$p = new FunPrg($v.v, $ts.ts, $s.s);} (FUN v=vv ts=typescheme s=stat {$p.add($v.v, $ts.ts, $s.s);})* pr=program {$p.add($pr.p);}
+	| FUN VAR ts=typescheme s=stat {$p = new FunPrg($VAR.text, $ts.ts, $s.s);} (FUN VAR ts=typescheme s=stat {$p.add($VAR.text, $ts.ts, $s.s);})* pr=program {$p.add($pr.p);}
 	| i=intf pr=program {$p = new IntfPrg($i.i, $pr.p);}
 	| c=cls pr=program {$p = new ClassPrg($c.c, $pr.p);};
 functxt returns [CuFunC f]
@@ -76,5 +71,5 @@ functxt returns [CuFunC f]
 	| fc=functxt COMMA v=vvc ts=typescheme {$f = new FuncTxt($fc.f, $v.v, $ts.ts);};
 clsctxt returns [CuClassC c]
 	: {$c = new ClassCtxtEmpty();}
-	| cl=clsctxt COMMA INTERFACE CLSINTF p=kindcontext {$c = new ClassCtxtIntf($cl.c, $CLSINTF.text, $p.kc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (v=vv ts=typescheme SEMICOLON {$c.add($v.v, $ts.ts);})* RBRACE)? 
-	| cl=clsctxt COMMA CLASS CLSINTF p=kindcontext {$c = new ClassCtxtCls($cl.c, $CLSINTF.text, $p.kc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (v=vv ts=typescheme SEMICOLON {$c.add($v.v, $ts.ts);})* RBRACE)?;
+	| cl=clsctxt COMMA INTERFACE CLSINTF p=kindcontext {$c = new ClassCtxtIntf($cl.c, $CLSINTF.text, $p.kc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (VAR ts=typescheme SEMICOLON {$c.add($VAR.text, $ts.ts);})* RBRACE)? 
+	| cl=clsctxt COMMA CLASS CLSINTF p=kindcontext {$c = new ClassCtxtCls($cl.c, $CLSINTF.text, $p.kc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (VAR ts=typescheme SEMICOLON {$c.add($VAR.text, $ts.ts);})* RBRACE)?;
