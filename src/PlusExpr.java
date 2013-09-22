@@ -4,6 +4,6 @@ public class PlusExpr extends CuExpr{
 	public PlusExpr(CuExpr e1, CuExpr e2) {
 		data1 = e1;
 		data2 = e2;
-		super.text = data1.toString() + " . * plus < > ( " + data2.toString()+" )";
+		super.text = String.format("%s . plus < > ( %s )", data1.toString(), data2.toString());
 	}
 }
