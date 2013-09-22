@@ -4,13 +4,18 @@ options { tokenVocab = CubexLexer2; }
 vvc returns [CuVvc v]
 	: vv= (CLSINTF | VAR) {$v = new Vvc($vv.text);};
 
-kindcontext returns [CuKindContext kc]
-	: { $kc = new KindContext(); } (LANGLE (TPARA { $kc.add($TPARA.text); } (COMMA TPARA { $kc.add($TPARA.text); })*)? RANGLE)?;
-typecontext returns [CuTypeContext tc]
-	: { $tc = new TypeContext(); } LPAREN (VAR COLON t=type { $tc.add($VAR.text, $t.t); } (COMMA VAR COLON t=type { $tc.add($VAR.text, $t.t); })*)? RPAREN;
+exprs returns [List<CuExpr> cu] 
+	: {$cu = new ArrayList<CuExpr>();} (e=expr {$cu.add($e.e);} (COMMA e=expr {$cu.add($e.e);})*)?;
 
-paratype returns [CuParaType pt]
-	: {$pt = new ParaType(); } (LANGLE (t=type {$pt.add($t.t);} (COMMA t=type {$pt.add($t.t);})*)? RANGLE)?;	
+kindcontext returns [List<String> kc]
+	: {$kc = new ArrayList<String>();} (LANGLE (TPARA { $kc.add($TPARA.text); } (COMMA TPARA { $kc.add($TPARA.text); })*)? RANGLE)?;
+vvt returns [CuVvT cu]
+	: VAR COLON t=type { $cu = new Vvt($VAR.text, $t.t); };
+typecontext returns [List<CuVvt> tc]
+	: { $tc = new ArrayList<CuVvt>(); } LPAREN (v=vvt { $tc.add($vvt.cu); } (COMMA v=vvt { $tc.add($vvt.cu); })*)? RPAREN;
+
+paratype returns [List<CuType> pt]
+	: {$pt = new ArrayList<CuType>(); } (LANGLE (t=type {$pt.add($t.t);} (COMMA t=type {$pt.add($t.t);})*)? RANGLE)?;	
 type returns [CuType t]
 	: v = (TPARA | THING | NOTHING) {$t = $v.type== TPARA ? new VTypePara($v.text) : new VTopBot($v.text);}
 	| CLSINTF {$t = new VClass($CLSINTF.text);} (p=paratype {$t.add($p.pt);})? 
@@ -31,8 +36,6 @@ expr returns [CuExpr e]
 		{$e = ($op.type == THR) ? new ThroughExpr($l.e, $r.e, true, true) : ($op.type == LTHR) ? new ThroughExpr($l.e, $r.e, false, true) : ($op.type == RTHR) ? new ThroughExpr($l.e, $r.e, true, false) : new ThroughExpr($l.e, $r.e, false, false);}
 	| ex=expr op=(ONW | LONW) 
 		{$e = ($op.type == ONW) ? new OnwardsExpr($ex.e, true) : new OnwardsExpr($ex.e, false);}
-	| l=expr APPEND LPAREN? r=expr RPAREN?
-		{$e = new AppendExpr($l.e, $r.e);}
 	| l=expr op=(LANGLE | LTE | RANGLE | GTE) LPAREN? r=expr RPAREN?
 		{$e = ($op.type == LANGLE) ? new LessThanExpr($l.e, $r.e, true) : ($op.type == LTE) ? new LessThanExpr($l.e, $r.e, false) : ($op.type == RANGLE) ? new GreaterThanExpr($l.e, $r.e, true) : new GreaterThanExpr($l.e, $r.e, false);}
 	| l=expr op=(EQEQUAL | INEQUAL) LPAREN? r=expr RPAREN?
