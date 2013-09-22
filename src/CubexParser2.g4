@@ -4,9 +4,6 @@ options { tokenVocab = CubexLexer2; }
 vvc returns [CuVvc v]
 	: vv= (CLSINTF | VAR) {$v = new Vvc($vv.text);};
 
-exprs returns [List<CuExpr> cu] 
-	: {$cu = new ArrayList<CuExpr>();} (e=expr {$cu.add($e.e);} (COMMA e=expr {$cu.add($e.e);})*)?;
-
 kindcontext returns [List<String> kc]
 	: {$kc = new ArrayList<String>();} (LANGLE (TPARA { $kc.add($TPARA.text); } (COMMA TPARA { $kc.add($TPARA.text); })*)? RANGLE)?;
 vvt returns [CuVvT cu]
