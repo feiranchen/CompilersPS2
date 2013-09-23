@@ -6,6 +6,9 @@ public class StatsPrg extends CuProgr {
 	List<CuStat> cu; 
 	CuProgr p;
 	public StatsPrg(CuStat s, List<CuStat> cu, CuProgr p) {
+System.out.println("p " +p.toString());
+System.out.println("cu " +cu.toString());
+System.out.println("s " +s.toString());
 		this.s = s;
 		this.cu = cu;
 		this.p = p;

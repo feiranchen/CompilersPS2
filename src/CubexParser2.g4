@@ -53,7 +53,7 @@ stat returns [CuStat s]
 	| IF LPAREN e=expr RPAREN l=stat {$s = new IfStat($e.e, $l.s);} (ELSE r=stat {$s.add($r.s);})? 
 	| WHILE LPAREN e=expr RPAREN st=stat {$s = new WhileStat($e.e, $st.s);}
 	| FOR LPAREN VAR IN e=expr RPAREN st=stat {$s = new ForStat($VAR.text, $e.e, $st.s);}
-	| (RETURN | EQUAL) e=expr {$s = new ReturnStat($e.e);};
+	| (RETURN | EQUAL) e=expr SEMICOLON {$s = new ReturnStat($e.e);};
 stats returns [List<CuStat> cu] 
 	: {$cu = new ArrayList<CuStat>();} (s=stat {$cu.add($s.s);} (COMMA s=stat {$cu.add($s.s);})*)?;
 intf returns [CuInterface i]
