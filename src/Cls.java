@@ -17,19 +17,19 @@ public class Cls extends CuClass {
 		this.kc = kc;
 		this.tc = tc;
 	}
-	public void add (CuType t) {
+	@Override public void add (CuType t) {
 		type = t.toString();
 	}
 	
-	public void add (CuStat s) {
+	@Override public void add (CuStat s) {
 		ss.add(s);
 	}
 	
-	public void add (CuExpr s) {
+	@Override public void add (CuExpr s) {
 		es.add(s);
 	}
 	
-	public void add(String v, CuTypeScheme ts, CuStat s) {
+	@Override public void add(String v, CuTypeScheme ts, CuStat s) {
 		String t = String.format("fun %s %s %s", v, ts.toString(), s.toString());
 		fun.add(t);
 	}
