@@ -8,13 +8,9 @@ public class VarExpr extends CuExpr{
 	List<CuExpr> es;
 	public VarExpr(CuExpr e, String var, List<CuType> pt, List<CuExpr> es) {
 		this.e = e;
-		P.p("e"+e.toString());
 		this.var = var;
-		P.p("var" + var.toString());
 		this.pt = pt;
-		P.p("pt" + pt.toString());
 		this.es = es;
-		P.p("es"+es.toString());
 		super.text = String.format("%s . %s %s %s", e.toString(), var, listTypes(pt), listExprs(es));
 	}
 	

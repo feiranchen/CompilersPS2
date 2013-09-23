@@ -22,20 +22,16 @@ public class Intf extends CuInterface{
 	public void add (CuType tt) {
 		t = tt;
 		text += " " + t.toString();
-P.p("add");	
-P.p(text);
 	}
 	@Override
 	public void add (String v_name, CuTypeScheme ts) {
 		v_names.add(v_name);
 		ts_names.add(ts);
 		funs += " fun " + v_name + ts.toString() + " ;";
-P.p("funs " + funs);
 	}
 	
 	@Override public String toString() {
 		text += " { " + funs + " } ";
-P.p(text);
 		return text;
 	}
 }
