@@ -4,7 +4,7 @@ import java.util.List;
 public class VarExpr extends CuExpr{
 	private CuExpr e;
 	private String var;
-	private CuParaType pt;
+	private List<CuType> pt;
 	List<CuExpr> es;
 	public VarExpr(CuExpr e, String var, List<CuType> pt, List<CuExpr> es) {
 		this.e = e;
