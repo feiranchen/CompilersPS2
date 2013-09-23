@@ -11,11 +11,12 @@ public class VvcExp extends CuExpr {
 		
 		super.text=v.toString()+" < "+printLst(pt)+" > ("+printLst(es)+" )";
 	}
-	private <T>String printLst(List<T> pt){
-		StringBuilder stB=new StringBuilder();
-		for( T t : pt){
-			stB.append(pt.toString()+ " ");
+	
+	private <T>String printLst(List<T> es) {
+		String s = "";
+		for (T e : es) {
+			s += e.toString() + " ";
 		}
-		return stB.substring(0,stB.length()-2);
+		return s;
 	}
 }

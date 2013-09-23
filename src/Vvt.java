@@ -8,7 +8,4 @@ public class Vvt extends CuVvt{
 		data_t=t;
 		text=s+" : "+t.toString();
 	}
-	@Override public String toString() {
-		return text;
-	}
 }
