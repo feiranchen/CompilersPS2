@@ -7,8 +7,6 @@ public class ForStat extends CuStat{
 		var = v;
 		e = ee;
 		s1 = ss;
-	}
-	public String toString() {
-		return "for ( " + var + " in " + e.toString() + " ) " + s1.toString();
+		super.text = "for ( " + var + " in " + e.toString() + " ) " + s1.toString();
 	}
 }
