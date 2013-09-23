@@ -2,24 +2,37 @@ import java.util.List;
 
 
 public class VarExpr extends CuExpr{
-	private CuExpr data_e;
-	private String data_text;
-	private List<CubeType> data_pt;
-	private List<CuExpr> data_es;
-	public VarExpr(CuExpr e, String text, List<CubeType> pt, List<CuExpr> es){
-		this.data_e=e;
-		this.data_text=text;
-		this.data_pt=pt;
-		this.data_es=es;
-		
-		super.text=e.toString()+" "+text+" < "+printLst(pt)+"> ("+printLst(es)+")";
+	private CuExpr e;
+	private String var;
+	private List<CuType> pt;
+	List<CuExpr> es;
+	public VarExpr(CuExpr e, String var, List<CuType> pt, List<CuExpr> es) {
+		this.e = e;
+		this.var = var;
+		this.pt = pt;
+		this.es = es;
+		super.text = String.format("%s . %s %s %s", e.toString(), var, listTypes(pt), listExprs(es));
 	}
-	private <T>String printLst(List<T> pt){
-		if (pt.isEmpty()) return "";
-		StringBuilder stB=new StringBuilder();
-		for( T t : pt){
-			stB.append(pt.toString()+ " ");
+	
+	private String listTypes(List<CuType> es) {
+		String s = "< ";
+		for (CuType e : es) {
+			s += e.toString() + " , ";
 		}
-		return stB.substring(0,stB.length()-1);
+		int l = s.lastIndexOf(", ");
+		if (l > 0) s = s.substring(0, l);
+		s += ">";
+		return s;
+	}
+	
+	private String listExprs(List<CuExpr> es) {
+		String s = "( ";
+		for (CuExpr e : es) {
+			s += e.toString() + " , ";
+		}
+		int l = s.lastIndexOf(", ");
+		if (l > 0) s = s.substring(0, l);
+		s += ")";
+		return s;
 	}
 }
