@@ -6,7 +6,7 @@ vvc returns [CuVvc v]
 
 kindcontext returns [List<String> kc]
 	: {$kc = new ArrayList<String>();} (LANGLE (TPARA { $kc.add($TPARA.text); } (COMMA TPARA { $kc.add($TPARA.text); })*)? RANGLE)?;
-vvt returns [CuVvT cu]
+vvt returns [CuVvt cu]
 	: VAR COLON t=type { $cu = new Vvt($VAR.text, $t.t); };
 typecontext returns [List<CuVvt> tc]
 	: { $tc = new ArrayList<CuVvt>(); } LPAREN (v=vvt { $tc.add($vvt.cu); } (COMMA v=vvt { $tc.add($vvt.cu); })*)? RPAREN;

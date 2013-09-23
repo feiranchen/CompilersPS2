@@ -1,4 +1,4 @@
-// Generated from CubexParser2.g4 by ANTLR 4.1
+// Generated from CubexParser2.g4 by ANTLR 4.0
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -15,7 +15,7 @@ public class CubexParser2 extends Parser {
 		new PredictionContextCache();
 	public static final int
 		APPEND=42, CLASS=11, STAR=31, LRTHR=46, THR=43, WHILE=4, LONW=48, CLSINTF=17, 
-		COMMENTS_POND=55, ONW=47, LANGLE=36, GTE=50, LBRACE=29, FOR=5, THING=13, 
+		COMMENTS_POND=55, ONW=47, LANGLE=36, GTE=50, LBRACE=29, THING=13, FOR=5, 
 		SPACE=56, LTE=49, LPAREN=25, IF=2, LBRACKET=21, RPAREN=26, LTHR=44, SLASH=32, 
 		IN=6, COMMENTS=54, COMMA=27, EQUAL=24, RETURN=7, NOTHING=14, PLUS=34, 
 		PIPE=40, VAR=19, SUPER=12, RBRACKET=22, RANGLE=37, DOT=41, RTHR=45, INTEGER=20, 
@@ -101,16 +101,16 @@ public class CubexParser2 extends Parser {
 	public static class KindcontextContext extends ParserRuleContext {
 		public List<String> kc;
 		public Token TPARA;
-		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
-		public List<TerminalNode> TPARA() { return getTokens(CubexParser2.TPARA); }
-		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
-		public TerminalNode TPARA(int i) {
-			return getToken(CubexParser2.TPARA, i);
-		}
 		public TerminalNode COMMA(int i) {
 			return getToken(CubexParser2.COMMA, i);
 		}
+		public List<TerminalNode> TPARA() { return getTokens(CubexParser2.TPARA); }
 		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
+		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
+		public TerminalNode TPARA(int i) {
+			return getToken(CubexParser2.TPARA, i);
+		}
+		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
 		public KindcontextContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -175,11 +175,11 @@ public class CubexParser2 extends Parser {
 		public CuVvT cu;
 		public Token VAR;
 		public TypeContext t;
+		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
 		public TerminalNode VAR() { return getToken(CubexParser2.VAR, 0); }
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
-		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
 		public VvtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -216,14 +216,14 @@ public class CubexParser2 extends Parser {
 		public List<VvtContext> vvt() {
 			return getRuleContexts(VvtContext.class);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
 		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
-		public VvtContext vvt(int i) {
-			return getRuleContext(VvtContext.class,i);
-		}
-		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
 		public TerminalNode COMMA(int i) {
 			return getToken(CubexParser2.COMMA, i);
+		}
+		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
+		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public VvtContext vvt(int i) {
+			return getRuleContext(VvtContext.class,i);
 		}
 		public TypecontextContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -281,6 +281,10 @@ public class CubexParser2 extends Parser {
 	public static class ParatypeContext extends ParserRuleContext {
 		public List<CuType> pt;
 		public TypeContext t;
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
+		}
+		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
 		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
 		public TypeContext type(int i) {
 			return getRuleContext(TypeContext.class,i);
@@ -289,10 +293,6 @@ public class CubexParser2 extends Parser {
 			return getRuleContexts(TypeContext.class);
 		}
 		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
-		}
-		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
 		public ParatypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -361,7 +361,12 @@ public class CubexParser2 extends Parser {
 		public Token CLSINTF;
 		public ParatypeContext p;
 		public TypeContext r;
+		public TerminalNode NOTHING() { return getToken(CubexParser2.NOTHING, 0); }
 		public TerminalNode AMPERSAND() { return getToken(CubexParser2.AMPERSAND, 0); }
+		public ParatypeContext paratype() {
+			return getRuleContext(ParatypeContext.class,0);
+		}
+		public TerminalNode THING() { return getToken(CubexParser2.THING, 0); }
 		public TerminalNode TPARA() { return getToken(CubexParser2.TPARA, 0); }
 		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public TypeContext type(int i) {
@@ -370,11 +375,6 @@ public class CubexParser2 extends Parser {
 		public List<TypeContext> type() {
 			return getRuleContexts(TypeContext.class);
 		}
-		public TerminalNode THING() { return getToken(CubexParser2.THING, 0); }
-		public ParatypeContext paratype() {
-			return getRuleContext(ParatypeContext.class,0);
-		}
-		public TerminalNode NOTHING() { return getToken(CubexParser2.NOTHING, 0); }
 		public TypeContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public TypeContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -472,16 +472,16 @@ public class CubexParser2 extends Parser {
 		public KindcontextContext kc;
 		public TypecontextContext tc;
 		public TypeContext t;
+		public KindcontextContext kindcontext() {
+			return getRuleContext(KindcontextContext.class,0);
+		}
+		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
 		public TypecontextContext typecontext() {
 			return getRuleContext(TypecontextContext.class,0);
 		}
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
-		public KindcontextContext kindcontext() {
-			return getRuleContext(KindcontextContext.class,0);
-		}
-		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
 		public TypeschemeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -525,51 +525,51 @@ public class CubexParser2 extends Parser {
 		public Token STRING;
 		public ExprContext r;
 		public Token op;
+		public TerminalNode INTEGER() { return getToken(CubexParser2.INTEGER, 0); }
 		public TerminalNode APPEND() { return getToken(CubexParser2.APPEND, 0); }
-		public TerminalNode TRUE() { return getToken(CubexParser2.TRUE, 0); }
-		public VvcContext vvc() {
-			return getRuleContext(VvcContext.class,0);
-		}
-		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
+		public TerminalNode INEQUAL() { return getToken(CubexParser2.INEQUAL, 0); }
 		public TerminalNode STAR() { return getToken(CubexParser2.STAR, 0); }
-		public TerminalNode RBRACKET() { return getToken(CubexParser2.RBRACKET, 0); }
-		public TerminalNode AMPERSAND() { return getToken(CubexParser2.AMPERSAND, 0); }
-		public TerminalNode RTHR() { return getToken(CubexParser2.RTHR, 0); }
+		public TerminalNode LRTHR() { return getToken(CubexParser2.LRTHR, 0); }
+		public TerminalNode PERCENT() { return getToken(CubexParser2.PERCENT, 0); }
+		public TerminalNode THR() { return getToken(CubexParser2.THR, 0); }
+		public TerminalNode LONW() { return getToken(CubexParser2.LONW, 0); }
+		public TerminalNode DASH() { return getToken(CubexParser2.DASH, 0); }
 		public List<ExprContext> expr() {
 			return getRuleContexts(ExprContext.class);
+		}
+		public TerminalNode ONW() { return getToken(CubexParser2.ONW, 0); }
+		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
+		public TerminalNode GTE() { return getToken(CubexParser2.GTE, 0); }
+		public TerminalNode AMPERSAND() { return getToken(CubexParser2.AMPERSAND, 0); }
+		public TerminalNode BANG() { return getToken(CubexParser2.BANG, 0); }
+		public TerminalNode LTE() { return getToken(CubexParser2.LTE, 0); }
+		public TerminalNode TRUE() { return getToken(CubexParser2.TRUE, 0); }
+		public ExprsContext exprs() {
+			return getRuleContext(ExprsContext.class,0);
+		}
+		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public TerminalNode LBRACKET() { return getToken(CubexParser2.LBRACKET, 0); }
+		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
+		public TerminalNode LTHR() { return getToken(CubexParser2.LTHR, 0); }
+		public TerminalNode SLASH() { return getToken(CubexParser2.SLASH, 0); }
+		public TerminalNode EQEQUAL() { return getToken(CubexParser2.EQEQUAL, 0); }
+		public ParatypeContext paratype() {
+			return getRuleContext(ParatypeContext.class,0);
+		}
+		public TerminalNode PIPE() { return getToken(CubexParser2.PIPE, 0); }
+		public TerminalNode PLUS() { return getToken(CubexParser2.PLUS, 0); }
+		public TerminalNode VAR() { return getToken(CubexParser2.VAR, 0); }
+		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
+		public TerminalNode RBRACKET() { return getToken(CubexParser2.RBRACKET, 0); }
+		public VvcContext vvc() {
+			return getRuleContext(VvcContext.class,0);
 		}
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode VAR() { return getToken(CubexParser2.VAR, 0); }
-		public TerminalNode PLUS() { return getToken(CubexParser2.PLUS, 0); }
-		public TerminalNode LRTHR() { return getToken(CubexParser2.LRTHR, 0); }
-		public TerminalNode ONW() { return getToken(CubexParser2.ONW, 0); }
-		public ExprsContext exprs() {
-			return getRuleContext(ExprsContext.class,0);
-		}
-		public TerminalNode PIPE() { return getToken(CubexParser2.PIPE, 0); }
-		public TerminalNode GTE() { return getToken(CubexParser2.GTE, 0); }
-		public TerminalNode PERCENT() { return getToken(CubexParser2.PERCENT, 0); }
-		public TerminalNode LTE() { return getToken(CubexParser2.LTE, 0); }
-		public TerminalNode BANG() { return getToken(CubexParser2.BANG, 0); }
-		public TerminalNode DASH() { return getToken(CubexParser2.DASH, 0); }
-		public TerminalNode LBRACKET() { return getToken(CubexParser2.LBRACKET, 0); }
-		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
-		public TerminalNode INEQUAL() { return getToken(CubexParser2.INEQUAL, 0); }
-		public TerminalNode EQEQUAL() { return getToken(CubexParser2.EQEQUAL, 0); }
-		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
-		public TerminalNode LONW() { return getToken(CubexParser2.LONW, 0); }
-		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
-		public TerminalNode LTHR() { return getToken(CubexParser2.LTHR, 0); }
-		public TerminalNode STRING() { return getToken(CubexParser2.STRING, 0); }
-		public TerminalNode INTEGER() { return getToken(CubexParser2.INTEGER, 0); }
-		public ParatypeContext paratype() {
-			return getRuleContext(ParatypeContext.class,0);
-		}
-		public TerminalNode SLASH() { return getToken(CubexParser2.SLASH, 0); }
 		public TerminalNode FALSE() { return getToken(CubexParser2.FALSE, 0); }
-		public TerminalNode THR() { return getToken(CubexParser2.THR, 0); }
+		public TerminalNode RTHR() { return getToken(CubexParser2.RTHR, 0); }
+		public TerminalNode STRING() { return getToken(CubexParser2.STRING, 0); }
 		public ExprContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public ExprContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -953,15 +953,15 @@ public class CubexParser2 extends Parser {
 	public static class ExprsContext extends ParserRuleContext {
 		public List<CuExpr> cu;
 		public ExprContext e;
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
+		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
 		}
 		public ExprsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1024,32 +1024,32 @@ public class CubexParser2 extends Parser {
 		public StatContext l;
 		public StatContext r;
 		public StatContext st;
-		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
-		public TerminalNode SEMICOLON() { return getToken(CubexParser2.SEMICOLON, 0); }
-		public TerminalNode EQUAL() { return getToken(CubexParser2.EQUAL, 0); }
-		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
-		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
 		public TerminalNode IN() { return getToken(CubexParser2.IN, 0); }
+		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
+		public StatsContext stats() {
+			return getRuleContext(StatsContext.class,0);
+		}
 		public TerminalNode WHILE() { return getToken(CubexParser2.WHILE, 0); }
-		public TerminalNode IF() { return getToken(CubexParser2.IF, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public TerminalNode EQUAL() { return getToken(CubexParser2.EQUAL, 0); }
+		public TerminalNode ELSE() { return getToken(CubexParser2.ELSE, 0); }
+		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
+		public List<StatContext> stat() {
+			return getRuleContexts(StatContext.class);
+		}
+		public TerminalNode RETURN() { return getToken(CubexParser2.RETURN, 0); }
+		public TerminalNode ASSIGN() { return getToken(CubexParser2.ASSIGN, 0); }
 		public StatContext stat(int i) {
 			return getRuleContext(StatContext.class,i);
 		}
 		public TerminalNode FOR() { return getToken(CubexParser2.FOR, 0); }
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public TerminalNode ELSE() { return getToken(CubexParser2.ELSE, 0); }
-		public TerminalNode ASSIGN() { return getToken(CubexParser2.ASSIGN, 0); }
 		public TerminalNode VAR() { return getToken(CubexParser2.VAR, 0); }
-		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
-		public TerminalNode RETURN() { return getToken(CubexParser2.RETURN, 0); }
-		public StatsContext stats() {
-			return getRuleContext(StatsContext.class,0);
-		}
-		public List<StatContext> stat() {
-			return getRuleContexts(StatContext.class);
-		}
+		public TerminalNode SEMICOLON() { return getToken(CubexParser2.SEMICOLON, 0); }
+		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public TerminalNode IF() { return getToken(CubexParser2.IF, 0); }
 		public StatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1162,12 +1162,12 @@ public class CubexParser2 extends Parser {
 		public StatContext stat(int i) {
 			return getRuleContext(StatContext.class,i);
 		}
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
+		}
 		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
-		}
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
 		}
 		public StatsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1227,34 +1227,34 @@ public class CubexParser2 extends Parser {
 		public TypeContext t;
 		public Token VAR;
 		public TypeschemeContext ts;
-		public TerminalNode VAR(int i) {
-			return getToken(CubexParser2.VAR, i);
-		}
-		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
-		public List<TerminalNode> SEMICOLON() { return getTokens(CubexParser2.SEMICOLON); }
-		public TerminalNode SEMICOLON(int i) {
-			return getToken(CubexParser2.SEMICOLON, i);
-		}
-		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
-		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public KindcontextContext kindcontext() {
 			return getRuleContext(KindcontextContext.class,0);
+		}
+		public TerminalNode FUN(int i) {
+			return getToken(CubexParser2.FUN, i);
+		}
+		public TypeschemeContext typescheme(int i) {
+			return getRuleContext(TypeschemeContext.class,i);
 		}
 		public List<TypeschemeContext> typescheme() {
 			return getRuleContexts(TypeschemeContext.class);
 		}
 		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
-		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
+		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
-		public TypeschemeContext typescheme(int i) {
-			return getRuleContext(TypeschemeContext.class,i);
+		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
+		public TerminalNode VAR(int i) {
+			return getToken(CubexParser2.VAR, i);
 		}
+		public TerminalNode SEMICOLON(int i) {
+			return getToken(CubexParser2.SEMICOLON, i);
+		}
+		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
+		public List<TerminalNode> SEMICOLON() { return getTokens(CubexParser2.SEMICOLON); }
 		public TerminalNode INTERFACE() { return getToken(CubexParser2.INTERFACE, 0); }
-		public TerminalNode FUN(int i) {
-			return getToken(CubexParser2.FUN, i);
-		}
+		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
 		public TerminalNode EXTENDS() { return getToken(CubexParser2.EXTENDS, 0); }
 		public IntfContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1325,54 +1325,54 @@ public class CubexParser2 extends Parser {
 		public ExprContext ex;
 		public Token VAR;
 		public TypeschemeContext ts;
-		public TerminalNode VAR(int i) {
-			return getToken(CubexParser2.VAR, i);
-		}
-		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
-		public TerminalNode SEMICOLON() { return getToken(CubexParser2.SEMICOLON, 0); }
-		public TerminalNode SUPER() { return getToken(CubexParser2.SUPER, 0); }
-		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
-		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public KindcontextContext kindcontext() {
 			return getRuleContext(KindcontextContext.class,0);
-		}
-		public List<TypeschemeContext> typescheme() {
-			return getRuleContexts(TypeschemeContext.class);
-		}
-		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
-		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
-		}
-		public TerminalNode CLASS() { return getToken(CubexParser2.CLASS, 0); }
-		public StatContext stat(int i) {
-			return getRuleContext(StatContext.class,i);
-		}
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public TypecontextContext typecontext() {
-			return getRuleContext(TypecontextContext.class,0);
-		}
-		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
-		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
-		public TypeContext type() {
-			return getRuleContext(TypeContext.class,0);
-		}
-		public TypeschemeContext typescheme(int i) {
-			return getRuleContext(TypeschemeContext.class,i);
-		}
-		public List<StatContext> stat() {
-			return getRuleContexts(StatContext.class);
 		}
 		public TerminalNode FUN(int i) {
 			return getToken(CubexParser2.FUN, i);
 		}
+		public TypeschemeContext typescheme(int i) {
+			return getRuleContext(TypeschemeContext.class,i);
+		}
+		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
+		public TerminalNode CLASS() { return getToken(CubexParser2.CLASS, 0); }
+		public List<TypeschemeContext> typescheme() {
+			return getRuleContexts(TypeschemeContext.class);
+		}
+		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
+		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
+		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
+		}
+		public List<StatContext> stat() {
+			return getRuleContexts(StatContext.class);
+		}
+		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
+		public StatContext stat(int i) {
+			return getRuleContext(StatContext.class,i);
+		}
+		public TerminalNode VAR(int i) {
+			return getToken(CubexParser2.VAR, i);
+		}
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
+		}
+		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
+		public TerminalNode SEMICOLON() { return getToken(CubexParser2.SEMICOLON, 0); }
+		public TerminalNode SUPER() { return getToken(CubexParser2.SUPER, 0); }
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
+		public TypecontextContext typecontext() {
+			return getRuleContext(TypecontextContext.class,0);
+		}
 		public TerminalNode EXTENDS() { return getToken(CubexParser2.EXTENDS, 0); }
+		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
 		public ClsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1498,37 +1498,37 @@ public class CubexParser2 extends Parser {
 		public TypeschemeContext ts;
 		public IntfContext i;
 		public ClsContext c;
-		public IntfContext intf() {
-			return getRuleContext(IntfContext.class,0);
-		}
 		public TerminalNode VAR(int i) {
 			return getToken(CubexParser2.VAR, i);
+		}
+		public TerminalNode FUN(int i) {
+			return getToken(CubexParser2.FUN, i);
 		}
 		public StatContext stat(int i) {
 			return getRuleContext(StatContext.class,i);
 		}
-		public ProgramContext program() {
-			return getRuleContext(ProgramContext.class,0);
+		public TypeschemeContext typescheme(int i) {
+			return getRuleContext(TypeschemeContext.class,i);
 		}
 		public ClsContext cls() {
 			return getRuleContext(ClsContext.class,0);
 		}
-		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
-		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
-		public TypeschemeContext typescheme(int i) {
-			return getRuleContext(TypeschemeContext.class,i);
-		}
 		public List<TypeschemeContext> typescheme() {
 			return getRuleContexts(TypeschemeContext.class);
+		}
+		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
+		public ProgramContext program() {
+			return getRuleContext(ProgramContext.class,0);
 		}
 		public StatsContext stats() {
 			return getRuleContext(StatsContext.class,0);
 		}
+		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
+		public IntfContext intf() {
+			return getRuleContext(IntfContext.class,0);
+		}
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
-		}
-		public TerminalNode FUN(int i) {
-			return getToken(CubexParser2.FUN, i);
 		}
 		public ProgramContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1629,16 +1629,16 @@ public class CubexParser2 extends Parser {
 		public FunctxtContext fc;
 		public VvcContext v;
 		public TypeschemeContext ts;
+		public FunctxtContext functxt() {
+			return getRuleContext(FunctxtContext.class,0);
+		}
+		public TypeschemeContext typescheme() {
+			return getRuleContext(TypeschemeContext.class,0);
+		}
 		public VvcContext vvc() {
 			return getRuleContext(VvcContext.class,0);
 		}
 		public TerminalNode COMMA() { return getToken(CubexParser2.COMMA, 0); }
-		public TypeschemeContext typescheme() {
-			return getRuleContext(TypeschemeContext.class,0);
-		}
-		public FunctxtContext functxt() {
-			return getRuleContext(FunctxtContext.class,0);
-		}
 		public FunctxtContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public FunctxtContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -1709,34 +1709,34 @@ public class CubexParser2 extends Parser {
 		public TypeContext t;
 		public Token VAR;
 		public TypeschemeContext ts;
-		public TerminalNode VAR(int i) {
-			return getToken(CubexParser2.VAR, i);
-		}
-		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
-		public List<TerminalNode> SEMICOLON() { return getTokens(CubexParser2.SEMICOLON); }
-		public TerminalNode SEMICOLON(int i) {
-			return getToken(CubexParser2.SEMICOLON, i);
-		}
 		public ClsctxtContext clsctxt() {
 			return getRuleContext(ClsctxtContext.class,0);
 		}
-		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public KindcontextContext kindcontext() {
 			return getRuleContext(KindcontextContext.class,0);
-		}
-		public List<TypeschemeContext> typescheme() {
-			return getRuleContexts(TypeschemeContext.class);
-		}
-		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
-		public TerminalNode CLASS() { return getToken(CubexParser2.CLASS, 0); }
-		public TerminalNode COMMA() { return getToken(CubexParser2.COMMA, 0); }
-		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
-		public TypeContext type() {
-			return getRuleContext(TypeContext.class,0);
 		}
 		public TypeschemeContext typescheme(int i) {
 			return getRuleContext(TypeschemeContext.class,i);
 		}
+		public TerminalNode CLASS() { return getToken(CubexParser2.CLASS, 0); }
+		public List<TypeschemeContext> typescheme() {
+			return getRuleContexts(TypeschemeContext.class);
+		}
+		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
+		public TerminalNode COMMA() { return getToken(CubexParser2.COMMA, 0); }
+		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
+		}
+		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
+		public TerminalNode VAR(int i) {
+			return getToken(CubexParser2.VAR, i);
+		}
+		public TerminalNode SEMICOLON(int i) {
+			return getToken(CubexParser2.SEMICOLON, i);
+		}
+		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
+		public List<TerminalNode> SEMICOLON() { return getTokens(CubexParser2.SEMICOLON); }
 		public TerminalNode INTERFACE() { return getToken(CubexParser2.INTERFACE, 0); }
 		public TerminalNode EXTENDS() { return getToken(CubexParser2.EXTENDS, 0); }
 		public ClsctxtContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
@@ -1936,54 +1936,53 @@ public class CubexParser2 extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\uacf5\uee8c\u4f5d\u8b0d\u4a45\u78bd\u1b2f\u3378\3;\u01ec\4\2\t\2\4"+
-		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\3\2\3"+
-		"\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3-\n\3\f\3\16\3\60\13\3\5\3\62\n\3\3"+
-		"\3\5\3\65\n\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5"+
-		"D\n\5\f\5\16\5G\13\5\5\5I\n\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
-		"\7\6U\n\6\f\6\16\6X\13\6\5\6Z\n\6\3\6\5\6]\n\6\3\7\3\7\3\7\3\7\3\7\3\7"+
-		"\3\7\3\7\5\7g\n\7\5\7i\n\7\3\7\3\7\3\7\3\7\3\7\7\7p\n\7\f\7\16\7s\13\7"+
-		"\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3"+
-		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u0090\n\t\3\t\3\t\3\t\3\t\3"+
-		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00a5\n"+
-		"\t\3\t\3\t\5\t\u00a9\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00b0\n\t\3\t\3\t\5\t"+
-		"\u00b4\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00bb\n\t\3\t\3\t\5\t\u00bf\n\t\3\t"+
-		"\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00c9\n\t\3\t\3\t\5\t\u00cd\n\t\3\t\3"+
-		"\t\3\t\3\t\3\t\5\t\u00d4\n\t\3\t\3\t\5\t\u00d8\n\t\3\t\3\t\3\t\3\t\3\t"+
-		"\5\t\u00df\n\t\3\t\3\t\5\t\u00e3\n\t\3\t\3\t\7\t\u00e7\n\t\f\t\16\t\u00ea"+
-		"\13\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\7\n\u00f3\n\n\f\n\16\n\u00f6\13\n\5"+
-		"\n\u00f8\n\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3"+
-		"\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13\u010f\n\13\3\13"+
-		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
-		"\3\13\3\13\3\13\3\13\3\13\5\13\u0125\n\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f"+
-		"\7\f\u012e\n\f\f\f\16\f\u0131\13\f\5\f\u0133\n\f\3\r\3\r\3\r\3\r\3\r\3"+
-		"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\7\r\u0143\n\r\f\r\16\r\u0146\13\r\3"+
-		"\r\3\r\5\r\u014a\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\7\16\u0158\n\16\f\16\16\16\u015b\13\16\3\16\3\16\5\16\u015f"+
-		"\n\16\3\16\3\16\3\16\3\16\3\16\3\16\7\16\u0167\n\16\f\16\16\16\u016a\13"+
-		"\16\3\16\5\16\u016d\n\16\5\16\u016f\n\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\7\16\u0178\n\16\f\16\16\16\u017b\13\16\3\16\3\16\5\16\u017f\n\16"+
-		"\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17"+
-		"\3\17\3\17\3\17\3\17\3\17\7\17\u0194\n\17\f\17\16\17\u0197\13\17\3\17"+
-		"\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\5\17\u01a4\n\17\3\20"+
-		"\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20\u01af\n\20\f\20\16\20\u01b2"+
-		"\13\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21"+
-		"\3\21\3\21\3\21\3\21\3\21\7\21\u01c6\n\21\f\21\16\21\u01c9\13\21\3\21"+
-		"\3\21\5\21\u01cd\n\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21"+
-		"\3\21\3\21\3\21\3\21\3\21\7\21\u01de\n\21\f\21\16\21\u01e1\13\21\3\21"+
-		"\3\21\5\21\u01e5\n\21\7\21\u01e7\n\21\f\21\16\21\u01ea\13\21\3\21\2\22"+
-		"\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \2\r\4\2\23\23\25\25\4\2\17\20"+
-		"\24\24\4\2%%((\3\2!#\3\2$%\3\2-\60\3\2\61\62\4\2&\'\63\64\3\2\65\66\3"+
-		"\2)*\4\2\t\t\32\32\u0221\2\"\3\2\2\2\4%\3\2\2\2\6\66\3\2\2\2\b;\3\2\2"+
-		"\2\nL\3\2\2\2\fh\3\2\2\2\16t\3\2\2\2\20\u008f\3\2\2\2\22\u00eb\3\2\2\2"+
-		"\24\u0124\3\2\2\2\26\u0126\3\2\2\2\30\u0134\3\2\2\2\32\u014b\3\2\2\2\34"+
-		"\u01a3\3\2\2\2\36\u01a5\3\2\2\2 \u01b3\3\2\2\2\"#\t\2\2\2#$\b\2\1\2$\3"+
-		"\3\2\2\2%\64\b\3\1\2&\61\7&\2\2\'(\7\24\2\2(.\b\3\1\2)*\7\35\2\2*+\7\24"+
-		"\2\2+-\b\3\1\2,)\3\2\2\2-\60\3\2\2\2.,\3\2\2\2./\3\2\2\2/\62\3\2\2\2\60"+
-		".\3\2\2\2\61\'\3\2\2\2\61\62\3\2\2\2\62\63\3\2\2\2\63\65\7\'\2\2\64&\3"+
-		"\2\2\2\64\65\3\2\2\2\65\5\3\2\2\2\66\67\7\25\2\2\678\7\31\2\289\5\f\7"+
-		"\29:\b\4\1\2:\7\3\2\2\2;<\b\5\1\2<H\7\33\2\2=>\5\6\4\2>E\b\5\1\2?@\7\35"+
+		"\2\3;\u01ec\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4"+
+		"\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20"+
+		"\4\21\t\21\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3-\n\3\f\3\16\3\60"+
+		"\13\3\5\3\62\n\3\3\3\5\3\65\n\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3"+
+		"\5\3\5\3\5\3\5\7\5D\n\5\f\5\16\5G\13\5\5\5I\n\5\3\5\3\5\3\6\3\6\3\6\3"+
+		"\6\3\6\3\6\3\6\3\6\7\6U\n\6\f\6\16\6X\13\6\5\6Z\n\6\3\6\5\6]\n\6\3\7\3"+
+		"\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7g\n\7\5\7i\n\7\3\7\3\7\3\7\3\7\3\7\7\7p"+
+		"\n\7\f\7\16\7s\13\7\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t\3"+
+		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u0090\n"+
+		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t"+
+		"\3\t\3\t\5\t\u00a5\n\t\3\t\3\t\5\t\u00a9\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00b0"+
+		"\n\t\3\t\3\t\5\t\u00b4\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00bb\n\t\3\t\3\t\5"+
+		"\t\u00bf\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00c9\n\t\3\t\3\t\5\t"+
+		"\u00cd\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00d4\n\t\3\t\3\t\5\t\u00d8\n\t\3\t"+
+		"\3\t\3\t\3\t\3\t\5\t\u00df\n\t\3\t\3\t\5\t\u00e3\n\t\3\t\3\t\7\t\u00e7"+
+		"\n\t\f\t\16\t\u00ea\13\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\7\n\u00f3\n\n\f\n"+
+		"\16\n\u00f6\13\n\5\n\u00f8\n\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
+		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13"+
+		"\u010f\n\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
+		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13\u0125\n\13\3\f\3\f\3\f\3"+
+		"\f\3\f\3\f\3\f\7\f\u012e\n\f\f\f\16\f\u0131\13\f\5\f\u0133\n\f\3\r\3\r"+
+		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\7\r\u0143\n\r\f\r\16"+
+		"\r\u0146\13\r\3\r\3\r\5\r\u014a\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
+		"\3\16\3\16\3\16\3\16\3\16\7\16\u0158\n\16\f\16\16\16\u015b\13\16\3\16"+
+		"\3\16\5\16\u015f\n\16\3\16\3\16\3\16\3\16\3\16\3\16\7\16\u0167\n\16\f"+
+		"\16\16\16\u016a\13\16\3\16\5\16\u016d\n\16\5\16\u016f\n\16\3\16\3\16\3"+
+		"\16\3\16\3\16\3\16\3\16\7\16\u0178\n\16\f\16\16\16\u017b\13\16\3\16\3"+
+		"\16\5\16\u017f\n\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17"+
+		"\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\7\17\u0194\n\17\f\17\16"+
+		"\17\u0197\13\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17"+
+		"\5\17\u01a4\n\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20\u01af"+
+		"\n\20\f\20\16\20\u01b2\13\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3"+
+		"\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\7\21\u01c6\n\21\f\21"+
+		"\16\21\u01c9\13\21\3\21\3\21\5\21\u01cd\n\21\3\21\3\21\3\21\3\21\3\21"+
+		"\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\7\21\u01de\n\21\f\21"+
+		"\16\21\u01e1\13\21\3\21\3\21\5\21\u01e5\n\21\7\21\u01e7\n\21\f\21\16\21"+
+		"\u01ea\13\21\3\21\2\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \2\r\4\23"+
+		"\23\25\25\4\17\20\24\24\4%%((\3!#\3$%\3-\60\3\61\62\4&\'\63\64\3\65\66"+
+		"\3)*\4\t\t\32\32\u0221\2\"\3\2\2\2\4%\3\2\2\2\6\66\3\2\2\2\b;\3\2\2\2"+
+		"\nL\3\2\2\2\fh\3\2\2\2\16t\3\2\2\2\20\u008f\3\2\2\2\22\u00eb\3\2\2\2\24"+
+		"\u0124\3\2\2\2\26\u0126\3\2\2\2\30\u0134\3\2\2\2\32\u014b\3\2\2\2\34\u01a3"+
+		"\3\2\2\2\36\u01a5\3\2\2\2 \u01b3\3\2\2\2\"#\t\2\2\2#$\b\2\1\2$\3\3\2\2"+
+		"\2%\64\b\3\1\2&\61\7&\2\2\'(\7\24\2\2(.\b\3\1\2)*\7\35\2\2*+\7\24\2\2"+
+		"+-\b\3\1\2,)\3\2\2\2-\60\3\2\2\2.,\3\2\2\2./\3\2\2\2/\62\3\2\2\2\60.\3"+
+		"\2\2\2\61\'\3\2\2\2\61\62\3\2\2\2\62\63\3\2\2\2\63\65\7\'\2\2\64&\3\2"+
+		"\2\2\64\65\3\2\2\2\65\5\3\2\2\2\66\67\7\25\2\2\678\7\31\2\289\5\f\7\2"+
+		"9:\b\4\1\2:\7\3\2\2\2;<\b\5\1\2<H\7\33\2\2=>\5\6\4\2>E\b\5\1\2?@\7\35"+
 		"\2\2@A\5\6\4\2AB\b\5\1\2BD\3\2\2\2C?\3\2\2\2DG\3\2\2\2EC\3\2\2\2EF\3\2"+
 		"\2\2FI\3\2\2\2GE\3\2\2\2H=\3\2\2\2HI\3\2\2\2IJ\3\2\2\2JK\7\34\2\2K\t\3"+
 		"\2\2\2L\\\b\6\1\2MY\7&\2\2NO\5\f\7\2OV\b\6\1\2PQ\7\35\2\2QR\5\f\7\2RS"+
@@ -2124,8 +2123,5 @@ public class CubexParser2 extends Parser {
 		ATNSimulator.deserialize(_serializedATN.toCharArray());
 	static {
 		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
-		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
-			_decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
-		}
 	}
 }
