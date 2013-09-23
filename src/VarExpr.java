@@ -1,4 +1,38 @@
+import java.util.List;
 
-public class VarExpr {
 
+public class VarExpr extends CuExpr{
+	private CuExpr e;
+	private String var;
+	private CuParaType pt;
+	List<CuExpr> es;
+	public VarExpr(CuExpr e, String var, List<CuType> pt, List<CuExpr> es) {
+		this.e = e;
+		this.var = var;
+		this.pt = pt;
+		this.es = es;
+		super.text = String.format("%s . %s %s %s", e.toString(), var, listTypes(pt), listExprs(es));
+	}
+	
+	private String listTypes(List<CuType> es) {
+		String s = "< ";
+		for (CuType e : es) {
+			s += e.toString() + " , ";
+		}
+		int l = s.lastIndexOf(", ");
+		if (l > 0) s = s.substring(0, l);
+		s += ">";
+		return s;
+	}
+	
+	private String listExprs(List<CuExpr> es) {
+		String s = "( ";
+		for (CuExpr e : es) {
+			s += e.toString() + " , ";
+		}
+		int l = s.lastIndexOf(", ");
+		if (l > 0) s = s.substring(0, l);
+		s += ")";
+		return s;
+	}
 }

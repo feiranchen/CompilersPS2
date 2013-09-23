@@ -1,4 +1,4 @@
 
-public class CuVvc {
+public class CuVvc extends CuExpr {
 
 }
