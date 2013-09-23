@@ -25,7 +25,7 @@ public class TypeScheme extends CuTypeScheme {
 	
 	private String listTypes(List<CuVvt> es) {
 		String s = "( ";
-		for (Vvt e : es) {
+		for (CuVvt e : es) {
 			s += e.toString() + " , ";
 		}
 		int l = s.lastIndexOf(", ");
