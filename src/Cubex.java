@@ -20,6 +20,6 @@ public class Cubex {
 		tree.inspect(parser); // show in gui
 		//tree.save(parser, "/tmp/R.ps"); // Generate postscript
 
-		System.out.println(tree.toStringTree(parser));
+		//System.out.println(tree.toStringTree(parser));
 	}
 }
