@@ -18,11 +18,11 @@ public class Intf extends CuInterface{
 		}
 		text += " >";
 	}
-	void add (CuType tt) {
+	@Override void add (CuType tt) {
 		t = tt;
 		
 	}
-	void add (String v_name, CuTypeScheme ts) {
+	@Override void add (String v_name, CuTypeScheme ts) {
 		v_names.add(v_name);
 		ts_names.add(ts);
 		funs += " fun " + v_name + ts.toString() + " ;";

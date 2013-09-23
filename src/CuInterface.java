@@ -4,4 +4,6 @@ public abstract class CuInterface {
 	@Override public String toString() {
 		return text;
 	}
+	public abstract void add (CuType tt);
+	public abstract void add (String v_name, CuTypeScheme ts);
 }

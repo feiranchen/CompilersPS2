@@ -9,7 +9,7 @@ public class IfStat extends CuStat{
 		super.text = "if ( " + e.toString() + " ) " + s1.toString();
 	}
 
-    public void add (CuStat st) {
+    @Override public void add (CuStat st) {
     	s2 = st;
     	super.text += " else " + s2.toString();
     }
