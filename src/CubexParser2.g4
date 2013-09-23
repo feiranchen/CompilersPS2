@@ -22,7 +22,7 @@ typescheme returns [CuTypeScheme ts]
 expr returns [CuExpr e]
 	: VAR {$e = new VvExp($VAR.text);}
 	| v=vvc pt=paratype es=exprs {$e = new VvcExp($v.v, $pt.pt, $es.cu);}
-	| ex=expr VAR pt=paratype LPAREN es=exprs RPAREN {$e = new VarExpr($ex.e, $VAR.text, $pt.pt, $es.cu);} 
+	| ex=expr DOT VAR pt=paratype LPAREN es=exprs RPAREN {$e = new VarExpr($ex.e, $VAR.text, $pt.pt, $es.cu);} 
 	| ex=expr op=(DASH | BANG) 
 		{$e = ($op.type == DASH) ? new NegativeExpr($ex.e) : new NegateExpr($ex.e);}
 	| l=expr op=(STAR | SLASH | PERCENT) LPAREN? r=expr RPAREN?
@@ -62,7 +62,6 @@ cls returns [CuClass c]
 	: CLASS CLSINTF pk=kindcontext pt=typecontext {$c = new Cls($CLSINTF.text, $pk.kc, $pt.tc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (s=stat {$c.add($s.s);})* (SUPER LPAREN? ex=expr {$c.add($ex.e);} (COMMA ex=expr {$c.add($ex.e);})* RPAREN?)? SEMICOLON (FUN VAR ts=typescheme s=stat {$c.add($VAR.text, $ts.ts, $s.s);})* RBRACE)?;
 program returns [CuProgr p]
 	: s=stat {$p = new StatPrg($s.s);} 
-	| s=stat ss=stats pr=program {$p = new StatsPrg($s.s, $ss.cu, $pr.p);}
 	| FUN VAR ts=typescheme s=stat {$p = new FunPrg($VAR.text, $ts.ts, $s.s);} (FUN VAR ts=typescheme s=stat {$p.add($VAR.text, $ts.ts, $s.s);})* pr=program {$p.add($pr.p);}
 	| i=intf pr=program {$p = new IntfPrg($i.i, $pr.p);}
 	| c=cls pr=program {$p = new ClassPrg($c.c, $pr.p);};
