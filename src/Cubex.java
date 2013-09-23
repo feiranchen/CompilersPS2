@@ -9,9 +9,9 @@ public class Cubex {
 	}
 	
 	protected static void getLexer(String fn) throws IOException {
-		CubexLexer lexer = new CubexLexer(new ANTLRFileStream(fn));
+		CubexLexer2 lexer = new CubexLexer2(new ANTLRFileStream(fn));
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		CubexParser parser = new CubexParser(tokens);
+		CubexParser2 parser = new CubexParser2(tokens);
 		//parser.setBuildParseTree(true);
 		//RuleContext tree = parser.vv();
 		System.out.println(parser.program().p.toString());

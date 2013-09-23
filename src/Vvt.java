@@ -1,5 +1,5 @@
 
-public class Vvt {
+public class Vvt extends CuVvt{
 	String text;
 	String data_s;
 	CuType data_t;

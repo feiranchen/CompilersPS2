@@ -10,7 +10,7 @@ public class Stats extends CuStat{
 	public String toString() {
 		String name;
 		name = "{ ";
-		for (CuStat cs : cu) {
+		for (CuStat cs : al) {
 			name += cs.toString() + " ";
 		}
 		name += "}";
