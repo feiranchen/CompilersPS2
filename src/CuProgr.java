@@ -1,3 +1,5 @@
+import java.util.List;
+
 
 public abstract class CuProgr {
 	protected String text = "";
@@ -5,5 +7,9 @@ public abstract class CuProgr {
 		return text.replaceAll("[ ]+", " ");
 	}
 	public void add (String var, CuTypeScheme ts, CuStat s){};
-	public void add (CuProgr p){};
+	public void add (CuProgr p){}
+	public void add(List<CuStat> cu, CuProgr p) {
+		// TODO Auto-generated method stub
+		
+	};
 }

@@ -1,2 +1,2 @@
 # parser test program 3
-if(a>b) {z:=a-b; x:=u.v(z);}
+if(a>b) {x:=u.v(z); z:=a-b;}

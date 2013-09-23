@@ -55,13 +55,13 @@ stat returns [CuStat s]
 	| FOR LPAREN VAR IN e=expr RPAREN st=stat {$s = new ForStat($VAR.text, $e.e, $st.s);}
 	| (RETURN | EQUAL) e=expr SEMICOLON {$s = new ReturnStat($e.e);};
 stats returns [List<CuStat> cu] 
-	: {$cu = new ArrayList<CuStat>();} (s=stat {$cu.add($s.s);} (COMMA s=stat {$cu.add($s.s);})*)?;
+	: {$cu = new ArrayList<CuStat>();} (s=stat {$cu.add($s.s);} (s=stat {$cu.add($s.s);})*)?;
 intf returns [CuInterface i]
 	: INTERFACE CLSINTF p=kindcontext {$i = new Intf($CLSINTF.text, $p.kc);} (EXTENDS t=type {$i.add($t.t);} LBRACE (FUN VAR ts=typescheme SEMICOLON {$i.add($VAR.text, $ts.ts);})* RBRACE)?;
 cls returns [CuClass c]
 	: CLASS CLSINTF pk=kindcontext pt=typecontext {$c = new Cls($CLSINTF.text, $pk.kc, $pt.tc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (s=stat {$c.add($s.s);})* (SUPER LPAREN? ex=expr {$c.add($ex.e);} (COMMA ex=expr {$c.add($ex.e);})* RPAREN?)? SEMICOLON (FUN VAR ts=typescheme s=stat {$c.add($VAR.text, $ts.ts, $s.s);})* RBRACE)?;
 program returns [CuProgr p]
-	: s=stat {$p = new StatPrg($s.s);} 
+	: s=stat {$p = new StatPrg($s.s);} (ss=stats pr=program {$p.add($ss.cu, $pr.p);})?
 	| FUN VAR ts=typescheme s=stat {$p = new FunPrg($VAR.text, $ts.ts, $s.s);} (FUN VAR ts=typescheme s=stat {$p.add($VAR.text, $ts.ts, $s.s);})* pr=program {$p.add($pr.p);}
 	| i=intf pr=program {$p = new IntfPrg($i.i, $pr.p);}
 	| c=cls pr=program {$p = new ClassPrg($c.c, $pr.p);};
