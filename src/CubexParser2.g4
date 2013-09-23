@@ -15,7 +15,7 @@ paratype returns [List<CuType> pt]
 	: {$pt = new ArrayList<CuType>(); } (LANGLE (t=type {$pt.add($t.t);} (COMMA t=type {$pt.add($t.t);})*)? RANGLE)?;	
 type returns [CuType t]
 	: v = (TPARA | THING | NOTHING) {$t = $v.type== TPARA ? new VTypePara($v.text) : new VTopBot($v.text);}
-	| CLSINTF {$t = new VClass($CLSINTF.text);} (p=paratype {$t.add($p.pt);})? 
+	| CLSINTF p=paratype {$t = new VClass($CLSINTF.text, $p.pt);}
 	| l=type AMPERSAND r=type {$t = new VTypeInter($l.t, $r.t);};
 typescheme returns [CuTypeScheme ts]
 	: kc=kindcontext tc=typecontext COLON t=type {$ts = new TypeScheme($kc.kc, $tc.tc, $t.t);};
