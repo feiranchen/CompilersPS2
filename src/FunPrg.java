@@ -20,15 +20,7 @@ public class FunPrg extends CuProgr {
 		this.p = p;
 	}
 	
-	private static String listStrings(List<String> es) {
-		String s = "";
-		for (String e : es) {
-			s += e.toString() + " ";
-		}
-		return s;
-	}
-	
 	@Override public String toString() {
-		return listStrings(fun) + " " + p.toString();
+		return CuMethod.printList("", fun, "", "") + " " + p.toString();
 	}
 }

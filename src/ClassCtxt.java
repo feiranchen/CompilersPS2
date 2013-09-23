@@ -14,7 +14,7 @@ public class ClassCtxt extends CuClassC {
 		this.keyword = k;
 		this.clsintf = ci;
 		this.kc = kc;
-		text += String.format(" , %s %s %s extends", keyword, clsintf, listKC(kc));
+		text += String.format(" , %s %s %s extends", keyword, clsintf, CuMethod.printList("<", kc, ">", ","));
 	}
 	
 	@Override public void add (CuType t) {
@@ -25,27 +25,7 @@ public class ClassCtxt extends CuClassC {
 	@Override public void add (String vv, CuTypeScheme ts) {
 		String s = String.format("%s %s ;", vv, ts.toString());
 		VvTypeScheme.add(s);
-		text +=  " " +listVvTypeScheme(VvTypeScheme);
-	}
-	
-	private String listKC(List<String> es) {
-		String s = "< ";
-		for (String e : es) {
-			s += e.toString() + " , ";
-		}
-		int l = s.lastIndexOf(", ");
-		if (l > 0) s = s.substring(0, l);
-		s += ">";
-		return s;
-	}
-	
-	private String listVvTypeScheme(List<String> es) {
-		String s = "{ ";
-		for (String e : es) {
-			s += e.toString() + " ; ";
-		}
-		s += "}";
-		return s;
+		text +=  " " + CuMethod.printList("{", VvTypeScheme, "}", ";");
 	}
 	
 }
