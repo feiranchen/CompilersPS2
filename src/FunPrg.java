@@ -12,11 +12,11 @@ public class FunPrg extends CuProgr {
 		fun.add(t);
 	}
 	
-	public void add (String var, CuTypeScheme ts, CuStat s) {
+	@Override public void add (String var, CuTypeScheme ts, CuStat s) {
 		String t = String.format("fun %s %s %s", var, ts.toString(), s.toString());
 		fun.add(t);
 	}
-	public void add (CuProgr p) {
+	@Override public void add (CuProgr p) {
 		this.p = p;
 	}
 	

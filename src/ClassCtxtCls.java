@@ -15,12 +15,12 @@ public class ClassCtxtCls extends CuClassC {
 		text = String.format("%s , class %s %s extends", c.toString(), clsintf, listKC(kc));
 	}
 	
-	public void add (CuType t) {
+	@Override public void add (CuType t) {
 		this.t = t;
 		text += " " +t.toString();
 	}
 	
-	public void add (String vv, CuTypeScheme ts) {
+	@Override public void add (String vv, CuTypeScheme ts) {
 		String s = String.format("%s %s ;", vv, ts.toString());
 		VvTypeScheme.add(s);
 	}
