@@ -1,4 +1,7 @@
 
 public abstract class CuInterface {
-	public abstract String toString();
+	protected String text = "";
+	@Override public String toString() {
+		return text;
+	}
 }

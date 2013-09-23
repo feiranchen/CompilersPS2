@@ -6,12 +6,14 @@ public class BrkExpr extends CuExpr {
 		super.text=printLst(es);
 	}
 	
-	private <T>String printLst(List<T> pt){
-		if (pt.isEmpty()) return "";
-		StringBuilder stB=new StringBuilder();
-		for( T t : pt){
-			stB.append(pt.toString()+ " ");
+	private String printLst(List<CuExpr> es) {
+		String s = "[ ";
+		for (CuExpr e : es) {
+			s += e.toString() + " , ";
 		}
-		return stB.substring(0,stB.length()-2);
+		int l = s.lastIndexOf(", ");
+		if (l > 0) s = s.substring(0, l);
+		s += "]";
+		return s;
 	}
 }
