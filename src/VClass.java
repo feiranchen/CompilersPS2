@@ -6,7 +6,7 @@ public class VClass extends CuType {
 	public VClass(String s, List<CuType> pt){
 		data_s=s;
 		this.pt = pt;
-		super.text=data_s + listTypes(pt);
+		super.text=data_s+ " "+ listTypes(pt);
 	}
 	private String listTypes(List<CuType> es) {
 		String s = "< ";
