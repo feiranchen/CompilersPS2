@@ -1,4 +1,4 @@
-// Generated from CubexParser2.g4 by ANTLR 4.0
+// Generated from CubexParser2.g4 by ANTLR 4.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -15,7 +15,7 @@ public class CubexParser2 extends Parser {
 		new PredictionContextCache();
 	public static final int
 		APPEND=42, CLASS=11, STAR=31, LRTHR=46, THR=43, WHILE=4, LONW=48, CLSINTF=17, 
-		COMMENTS_POND=55, ONW=47, LANGLE=36, GTE=50, LBRACE=29, THING=13, FOR=5, 
+		COMMENTS_POND=55, ONW=47, LANGLE=36, GTE=50, LBRACE=29, FOR=5, THING=13, 
 		SPACE=56, LTE=49, LPAREN=25, IF=2, LBRACKET=21, RPAREN=26, LTHR=44, SLASH=32, 
 		IN=6, COMMENTS=54, COMMA=27, EQUAL=24, RETURN=7, NOTHING=14, PLUS=34, 
 		PIPE=40, VAR=19, SUPER=12, RBRACKET=22, RANGLE=37, DOT=41, RTHR=45, INTEGER=20, 
@@ -101,16 +101,16 @@ public class CubexParser2 extends Parser {
 	public static class KindcontextContext extends ParserRuleContext {
 		public List<String> kc;
 		public Token TPARA;
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
-		}
-		public List<TerminalNode> TPARA() { return getTokens(CubexParser2.TPARA); }
-		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
 		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
+		public List<TerminalNode> TPARA() { return getTokens(CubexParser2.TPARA); }
+		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
 		public TerminalNode TPARA(int i) {
 			return getToken(CubexParser2.TPARA, i);
 		}
-		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
+		}
+		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
 		public KindcontextContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -175,11 +175,11 @@ public class CubexParser2 extends Parser {
 		public CuVvt cu;
 		public Token VAR;
 		public TypeContext t;
-		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
 		public TerminalNode VAR() { return getToken(CubexParser2.VAR, 0); }
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
+		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
 		public VvtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -215,14 +215,14 @@ public class CubexParser2 extends Parser {
 		public List<VvtContext> vvt() {
 			return getRuleContexts(VvtContext.class);
 		}
-		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
-		}
 		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
-		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
 		public VvtContext vvt(int i) {
 			return getRuleContext(VvtContext.class,i);
+		}
+		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
 		}
 		public TypecontextContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -280,10 +280,6 @@ public class CubexParser2 extends Parser {
 	public static class ParatypeContext extends ParserRuleContext {
 		public List<CuType> pt;
 		public TypeContext t;
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
-		}
-		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
 		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
 		public TypeContext type(int i) {
 			return getRuleContext(TypeContext.class,i);
@@ -292,6 +288,10 @@ public class CubexParser2 extends Parser {
 			return getRuleContexts(TypeContext.class);
 		}
 		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
+		}
+		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
 		public ParatypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -360,12 +360,7 @@ public class CubexParser2 extends Parser {
 		public Token CLSINTF;
 		public ParatypeContext p;
 		public TypeContext r;
-		public TerminalNode NOTHING() { return getToken(CubexParser2.NOTHING, 0); }
 		public TerminalNode AMPERSAND() { return getToken(CubexParser2.AMPERSAND, 0); }
-		public ParatypeContext paratype() {
-			return getRuleContext(ParatypeContext.class,0);
-		}
-		public TerminalNode THING() { return getToken(CubexParser2.THING, 0); }
 		public TerminalNode TPARA() { return getToken(CubexParser2.TPARA, 0); }
 		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public TypeContext type(int i) {
@@ -374,6 +369,11 @@ public class CubexParser2 extends Parser {
 		public List<TypeContext> type() {
 			return getRuleContexts(TypeContext.class);
 		}
+		public TerminalNode THING() { return getToken(CubexParser2.THING, 0); }
+		public ParatypeContext paratype() {
+			return getRuleContext(ParatypeContext.class,0);
+		}
+		public TerminalNode NOTHING() { return getToken(CubexParser2.NOTHING, 0); }
 		public TypeContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public TypeContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -394,7 +394,7 @@ public class CubexParser2 extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(102);
+			setState(99);
 			switch (_input.LA(1)) {
 			case THING:
 			case NOTHING:
@@ -413,25 +413,17 @@ public class CubexParser2 extends Parser {
 			case CLSINTF:
 				{
 				setState(95); ((TypeContext)_localctx).CLSINTF = match(CLSINTF);
-				((TypeContext)_localctx).t =  new VClass((((TypeContext)_localctx).CLSINTF!=null?((TypeContext)_localctx).CLSINTF.getText():null));
-				setState(100);
-				switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
-				case 1:
-					{
-					setState(97); ((TypeContext)_localctx).p = paratype();
-					_localctx.t.add(((TypeContext)_localctx).p.pt);
-					}
-					break;
-				}
+				setState(96); ((TypeContext)_localctx).p = paratype();
+				((TypeContext)_localctx).t =  new VClass((((TypeContext)_localctx).CLSINTF!=null?((TypeContext)_localctx).CLSINTF.getText():null), ((TypeContext)_localctx).p.pt);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(111);
+			setState(108);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
@@ -441,17 +433,17 @@ public class CubexParser2 extends Parser {
 					_localctx = new TypeContext(_parentctx, _parentState, _p);
 					_localctx.l = _prevctx;
 					pushNewRecursionContext(_localctx, _startState, RULE_type);
-					setState(104);
+					setState(101);
 					if (!(1 >= _localctx._p)) throw new FailedPredicateException(this, "1 >= $_p");
-					setState(105); match(AMPERSAND);
-					setState(106); ((TypeContext)_localctx).r = type(2);
+					setState(102); match(AMPERSAND);
+					setState(103); ((TypeContext)_localctx).r = type(2);
 					((TypeContext)_localctx).t =  new VTypeInter(((TypeContext)_localctx).l.t, ((TypeContext)_localctx).r.t);
 					}
 					} 
 				}
-				setState(113);
+				setState(110);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
 			}
 			}
 		}
@@ -471,16 +463,16 @@ public class CubexParser2 extends Parser {
 		public KindcontextContext kc;
 		public TypecontextContext tc;
 		public TypeContext t;
-		public KindcontextContext kindcontext() {
-			return getRuleContext(KindcontextContext.class,0);
-		}
-		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
 		public TypecontextContext typecontext() {
 			return getRuleContext(TypecontextContext.class,0);
 		}
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
+		public KindcontextContext kindcontext() {
+			return getRuleContext(KindcontextContext.class,0);
+		}
+		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
 		public TypeschemeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -493,10 +485,10 @@ public class CubexParser2 extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(114); ((TypeschemeContext)_localctx).kc = kindcontext();
-			setState(115); ((TypeschemeContext)_localctx).tc = typecontext();
-			setState(116); match(COLON);
-			setState(117); ((TypeschemeContext)_localctx).t = type(0);
+			setState(111); ((TypeschemeContext)_localctx).kc = kindcontext();
+			setState(112); ((TypeschemeContext)_localctx).tc = typecontext();
+			setState(113); match(COLON);
+			setState(114); ((TypeschemeContext)_localctx).t = type(0);
 			((TypeschemeContext)_localctx).ts =  new TypeScheme(((TypeschemeContext)_localctx).kc.kc, ((TypeschemeContext)_localctx).tc.tc, ((TypeschemeContext)_localctx).t.t);
 			}
 		}
@@ -524,51 +516,51 @@ public class CubexParser2 extends Parser {
 		public Token STRING;
 		public ExprContext r;
 		public Token op;
-		public TerminalNode INTEGER() { return getToken(CubexParser2.INTEGER, 0); }
 		public TerminalNode APPEND() { return getToken(CubexParser2.APPEND, 0); }
-		public TerminalNode INEQUAL() { return getToken(CubexParser2.INEQUAL, 0); }
-		public TerminalNode STAR() { return getToken(CubexParser2.STAR, 0); }
-		public TerminalNode LRTHR() { return getToken(CubexParser2.LRTHR, 0); }
-		public TerminalNode PERCENT() { return getToken(CubexParser2.PERCENT, 0); }
-		public TerminalNode THR() { return getToken(CubexParser2.THR, 0); }
-		public TerminalNode LONW() { return getToken(CubexParser2.LONW, 0); }
-		public TerminalNode DASH() { return getToken(CubexParser2.DASH, 0); }
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public TerminalNode ONW() { return getToken(CubexParser2.ONW, 0); }
-		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
-		public TerminalNode GTE() { return getToken(CubexParser2.GTE, 0); }
-		public TerminalNode AMPERSAND() { return getToken(CubexParser2.AMPERSAND, 0); }
-		public TerminalNode BANG() { return getToken(CubexParser2.BANG, 0); }
-		public TerminalNode LTE() { return getToken(CubexParser2.LTE, 0); }
 		public TerminalNode TRUE() { return getToken(CubexParser2.TRUE, 0); }
-		public ExprsContext exprs() {
-			return getRuleContext(ExprsContext.class,0);
-		}
-		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
-		public TerminalNode LBRACKET() { return getToken(CubexParser2.LBRACKET, 0); }
-		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
-		public TerminalNode LTHR() { return getToken(CubexParser2.LTHR, 0); }
-		public TerminalNode SLASH() { return getToken(CubexParser2.SLASH, 0); }
-		public TerminalNode EQEQUAL() { return getToken(CubexParser2.EQEQUAL, 0); }
-		public ParatypeContext paratype() {
-			return getRuleContext(ParatypeContext.class,0);
-		}
-		public TerminalNode PIPE() { return getToken(CubexParser2.PIPE, 0); }
-		public TerminalNode PLUS() { return getToken(CubexParser2.PLUS, 0); }
-		public TerminalNode VAR() { return getToken(CubexParser2.VAR, 0); }
-		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
-		public TerminalNode RBRACKET() { return getToken(CubexParser2.RBRACKET, 0); }
 		public VvcContext vvc() {
 			return getRuleContext(VvcContext.class,0);
+		}
+		public TerminalNode LANGLE() { return getToken(CubexParser2.LANGLE, 0); }
+		public TerminalNode STAR() { return getToken(CubexParser2.STAR, 0); }
+		public TerminalNode RBRACKET() { return getToken(CubexParser2.RBRACKET, 0); }
+		public TerminalNode AMPERSAND() { return getToken(CubexParser2.AMPERSAND, 0); }
+		public TerminalNode RTHR() { return getToken(CubexParser2.RTHR, 0); }
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
 		}
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode FALSE() { return getToken(CubexParser2.FALSE, 0); }
-		public TerminalNode RTHR() { return getToken(CubexParser2.RTHR, 0); }
+		public TerminalNode VAR() { return getToken(CubexParser2.VAR, 0); }
+		public TerminalNode PLUS() { return getToken(CubexParser2.PLUS, 0); }
+		public TerminalNode LRTHR() { return getToken(CubexParser2.LRTHR, 0); }
+		public TerminalNode ONW() { return getToken(CubexParser2.ONW, 0); }
+		public ExprsContext exprs() {
+			return getRuleContext(ExprsContext.class,0);
+		}
+		public TerminalNode PIPE() { return getToken(CubexParser2.PIPE, 0); }
+		public TerminalNode GTE() { return getToken(CubexParser2.GTE, 0); }
+		public TerminalNode PERCENT() { return getToken(CubexParser2.PERCENT, 0); }
+		public TerminalNode LTE() { return getToken(CubexParser2.LTE, 0); }
+		public TerminalNode BANG() { return getToken(CubexParser2.BANG, 0); }
+		public TerminalNode DASH() { return getToken(CubexParser2.DASH, 0); }
+		public TerminalNode LBRACKET() { return getToken(CubexParser2.LBRACKET, 0); }
+		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public TerminalNode INEQUAL() { return getToken(CubexParser2.INEQUAL, 0); }
+		public TerminalNode EQEQUAL() { return getToken(CubexParser2.EQEQUAL, 0); }
+		public TerminalNode RANGLE() { return getToken(CubexParser2.RANGLE, 0); }
+		public TerminalNode LONW() { return getToken(CubexParser2.LONW, 0); }
+		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
+		public TerminalNode LTHR() { return getToken(CubexParser2.LTHR, 0); }
 		public TerminalNode STRING() { return getToken(CubexParser2.STRING, 0); }
+		public TerminalNode INTEGER() { return getToken(CubexParser2.INTEGER, 0); }
+		public ParatypeContext paratype() {
+			return getRuleContext(ParatypeContext.class,0);
+		}
+		public TerminalNode SLASH() { return getToken(CubexParser2.SLASH, 0); }
+		public TerminalNode FALSE() { return getToken(CubexParser2.FALSE, 0); }
+		public TerminalNode THR() { return getToken(CubexParser2.THR, 0); }
 		public ExprContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public ExprContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -589,81 +581,81 @@ public class CubexParser2 extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(141);
-			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
+			setState(138);
+			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				{
-				setState(121); ((ExprContext)_localctx).VAR = match(VAR);
+				setState(118); ((ExprContext)_localctx).VAR = match(VAR);
 				((ExprContext)_localctx).e =  new VvExp((((ExprContext)_localctx).VAR!=null?((ExprContext)_localctx).VAR.getText():null));
 				}
 				break;
 
 			case 2:
 				{
-				setState(123); ((ExprContext)_localctx).v = vvc();
-				setState(124); ((ExprContext)_localctx).pt = paratype();
-				setState(125); ((ExprContext)_localctx).es = exprs();
+				setState(120); ((ExprContext)_localctx).v = vvc();
+				setState(121); ((ExprContext)_localctx).pt = paratype();
+				setState(122); ((ExprContext)_localctx).es = exprs();
 				((ExprContext)_localctx).e =  new VvcExp(((ExprContext)_localctx).v.v, ((ExprContext)_localctx).pt.pt, ((ExprContext)_localctx).es.cu);
 				}
 				break;
 
 			case 3:
 				{
-				setState(128); match(LBRACKET);
-				setState(129); ((ExprContext)_localctx).es = exprs();
-				setState(130); match(RBRACKET);
+				setState(125); match(LBRACKET);
+				setState(126); ((ExprContext)_localctx).es = exprs();
+				setState(127); match(RBRACKET);
 				((ExprContext)_localctx).e =  new BrkExpr(((ExprContext)_localctx).es.cu);
 				}
 				break;
 
 			case 4:
 				{
-				setState(133); match(TRUE);
+				setState(130); match(TRUE);
 				((ExprContext)_localctx).e =  new CBoolean(true);
 				}
 				break;
 
 			case 5:
 				{
-				setState(135); match(FALSE);
+				setState(132); match(FALSE);
 				((ExprContext)_localctx).e =  new CBoolean(false);
 				}
 				break;
 
 			case 6:
 				{
-				setState(137); ((ExprContext)_localctx).INTEGER = match(INTEGER);
+				setState(134); ((ExprContext)_localctx).INTEGER = match(INTEGER);
 				((ExprContext)_localctx).e =  new CInteger((((ExprContext)_localctx).INTEGER!=null?Integer.valueOf(((ExprContext)_localctx).INTEGER.getText()):0));
 				}
 				break;
 
 			case 7:
 				{
-				setState(139); ((ExprContext)_localctx).STRING = match(STRING);
+				setState(136); ((ExprContext)_localctx).STRING = match(STRING);
 				((ExprContext)_localctx).e =  new CString((((ExprContext)_localctx).STRING!=null?((ExprContext)_localctx).STRING.getText():null));
 				}
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(230);
+			setState(227);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,25,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,24,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(228);
-					switch ( getInterpreter().adaptivePredict(_input,24,_ctx) ) {
+					setState(225);
+					switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
 					case 1:
 						{
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.l = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(143);
+						setState(140);
 						if (!(5 >= _localctx._p)) throw new FailedPredicateException(this, "5 >= $_p");
-						setState(144); match(APPEND);
-						setState(145); ((ExprContext)_localctx).r = expr(6);
+						setState(141); match(APPEND);
+						setState(142); ((ExprContext)_localctx).r = expr(6);
 						((ExprContext)_localctx).e =  new AppExpr(((ExprContext)_localctx).l.e, ((ExprContext)_localctx).r.e);
 						}
 						break;
@@ -673,13 +665,13 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.ex = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(148);
+						setState(145);
 						if (!(15 >= _localctx._p)) throw new FailedPredicateException(this, "15 >= $_p");
-						setState(149); ((ExprContext)_localctx).VAR = match(VAR);
-						setState(150); ((ExprContext)_localctx).pt = paratype();
-						setState(151); match(LPAREN);
-						setState(152); ((ExprContext)_localctx).es = exprs();
-						setState(153); match(RPAREN);
+						setState(146); ((ExprContext)_localctx).VAR = match(VAR);
+						setState(147); ((ExprContext)_localctx).pt = paratype();
+						setState(148); match(LPAREN);
+						setState(149); ((ExprContext)_localctx).es = exprs();
+						setState(150); match(RPAREN);
 						((ExprContext)_localctx).e =  new VarExpr(((ExprContext)_localctx).ex.e, (((ExprContext)_localctx).VAR!=null?((ExprContext)_localctx).VAR.getText():null), ((ExprContext)_localctx).pt.pt, ((ExprContext)_localctx).es.cu);
 						}
 						break;
@@ -689,9 +681,9 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.ex = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(156);
+						setState(153);
 						if (!(14 >= _localctx._p)) throw new FailedPredicateException(this, "14 >= $_p");
-						setState(157);
+						setState(154);
 						((ExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==DASH || _la==BANG) ) {
@@ -707,29 +699,29 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.l = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(159);
+						setState(156);
 						if (!(13 >= _localctx._p)) throw new FailedPredicateException(this, "13 >= $_p");
-						setState(160);
+						setState(157);
 						((ExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STAR) | (1L << SLASH) | (1L << PERCENT))) != 0)) ) {
 							((ExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(162);
+						setState(159);
 						_la = _input.LA(1);
 						if (_la==LPAREN) {
 							{
-							setState(161); match(LPAREN);
+							setState(158); match(LPAREN);
 							}
 						}
 
-						setState(164); ((ExprContext)_localctx).r = expr(0);
-						setState(166);
-						switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
+						setState(161); ((ExprContext)_localctx).r = expr(0);
+						setState(163);
+						switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
 						case 1:
 							{
-							setState(165); match(RPAREN);
+							setState(162); match(RPAREN);
 							}
 							break;
 						}
@@ -742,29 +734,29 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.l = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(170);
+						setState(167);
 						if (!(12 >= _localctx._p)) throw new FailedPredicateException(this, "12 >= $_p");
-						setState(171);
+						setState(168);
 						((ExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==PLUS || _la==DASH) ) {
 							((ExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(173);
+						setState(170);
 						_la = _input.LA(1);
 						if (_la==LPAREN) {
 							{
-							setState(172); match(LPAREN);
+							setState(169); match(LPAREN);
 							}
 						}
 
-						setState(175); ((ExprContext)_localctx).r = expr(0);
-						setState(177);
-						switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+						setState(172); ((ExprContext)_localctx).r = expr(0);
+						setState(174);
+						switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 						case 1:
 							{
-							setState(176); match(RPAREN);
+							setState(173); match(RPAREN);
 							}
 							break;
 						}
@@ -777,29 +769,29 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.l = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(181);
+						setState(178);
 						if (!(11 >= _localctx._p)) throw new FailedPredicateException(this, "11 >= $_p");
-						setState(182);
+						setState(179);
 						((ExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << THR) | (1L << LTHR) | (1L << RTHR) | (1L << LRTHR))) != 0)) ) {
 							((ExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(184);
+						setState(181);
 						_la = _input.LA(1);
 						if (_la==LPAREN) {
 							{
-							setState(183); match(LPAREN);
+							setState(180); match(LPAREN);
 							}
 						}
 
-						setState(186); ((ExprContext)_localctx).r = expr(0);
-						setState(188);
-						switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
+						setState(183); ((ExprContext)_localctx).r = expr(0);
+						setState(185);
+						switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
 						case 1:
 							{
-							setState(187); match(RPAREN);
+							setState(184); match(RPAREN);
 							}
 							break;
 						}
@@ -812,9 +804,9 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.ex = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(192);
+						setState(189);
 						if (!(10 >= _localctx._p)) throw new FailedPredicateException(this, "10 >= $_p");
-						setState(193);
+						setState(190);
 						((ExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==ONW || _la==LONW) ) {
@@ -830,29 +822,29 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.l = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(195);
+						setState(192);
 						if (!(9 >= _localctx._p)) throw new FailedPredicateException(this, "9 >= $_p");
-						setState(196);
+						setState(193);
 						((ExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LANGLE) | (1L << RANGLE) | (1L << LTE) | (1L << GTE))) != 0)) ) {
 							((ExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(198);
+						setState(195);
 						_la = _input.LA(1);
 						if (_la==LPAREN) {
 							{
-							setState(197); match(LPAREN);
+							setState(194); match(LPAREN);
 							}
 						}
 
-						setState(200); ((ExprContext)_localctx).r = expr(0);
-						setState(202);
-						switch ( getInterpreter().adaptivePredict(_input,19,_ctx) ) {
+						setState(197); ((ExprContext)_localctx).r = expr(0);
+						setState(199);
+						switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
 						case 1:
 							{
-							setState(201); match(RPAREN);
+							setState(198); match(RPAREN);
 							}
 							break;
 						}
@@ -865,29 +857,29 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.l = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(206);
+						setState(203);
 						if (!(8 >= _localctx._p)) throw new FailedPredicateException(this, "8 >= $_p");
-						setState(207);
+						setState(204);
 						((ExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==EQEQUAL || _la==INEQUAL) ) {
 							((ExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(209);
+						setState(206);
 						_la = _input.LA(1);
 						if (_la==LPAREN) {
 							{
-							setState(208); match(LPAREN);
+							setState(205); match(LPAREN);
 							}
 						}
 
-						setState(211); ((ExprContext)_localctx).r = expr(0);
-						setState(213);
-						switch ( getInterpreter().adaptivePredict(_input,21,_ctx) ) {
+						setState(208); ((ExprContext)_localctx).r = expr(0);
+						setState(210);
+						switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
 						case 1:
 							{
-							setState(212); match(RPAREN);
+							setState(209); match(RPAREN);
 							}
 							break;
 						}
@@ -900,29 +892,29 @@ public class CubexParser2 extends Parser {
 						_localctx = new ExprContext(_parentctx, _parentState, _p);
 						_localctx.l = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(217);
+						setState(214);
 						if (!(7 >= _localctx._p)) throw new FailedPredicateException(this, "7 >= $_p");
-						setState(218);
+						setState(215);
 						((ExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==AMPERSAND || _la==PIPE) ) {
 							((ExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(220);
+						setState(217);
 						_la = _input.LA(1);
 						if (_la==LPAREN) {
 							{
-							setState(219); match(LPAREN);
+							setState(216); match(LPAREN);
 							}
 						}
 
-						setState(222); ((ExprContext)_localctx).r = expr(0);
-						setState(224);
-						switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
+						setState(219); ((ExprContext)_localctx).r = expr(0);
+						setState(221);
+						switch ( getInterpreter().adaptivePredict(_input,22,_ctx) ) {
 						case 1:
 							{
-							setState(223); match(RPAREN);
+							setState(220); match(RPAREN);
 							}
 							break;
 						}
@@ -932,9 +924,9 @@ public class CubexParser2 extends Parser {
 					}
 					} 
 				}
-				setState(232);
+				setState(229);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,25,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,24,_ctx);
 			}
 			}
 		}
@@ -952,15 +944,15 @@ public class CubexParser2 extends Parser {
 	public static class ExprsContext extends ParserRuleContext {
 		public List<CuExpr> cu;
 		public ExprContext e;
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
 		}
+		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
 		}
 		public ExprsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -976,28 +968,28 @@ public class CubexParser2 extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			((ExprsContext)_localctx).cu =  new ArrayList<CuExpr>();
-			setState(245);
-			switch ( getInterpreter().adaptivePredict(_input,27,_ctx) ) {
+			setState(242);
+			switch ( getInterpreter().adaptivePredict(_input,26,_ctx) ) {
 			case 1:
 				{
-				setState(234); ((ExprsContext)_localctx).e = expr(0);
+				setState(231); ((ExprsContext)_localctx).e = expr(0);
 				_localctx.cu.add(((ExprsContext)_localctx).e.e);
-				setState(242);
+				setState(239);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,26,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,25,_ctx);
 				while ( _alt!=2 && _alt!=-1 ) {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(236); match(COMMA);
-						setState(237); ((ExprsContext)_localctx).e = expr(0);
+						setState(233); match(COMMA);
+						setState(234); ((ExprsContext)_localctx).e = expr(0);
 						_localctx.cu.add(((ExprsContext)_localctx).e.e);
 						}
 						} 
 					}
-					setState(244);
+					setState(241);
 					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,26,_ctx);
+					_alt = getInterpreter().adaptivePredict(_input,25,_ctx);
 				}
 				}
 				break;
@@ -1023,32 +1015,32 @@ public class CubexParser2 extends Parser {
 		public StatContext l;
 		public StatContext r;
 		public StatContext st;
-		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
-		public TerminalNode IN() { return getToken(CubexParser2.IN, 0); }
-		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
-		public StatsContext stats() {
-			return getRuleContext(StatsContext.class,0);
-		}
-		public TerminalNode WHILE() { return getToken(CubexParser2.WHILE, 0); }
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public TerminalNode EQUAL() { return getToken(CubexParser2.EQUAL, 0); }
-		public TerminalNode ELSE() { return getToken(CubexParser2.ELSE, 0); }
 		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
-		public List<StatContext> stat() {
-			return getRuleContexts(StatContext.class);
-		}
-		public TerminalNode RETURN() { return getToken(CubexParser2.RETURN, 0); }
-		public TerminalNode ASSIGN() { return getToken(CubexParser2.ASSIGN, 0); }
+		public TerminalNode SEMICOLON() { return getToken(CubexParser2.SEMICOLON, 0); }
+		public TerminalNode EQUAL() { return getToken(CubexParser2.EQUAL, 0); }
+		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
+		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public TerminalNode IN() { return getToken(CubexParser2.IN, 0); }
+		public TerminalNode WHILE() { return getToken(CubexParser2.WHILE, 0); }
+		public TerminalNode IF() { return getToken(CubexParser2.IF, 0); }
 		public StatContext stat(int i) {
 			return getRuleContext(StatContext.class,i);
 		}
 		public TerminalNode FOR() { return getToken(CubexParser2.FOR, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public TerminalNode ELSE() { return getToken(CubexParser2.ELSE, 0); }
+		public TerminalNode ASSIGN() { return getToken(CubexParser2.ASSIGN, 0); }
 		public TerminalNode VAR() { return getToken(CubexParser2.VAR, 0); }
-		public TerminalNode SEMICOLON() { return getToken(CubexParser2.SEMICOLON, 0); }
-		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
-		public TerminalNode IF() { return getToken(CubexParser2.IF, 0); }
+		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
+		public TerminalNode RETURN() { return getToken(CubexParser2.RETURN, 0); }
+		public StatsContext stats() {
+			return getRuleContext(StatsContext.class,0);
+		}
+		public List<StatContext> stat() {
+			return getRuleContexts(StatContext.class);
+		}
 		public StatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1060,42 +1052,42 @@ public class CubexParser2 extends Parser {
 		enterRule(_localctx, 18, RULE_stat);
 		int _la;
 		try {
-			setState(290);
+			setState(287);
 			switch (_input.LA(1)) {
 			case LBRACE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(247); match(LBRACE);
-				setState(248); ((StatContext)_localctx).ss = stats();
-				setState(249); match(RBRACE);
+				setState(244); match(LBRACE);
+				setState(245); ((StatContext)_localctx).ss = stats();
+				setState(246); match(RBRACE);
 				((StatContext)_localctx).s =  new Stats(((StatContext)_localctx).ss.cu);
 				}
 				break;
 			case VAR:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(252); ((StatContext)_localctx).VAR = match(VAR);
-				setState(253); match(ASSIGN);
-				setState(254); ((StatContext)_localctx).e = expr(0);
-				setState(255); match(SEMICOLON);
+				setState(249); ((StatContext)_localctx).VAR = match(VAR);
+				setState(250); match(ASSIGN);
+				setState(251); ((StatContext)_localctx).e = expr(0);
+				setState(252); match(SEMICOLON);
 				((StatContext)_localctx).s =  new AssignStat((((StatContext)_localctx).VAR!=null?((StatContext)_localctx).VAR.getText():null), ((StatContext)_localctx).e.e);
 				}
 				break;
 			case IF:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(258); match(IF);
-				setState(259); match(LPAREN);
-				setState(260); ((StatContext)_localctx).e = expr(0);
-				setState(261); match(RPAREN);
-				setState(262); ((StatContext)_localctx).l = stat();
+				setState(255); match(IF);
+				setState(256); match(LPAREN);
+				setState(257); ((StatContext)_localctx).e = expr(0);
+				setState(258); match(RPAREN);
+				setState(259); ((StatContext)_localctx).l = stat();
 				((StatContext)_localctx).s =  new IfStat(((StatContext)_localctx).e.e, ((StatContext)_localctx).l.s);
-				setState(268);
-				switch ( getInterpreter().adaptivePredict(_input,28,_ctx) ) {
+				setState(265);
+				switch ( getInterpreter().adaptivePredict(_input,27,_ctx) ) {
 				case 1:
 					{
-					setState(264); match(ELSE);
-					setState(265); ((StatContext)_localctx).r = stat();
+					setState(261); match(ELSE);
+					setState(262); ((StatContext)_localctx).r = stat();
 					_localctx.s.add(((StatContext)_localctx).r.s);
 					}
 					break;
@@ -1105,24 +1097,24 @@ public class CubexParser2 extends Parser {
 			case WHILE:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(270); match(WHILE);
-				setState(271); match(LPAREN);
-				setState(272); ((StatContext)_localctx).e = expr(0);
-				setState(273); match(RPAREN);
-				setState(274); ((StatContext)_localctx).st = stat();
+				setState(267); match(WHILE);
+				setState(268); match(LPAREN);
+				setState(269); ((StatContext)_localctx).e = expr(0);
+				setState(270); match(RPAREN);
+				setState(271); ((StatContext)_localctx).st = stat();
 				((StatContext)_localctx).s =  new WhileStat(((StatContext)_localctx).e.e, ((StatContext)_localctx).st.s);
 				}
 				break;
 			case FOR:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(277); match(FOR);
-				setState(278); match(LPAREN);
-				setState(279); ((StatContext)_localctx).VAR = match(VAR);
-				setState(280); match(IN);
-				setState(281); ((StatContext)_localctx).e = expr(0);
-				setState(282); match(RPAREN);
-				setState(283); ((StatContext)_localctx).st = stat();
+				setState(274); match(FOR);
+				setState(275); match(LPAREN);
+				setState(276); ((StatContext)_localctx).VAR = match(VAR);
+				setState(277); match(IN);
+				setState(278); ((StatContext)_localctx).e = expr(0);
+				setState(279); match(RPAREN);
+				setState(280); ((StatContext)_localctx).st = stat();
 				((StatContext)_localctx).s =  new ForStat((((StatContext)_localctx).VAR!=null?((StatContext)_localctx).VAR.getText():null), ((StatContext)_localctx).e.e, ((StatContext)_localctx).st.s);
 				}
 				break;
@@ -1130,13 +1122,13 @@ public class CubexParser2 extends Parser {
 			case EQUAL:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(286);
+				setState(283);
 				_la = _input.LA(1);
 				if ( !(_la==RETURN || _la==EQUAL) ) {
 				_errHandler.recoverInline(this);
 				}
 				consume();
-				setState(287); ((StatContext)_localctx).e = expr(0);
+				setState(284); ((StatContext)_localctx).e = expr(0);
 				((StatContext)_localctx).s =  new ReturnStat(((StatContext)_localctx).e.e);
 				}
 				break;
@@ -1161,12 +1153,12 @@ public class CubexParser2 extends Parser {
 		public StatContext stat(int i) {
 			return getRuleContext(StatContext.class,i);
 		}
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
-		}
 		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
+		}
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
 		}
 		public StatsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1182,24 +1174,24 @@ public class CubexParser2 extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			((StatsContext)_localctx).cu =  new ArrayList<CuStat>();
-			setState(304);
-			switch ( getInterpreter().adaptivePredict(_input,31,_ctx) ) {
+			setState(301);
+			switch ( getInterpreter().adaptivePredict(_input,30,_ctx) ) {
 			case 1:
 				{
-				setState(293); ((StatsContext)_localctx).s = stat();
+				setState(290); ((StatsContext)_localctx).s = stat();
 				_localctx.cu.add(((StatsContext)_localctx).s.s);
-				setState(301);
+				setState(298);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==COMMA) {
 					{
 					{
-					setState(295); match(COMMA);
-					setState(296); ((StatsContext)_localctx).s = stat();
+					setState(292); match(COMMA);
+					setState(293); ((StatsContext)_localctx).s = stat();
 					_localctx.cu.add(((StatsContext)_localctx).s.s);
 					}
 					}
-					setState(303);
+					setState(300);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
@@ -1226,34 +1218,34 @@ public class CubexParser2 extends Parser {
 		public TypeContext t;
 		public Token VAR;
 		public TypeschemeContext ts;
+		public TerminalNode VAR(int i) {
+			return getToken(CubexParser2.VAR, i);
+		}
+		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
+		public List<TerminalNode> SEMICOLON() { return getTokens(CubexParser2.SEMICOLON); }
+		public TerminalNode SEMICOLON(int i) {
+			return getToken(CubexParser2.SEMICOLON, i);
+		}
+		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
+		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public KindcontextContext kindcontext() {
 			return getRuleContext(KindcontextContext.class,0);
-		}
-		public TerminalNode FUN(int i) {
-			return getToken(CubexParser2.FUN, i);
-		}
-		public TypeschemeContext typescheme(int i) {
-			return getRuleContext(TypeschemeContext.class,i);
 		}
 		public List<TypeschemeContext> typescheme() {
 			return getRuleContexts(TypeschemeContext.class);
 		}
 		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
-		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
+		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
-		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
-		public TerminalNode VAR(int i) {
-			return getToken(CubexParser2.VAR, i);
+		public TypeschemeContext typescheme(int i) {
+			return getRuleContext(TypeschemeContext.class,i);
 		}
-		public TerminalNode SEMICOLON(int i) {
-			return getToken(CubexParser2.SEMICOLON, i);
-		}
-		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
-		public List<TerminalNode> SEMICOLON() { return getTokens(CubexParser2.SEMICOLON); }
 		public TerminalNode INTERFACE() { return getToken(CubexParser2.INTERFACE, 0); }
-		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
+		public TerminalNode FUN(int i) {
+			return getToken(CubexParser2.FUN, i);
+		}
 		public TerminalNode EXTENDS() { return getToken(CubexParser2.EXTENDS, 0); }
 		public IntfContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1268,36 +1260,36 @@ public class CubexParser2 extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(306); match(INTERFACE);
-			setState(307); ((IntfContext)_localctx).CLSINTF = match(CLSINTF);
-			setState(308); ((IntfContext)_localctx).p = kindcontext();
+			setState(303); match(INTERFACE);
+			setState(304); ((IntfContext)_localctx).CLSINTF = match(CLSINTF);
+			setState(305); ((IntfContext)_localctx).p = kindcontext();
 			((IntfContext)_localctx).i =  new Intf((((IntfContext)_localctx).CLSINTF!=null?((IntfContext)_localctx).CLSINTF.getText():null), ((IntfContext)_localctx).p.kc);
-			setState(327);
+			setState(324);
 			_la = _input.LA(1);
 			if (_la==EXTENDS) {
 				{
-				setState(310); match(EXTENDS);
-				setState(311); ((IntfContext)_localctx).t = type(0);
+				setState(307); match(EXTENDS);
+				setState(308); ((IntfContext)_localctx).t = type(0);
 				_localctx.i.add(((IntfContext)_localctx).t.t);
-				setState(313); match(LBRACE);
-				setState(322);
+				setState(310); match(LBRACE);
+				setState(319);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==FUN) {
 					{
 					{
-					setState(314); match(FUN);
-					setState(315); ((IntfContext)_localctx).VAR = match(VAR);
-					setState(316); ((IntfContext)_localctx).ts = typescheme();
-					setState(317); match(SEMICOLON);
+					setState(311); match(FUN);
+					setState(312); ((IntfContext)_localctx).VAR = match(VAR);
+					setState(313); ((IntfContext)_localctx).ts = typescheme();
+					setState(314); match(SEMICOLON);
 					_localctx.i.add((((IntfContext)_localctx).VAR!=null?((IntfContext)_localctx).VAR.getText():null), ((IntfContext)_localctx).ts.ts);
 					}
 					}
-					setState(324);
+					setState(321);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(325); match(RBRACE);
+				setState(322); match(RBRACE);
 				}
 			}
 
@@ -1324,54 +1316,54 @@ public class CubexParser2 extends Parser {
 		public ExprContext ex;
 		public Token VAR;
 		public TypeschemeContext ts;
+		public TerminalNode VAR(int i) {
+			return getToken(CubexParser2.VAR, i);
+		}
+		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
+		public TerminalNode SEMICOLON() { return getToken(CubexParser2.SEMICOLON, 0); }
+		public TerminalNode SUPER() { return getToken(CubexParser2.SUPER, 0); }
+		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
+		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public KindcontextContext kindcontext() {
 			return getRuleContext(KindcontextContext.class,0);
 		}
-		public TerminalNode FUN(int i) {
-			return getToken(CubexParser2.FUN, i);
+		public List<TypeschemeContext> typescheme() {
+			return getRuleContexts(TypeschemeContext.class);
+		}
+		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
+		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
+		public TerminalNode COMMA(int i) {
+			return getToken(CubexParser2.COMMA, i);
+		}
+		public TerminalNode CLASS() { return getToken(CubexParser2.CLASS, 0); }
+		public StatContext stat(int i) {
+			return getRuleContext(StatContext.class,i);
+		}
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TypecontextContext typecontext() {
+			return getRuleContext(TypecontextContext.class,0);
+		}
+		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
+		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
 		}
 		public TypeschemeContext typescheme(int i) {
 			return getRuleContext(TypeschemeContext.class,i);
 		}
-		public TerminalNode RPAREN() { return getToken(CubexParser2.RPAREN, 0); }
-		public TerminalNode CLASS() { return getToken(CubexParser2.CLASS, 0); }
-		public List<TypeschemeContext> typescheme() {
-			return getRuleContexts(TypeschemeContext.class);
-		}
-		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
-		public List<TerminalNode> COMMA() { return getTokens(CubexParser2.COMMA); }
-		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public TypeContext type() {
-			return getRuleContext(TypeContext.class,0);
-		}
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
 		}
-		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
-		public StatContext stat(int i) {
-			return getRuleContext(StatContext.class,i);
-		}
-		public TerminalNode VAR(int i) {
-			return getToken(CubexParser2.VAR, i);
-		}
-		public TerminalNode COMMA(int i) {
-			return getToken(CubexParser2.COMMA, i);
-		}
-		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
-		public TerminalNode SEMICOLON() { return getToken(CubexParser2.SEMICOLON, 0); }
-		public TerminalNode SUPER() { return getToken(CubexParser2.SUPER, 0); }
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
-		public TypecontextContext typecontext() {
-			return getRuleContext(TypecontextContext.class,0);
+		public TerminalNode FUN(int i) {
+			return getToken(CubexParser2.FUN, i);
 		}
 		public TerminalNode EXTENDS() { return getToken(CubexParser2.EXTENDS, 0); }
-		public TerminalNode LPAREN() { return getToken(CubexParser2.LPAREN, 0); }
 		public ClsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1385,93 +1377,93 @@ public class CubexParser2 extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(329); match(CLASS);
-			setState(330); ((ClsContext)_localctx).CLSINTF = match(CLSINTF);
-			setState(331); ((ClsContext)_localctx).pk = kindcontext();
-			setState(332); ((ClsContext)_localctx).pt = typecontext();
+			setState(326); match(CLASS);
+			setState(327); ((ClsContext)_localctx).CLSINTF = match(CLSINTF);
+			setState(328); ((ClsContext)_localctx).pk = kindcontext();
+			setState(329); ((ClsContext)_localctx).pt = typecontext();
 			((ClsContext)_localctx).c =  new Cls((((ClsContext)_localctx).CLSINTF!=null?((ClsContext)_localctx).CLSINTF.getText():null), ((ClsContext)_localctx).pk.kc, ((ClsContext)_localctx).pt.tc);
-			setState(380);
+			setState(377);
 			_la = _input.LA(1);
 			if (_la==EXTENDS) {
 				{
-				setState(334); match(EXTENDS);
-				setState(335); ((ClsContext)_localctx).t = type(0);
+				setState(331); match(EXTENDS);
+				setState(332); ((ClsContext)_localctx).t = type(0);
 				_localctx.c.add(((ClsContext)_localctx).t.t);
-				setState(337); match(LBRACE);
-				setState(343);
+				setState(334); match(LBRACE);
+				setState(340);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << FOR) | (1L << RETURN) | (1L << VAR) | (1L << EQUAL) | (1L << LBRACE))) != 0)) {
 					{
 					{
-					setState(338); ((ClsContext)_localctx).s = stat();
+					setState(335); ((ClsContext)_localctx).s = stat();
 					_localctx.c.add(((ClsContext)_localctx).s.s);
 					}
 					}
-					setState(345);
+					setState(342);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(364);
+				setState(361);
 				_la = _input.LA(1);
 				if (_la==SUPER) {
 					{
-					setState(346); match(SUPER);
-					setState(348);
+					setState(343); match(SUPER);
+					setState(345);
 					_la = _input.LA(1);
 					if (_la==LPAREN) {
 						{
-						setState(347); match(LPAREN);
+						setState(344); match(LPAREN);
 						}
 					}
 
-					setState(350); ((ClsContext)_localctx).ex = expr(0);
+					setState(347); ((ClsContext)_localctx).ex = expr(0);
 					_localctx.c.add(((ClsContext)_localctx).ex.e);
-					setState(358);
+					setState(355);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 					while (_la==COMMA) {
 						{
 						{
-						setState(352); match(COMMA);
-						setState(353); ((ClsContext)_localctx).ex = expr(0);
+						setState(349); match(COMMA);
+						setState(350); ((ClsContext)_localctx).ex = expr(0);
 						_localctx.c.add(((ClsContext)_localctx).ex.e);
 						}
 						}
-						setState(360);
+						setState(357);
 						_errHandler.sync(this);
 						_la = _input.LA(1);
 					}
-					setState(362);
+					setState(359);
 					_la = _input.LA(1);
 					if (_la==RPAREN) {
 						{
-						setState(361); match(RPAREN);
+						setState(358); match(RPAREN);
 						}
 					}
 
 					}
 				}
 
-				setState(366); match(SEMICOLON);
-				setState(375);
+				setState(363); match(SEMICOLON);
+				setState(372);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==FUN) {
 					{
 					{
-					setState(367); match(FUN);
-					setState(368); ((ClsContext)_localctx).VAR = match(VAR);
-					setState(369); ((ClsContext)_localctx).ts = typescheme();
-					setState(370); ((ClsContext)_localctx).s = stat();
+					setState(364); match(FUN);
+					setState(365); ((ClsContext)_localctx).VAR = match(VAR);
+					setState(366); ((ClsContext)_localctx).ts = typescheme();
+					setState(367); ((ClsContext)_localctx).s = stat();
 					_localctx.c.add((((ClsContext)_localctx).VAR!=null?((ClsContext)_localctx).VAR.getText():null), ((ClsContext)_localctx).ts.ts, ((ClsContext)_localctx).s.s);
 					}
 					}
-					setState(377);
+					setState(374);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(378); match(RBRACE);
+				setState(375); match(RBRACE);
 				}
 			}
 
@@ -1497,37 +1489,37 @@ public class CubexParser2 extends Parser {
 		public TypeschemeContext ts;
 		public IntfContext i;
 		public ClsContext c;
+		public IntfContext intf() {
+			return getRuleContext(IntfContext.class,0);
+		}
 		public TerminalNode VAR(int i) {
 			return getToken(CubexParser2.VAR, i);
-		}
-		public TerminalNode FUN(int i) {
-			return getToken(CubexParser2.FUN, i);
 		}
 		public StatContext stat(int i) {
 			return getRuleContext(StatContext.class,i);
 		}
-		public TypeschemeContext typescheme(int i) {
-			return getRuleContext(TypeschemeContext.class,i);
+		public ProgramContext program() {
+			return getRuleContext(ProgramContext.class,0);
 		}
 		public ClsContext cls() {
 			return getRuleContext(ClsContext.class,0);
 		}
+		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
+		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
+		public TypeschemeContext typescheme(int i) {
+			return getRuleContext(TypeschemeContext.class,i);
+		}
 		public List<TypeschemeContext> typescheme() {
 			return getRuleContexts(TypeschemeContext.class);
-		}
-		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
-		public ProgramContext program() {
-			return getRuleContext(ProgramContext.class,0);
 		}
 		public StatsContext stats() {
 			return getRuleContext(StatsContext.class,0);
 		}
-		public List<TerminalNode> FUN() { return getTokens(CubexParser2.FUN); }
-		public IntfContext intf() {
-			return getRuleContext(IntfContext.class,0);
-		}
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
+		}
+		public TerminalNode FUN(int i) {
+			return getToken(CubexParser2.FUN, i);
 		}
 		public ProgramContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1540,12 +1532,12 @@ public class CubexParser2 extends Parser {
 		enterRule(_localctx, 26, RULE_program);
 		try {
 			int _alt;
-			setState(417);
-			switch ( getInterpreter().adaptivePredict(_input,42,_ctx) ) {
+			setState(414);
+			switch ( getInterpreter().adaptivePredict(_input,41,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(382); ((ProgramContext)_localctx).s = stat();
+				setState(379); ((ProgramContext)_localctx).s = stat();
 				((ProgramContext)_localctx).p =  new StatPrg(((ProgramContext)_localctx).s.s);
 				}
 				break;
@@ -1553,9 +1545,9 @@ public class CubexParser2 extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(385); ((ProgramContext)_localctx).s = stat();
-				setState(386); ((ProgramContext)_localctx).ss = stats();
-				setState(387); ((ProgramContext)_localctx).pr = program();
+				setState(382); ((ProgramContext)_localctx).s = stat();
+				setState(383); ((ProgramContext)_localctx).ss = stats();
+				setState(384); ((ProgramContext)_localctx).pr = program();
 				((ProgramContext)_localctx).p =  new StatsPrg(((ProgramContext)_localctx).s.s, ((ProgramContext)_localctx).ss.cu, ((ProgramContext)_localctx).pr.p);
 				}
 				break;
@@ -1563,31 +1555,31 @@ public class CubexParser2 extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(390); match(FUN);
-				setState(391); ((ProgramContext)_localctx).VAR = match(VAR);
-				setState(392); ((ProgramContext)_localctx).ts = typescheme();
-				setState(393); ((ProgramContext)_localctx).s = stat();
+				setState(387); match(FUN);
+				setState(388); ((ProgramContext)_localctx).VAR = match(VAR);
+				setState(389); ((ProgramContext)_localctx).ts = typescheme();
+				setState(390); ((ProgramContext)_localctx).s = stat();
 				((ProgramContext)_localctx).p =  new FunPrg((((ProgramContext)_localctx).VAR!=null?((ProgramContext)_localctx).VAR.getText():null), ((ProgramContext)_localctx).ts.ts, ((ProgramContext)_localctx).s.s);
-				setState(403);
+				setState(400);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,41,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,40,_ctx);
 				while ( _alt!=2 && _alt!=-1 ) {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(395); match(FUN);
-						setState(396); ((ProgramContext)_localctx).VAR = match(VAR);
-						setState(397); ((ProgramContext)_localctx).ts = typescheme();
-						setState(398); ((ProgramContext)_localctx).s = stat();
+						setState(392); match(FUN);
+						setState(393); ((ProgramContext)_localctx).VAR = match(VAR);
+						setState(394); ((ProgramContext)_localctx).ts = typescheme();
+						setState(395); ((ProgramContext)_localctx).s = stat();
 						_localctx.p.add((((ProgramContext)_localctx).VAR!=null?((ProgramContext)_localctx).VAR.getText():null), ((ProgramContext)_localctx).ts.ts, ((ProgramContext)_localctx).s.s);
 						}
 						} 
 					}
-					setState(405);
+					setState(402);
 					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,41,_ctx);
+					_alt = getInterpreter().adaptivePredict(_input,40,_ctx);
 				}
-				setState(406); ((ProgramContext)_localctx).pr = program();
+				setState(403); ((ProgramContext)_localctx).pr = program();
 				_localctx.p.add(((ProgramContext)_localctx).pr.p);
 				}
 				break;
@@ -1595,8 +1587,8 @@ public class CubexParser2 extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(409); ((ProgramContext)_localctx).i = intf();
-				setState(410); ((ProgramContext)_localctx).pr = program();
+				setState(406); ((ProgramContext)_localctx).i = intf();
+				setState(407); ((ProgramContext)_localctx).pr = program();
 				((ProgramContext)_localctx).p =  new IntfPrg(((ProgramContext)_localctx).i.i, ((ProgramContext)_localctx).pr.p);
 				}
 				break;
@@ -1604,8 +1596,8 @@ public class CubexParser2 extends Parser {
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(413); ((ProgramContext)_localctx).c = cls();
-				setState(414); ((ProgramContext)_localctx).pr = program();
+				setState(410); ((ProgramContext)_localctx).c = cls();
+				setState(411); ((ProgramContext)_localctx).pr = program();
 				((ProgramContext)_localctx).p =  new ClassPrg(((ProgramContext)_localctx).c.c, ((ProgramContext)_localctx).pr.p);
 				}
 				break;
@@ -1628,16 +1620,16 @@ public class CubexParser2 extends Parser {
 		public FunctxtContext fc;
 		public VvcContext v;
 		public TypeschemeContext ts;
-		public FunctxtContext functxt() {
-			return getRuleContext(FunctxtContext.class,0);
-		}
-		public TypeschemeContext typescheme() {
-			return getRuleContext(TypeschemeContext.class,0);
-		}
 		public VvcContext vvc() {
 			return getRuleContext(VvcContext.class,0);
 		}
 		public TerminalNode COMMA() { return getToken(CubexParser2.COMMA, 0); }
+		public TypeschemeContext typescheme() {
+			return getRuleContext(TypeschemeContext.class,0);
+		}
+		public FunctxtContext functxt() {
+			return getRuleContext(FunctxtContext.class,0);
+		}
 		public FunctxtContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public FunctxtContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -1661,9 +1653,9 @@ public class CubexParser2 extends Parser {
 			((FunctxtContext)_localctx).f =  new FunCtxtEmpty();
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(430);
+			setState(427);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,43,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,42,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
@@ -1673,18 +1665,18 @@ public class CubexParser2 extends Parser {
 					_localctx = new FunctxtContext(_parentctx, _parentState, _p);
 					_localctx.fc = _prevctx;
 					pushNewRecursionContext(_localctx, _startState, RULE_functxt);
-					setState(422);
+					setState(419);
 					if (!(1 >= _localctx._p)) throw new FailedPredicateException(this, "1 >= $_p");
-					setState(423); match(COMMA);
-					setState(424); ((FunctxtContext)_localctx).v = vvc();
-					setState(425); ((FunctxtContext)_localctx).ts = typescheme();
+					setState(420); match(COMMA);
+					setState(421); ((FunctxtContext)_localctx).v = vvc();
+					setState(422); ((FunctxtContext)_localctx).ts = typescheme();
 					((FunctxtContext)_localctx).f =  new FuncTxt(((FunctxtContext)_localctx).fc.f, ((FunctxtContext)_localctx).v.v, ((FunctxtContext)_localctx).ts.ts);
 					}
 					} 
 				}
-				setState(432);
+				setState(429);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,43,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,42,_ctx);
 			}
 			}
 		}
@@ -1708,34 +1700,34 @@ public class CubexParser2 extends Parser {
 		public TypeContext t;
 		public Token VAR;
 		public TypeschemeContext ts;
+		public TerminalNode VAR(int i) {
+			return getToken(CubexParser2.VAR, i);
+		}
+		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
+		public List<TerminalNode> SEMICOLON() { return getTokens(CubexParser2.SEMICOLON); }
+		public TerminalNode SEMICOLON(int i) {
+			return getToken(CubexParser2.SEMICOLON, i);
+		}
 		public ClsctxtContext clsctxt() {
 			return getRuleContext(ClsctxtContext.class,0);
 		}
+		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
 		public KindcontextContext kindcontext() {
 			return getRuleContext(KindcontextContext.class,0);
 		}
-		public TypeschemeContext typescheme(int i) {
-			return getRuleContext(TypeschemeContext.class,i);
-		}
-		public TerminalNode CLASS() { return getToken(CubexParser2.CLASS, 0); }
 		public List<TypeschemeContext> typescheme() {
 			return getRuleContexts(TypeschemeContext.class);
 		}
 		public TerminalNode RBRACE() { return getToken(CubexParser2.RBRACE, 0); }
+		public TerminalNode CLASS() { return getToken(CubexParser2.CLASS, 0); }
 		public TerminalNode COMMA() { return getToken(CubexParser2.COMMA, 0); }
-		public TerminalNode CLSINTF() { return getToken(CubexParser2.CLSINTF, 0); }
+		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
-		public TerminalNode LBRACE() { return getToken(CubexParser2.LBRACE, 0); }
-		public TerminalNode VAR(int i) {
-			return getToken(CubexParser2.VAR, i);
+		public TypeschemeContext typescheme(int i) {
+			return getRuleContext(TypeschemeContext.class,i);
 		}
-		public TerminalNode SEMICOLON(int i) {
-			return getToken(CubexParser2.SEMICOLON, i);
-		}
-		public List<TerminalNode> VAR() { return getTokens(CubexParser2.VAR); }
-		public List<TerminalNode> SEMICOLON() { return getTokens(CubexParser2.SEMICOLON); }
 		public TerminalNode INTERFACE() { return getToken(CubexParser2.INTERFACE, 0); }
 		public TerminalNode EXTENDS() { return getToken(CubexParser2.EXTENDS, 0); }
 		public ClsctxtContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
@@ -1762,53 +1754,53 @@ public class CubexParser2 extends Parser {
 			((ClsctxtContext)_localctx).c =  new ClassCtxtEmpty();
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(486);
+			setState(483);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,49,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,48,_ctx);
 			while ( _alt!=2 && _alt!=-1 ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(484);
-					switch ( getInterpreter().adaptivePredict(_input,48,_ctx) ) {
+					setState(481);
+					switch ( getInterpreter().adaptivePredict(_input,47,_ctx) ) {
 					case 1:
 						{
 						_localctx = new ClsctxtContext(_parentctx, _parentState, _p);
 						_localctx.cl = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_clsctxt);
-						setState(436);
+						setState(433);
 						if (!(2 >= _localctx._p)) throw new FailedPredicateException(this, "2 >= $_p");
-						setState(437); match(COMMA);
-						setState(438); match(INTERFACE);
-						setState(439); ((ClsctxtContext)_localctx).CLSINTF = match(CLSINTF);
-						setState(440); ((ClsctxtContext)_localctx).p = kindcontext();
+						setState(434); match(COMMA);
+						setState(435); match(INTERFACE);
+						setState(436); ((ClsctxtContext)_localctx).CLSINTF = match(CLSINTF);
+						setState(437); ((ClsctxtContext)_localctx).p = kindcontext();
 						((ClsctxtContext)_localctx).c =  new ClassCtxtIntf(((ClsctxtContext)_localctx).cl.c, (((ClsctxtContext)_localctx).CLSINTF!=null?((ClsctxtContext)_localctx).CLSINTF.getText():null), ((ClsctxtContext)_localctx).p.kc);
-						setState(458);
-						switch ( getInterpreter().adaptivePredict(_input,45,_ctx) ) {
+						setState(455);
+						switch ( getInterpreter().adaptivePredict(_input,44,_ctx) ) {
 						case 1:
 							{
-							setState(442); match(EXTENDS);
-							setState(443); ((ClsctxtContext)_localctx).t = type(0);
+							setState(439); match(EXTENDS);
+							setState(440); ((ClsctxtContext)_localctx).t = type(0);
 							_localctx.c.add(((ClsctxtContext)_localctx).t.t);
-							setState(445); match(LBRACE);
-							setState(453);
+							setState(442); match(LBRACE);
+							setState(450);
 							_errHandler.sync(this);
 							_la = _input.LA(1);
 							while (_la==VAR) {
 								{
 								{
-								setState(446); ((ClsctxtContext)_localctx).VAR = match(VAR);
-								setState(447); ((ClsctxtContext)_localctx).ts = typescheme();
-								setState(448); match(SEMICOLON);
+								setState(443); ((ClsctxtContext)_localctx).VAR = match(VAR);
+								setState(444); ((ClsctxtContext)_localctx).ts = typescheme();
+								setState(445); match(SEMICOLON);
 								_localctx.c.add((((ClsctxtContext)_localctx).VAR!=null?((ClsctxtContext)_localctx).VAR.getText():null), ((ClsctxtContext)_localctx).ts.ts);
 								}
 								}
-								setState(455);
+								setState(452);
 								_errHandler.sync(this);
 								_la = _input.LA(1);
 							}
-							setState(456); match(RBRACE);
+							setState(453); match(RBRACE);
 							}
 							break;
 						}
@@ -1820,38 +1812,38 @@ public class CubexParser2 extends Parser {
 						_localctx = new ClsctxtContext(_parentctx, _parentState, _p);
 						_localctx.cl = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_clsctxt);
-						setState(460);
+						setState(457);
 						if (!(1 >= _localctx._p)) throw new FailedPredicateException(this, "1 >= $_p");
-						setState(461); match(COMMA);
-						setState(462); match(CLASS);
-						setState(463); ((ClsctxtContext)_localctx).CLSINTF = match(CLSINTF);
-						setState(464); ((ClsctxtContext)_localctx).p = kindcontext();
+						setState(458); match(COMMA);
+						setState(459); match(CLASS);
+						setState(460); ((ClsctxtContext)_localctx).CLSINTF = match(CLSINTF);
+						setState(461); ((ClsctxtContext)_localctx).p = kindcontext();
 						((ClsctxtContext)_localctx).c =  new ClassCtxtCls(((ClsctxtContext)_localctx).cl.c, (((ClsctxtContext)_localctx).CLSINTF!=null?((ClsctxtContext)_localctx).CLSINTF.getText():null), ((ClsctxtContext)_localctx).p.kc);
-						setState(482);
-						switch ( getInterpreter().adaptivePredict(_input,47,_ctx) ) {
+						setState(479);
+						switch ( getInterpreter().adaptivePredict(_input,46,_ctx) ) {
 						case 1:
 							{
-							setState(466); match(EXTENDS);
-							setState(467); ((ClsctxtContext)_localctx).t = type(0);
+							setState(463); match(EXTENDS);
+							setState(464); ((ClsctxtContext)_localctx).t = type(0);
 							_localctx.c.add(((ClsctxtContext)_localctx).t.t);
-							setState(469); match(LBRACE);
-							setState(477);
+							setState(466); match(LBRACE);
+							setState(474);
 							_errHandler.sync(this);
 							_la = _input.LA(1);
 							while (_la==VAR) {
 								{
 								{
-								setState(470); ((ClsctxtContext)_localctx).VAR = match(VAR);
-								setState(471); ((ClsctxtContext)_localctx).ts = typescheme();
-								setState(472); match(SEMICOLON);
+								setState(467); ((ClsctxtContext)_localctx).VAR = match(VAR);
+								setState(468); ((ClsctxtContext)_localctx).ts = typescheme();
+								setState(469); match(SEMICOLON);
 								_localctx.c.add((((ClsctxtContext)_localctx).VAR!=null?((ClsctxtContext)_localctx).VAR.getText():null), ((ClsctxtContext)_localctx).ts.ts);
 								}
 								}
-								setState(479);
+								setState(476);
 								_errHandler.sync(this);
 								_la = _input.LA(1);
 							}
-							setState(480); match(RBRACE);
+							setState(477); match(RBRACE);
 							}
 							break;
 						}
@@ -1860,9 +1852,9 @@ public class CubexParser2 extends Parser {
 					}
 					} 
 				}
-				setState(488);
+				setState(485);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,49,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,48,_ctx);
 			}
 			}
 		}
@@ -1935,192 +1927,195 @@ public class CubexParser2 extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\2\3;\u01ec\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4"+
-		"\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20"+
-		"\4\21\t\21\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3-\n\3\f\3\16\3\60"+
-		"\13\3\5\3\62\n\3\3\3\5\3\65\n\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3"+
-		"\5\3\5\3\5\3\5\7\5D\n\5\f\5\16\5G\13\5\5\5I\n\5\3\5\3\5\3\6\3\6\3\6\3"+
-		"\6\3\6\3\6\3\6\3\6\7\6U\n\6\f\6\16\6X\13\6\5\6Z\n\6\3\6\5\6]\n\6\3\7\3"+
-		"\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7g\n\7\5\7i\n\7\3\7\3\7\3\7\3\7\3\7\7\7p"+
-		"\n\7\f\7\16\7s\13\7\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t\3"+
-		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u0090\n"+
-		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t"+
-		"\3\t\3\t\5\t\u00a5\n\t\3\t\3\t\5\t\u00a9\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00b0"+
-		"\n\t\3\t\3\t\5\t\u00b4\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00bb\n\t\3\t\3\t\5"+
-		"\t\u00bf\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00c9\n\t\3\t\3\t\5\t"+
-		"\u00cd\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00d4\n\t\3\t\3\t\5\t\u00d8\n\t\3\t"+
-		"\3\t\3\t\3\t\3\t\5\t\u00df\n\t\3\t\3\t\5\t\u00e3\n\t\3\t\3\t\7\t\u00e7"+
-		"\n\t\f\t\16\t\u00ea\13\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\7\n\u00f3\n\n\f\n"+
-		"\16\n\u00f6\13\n\5\n\u00f8\n\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
-		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13"+
-		"\u010f\n\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
-		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13\u0125\n\13\3\f\3\f\3\f\3"+
-		"\f\3\f\3\f\3\f\7\f\u012e\n\f\f\f\16\f\u0131\13\f\5\f\u0133\n\f\3\r\3\r"+
-		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\7\r\u0143\n\r\f\r\16"+
-		"\r\u0146\13\r\3\r\3\r\5\r\u014a\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\7\16\u0158\n\16\f\16\16\16\u015b\13\16\3\16"+
-		"\3\16\5\16\u015f\n\16\3\16\3\16\3\16\3\16\3\16\3\16\7\16\u0167\n\16\f"+
-		"\16\16\16\u016a\13\16\3\16\5\16\u016d\n\16\5\16\u016f\n\16\3\16\3\16\3"+
-		"\16\3\16\3\16\3\16\3\16\7\16\u0178\n\16\f\16\16\16\u017b\13\16\3\16\3"+
-		"\16\5\16\u017f\n\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17"+
-		"\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\7\17\u0194\n\17\f\17\16"+
-		"\17\u0197\13\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17"+
-		"\5\17\u01a4\n\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20\u01af"+
-		"\n\20\f\20\16\20\u01b2\13\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3"+
-		"\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\7\21\u01c6\n\21\f\21"+
-		"\16\21\u01c9\13\21\3\21\3\21\5\21\u01cd\n\21\3\21\3\21\3\21\3\21\3\21"+
-		"\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\7\21\u01de\n\21\f\21"+
-		"\16\21\u01e1\13\21\3\21\3\21\5\21\u01e5\n\21\7\21\u01e7\n\21\f\21\16\21"+
-		"\u01ea\13\21\3\21\2\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \2\r\4\23"+
-		"\23\25\25\4\17\20\24\24\4%%((\3!#\3$%\3-\60\3\61\62\4&\'\63\64\3\65\66"+
-		"\3)*\4\t\t\32\32\u0221\2\"\3\2\2\2\4%\3\2\2\2\6\66\3\2\2\2\b;\3\2\2\2"+
-		"\nL\3\2\2\2\fh\3\2\2\2\16t\3\2\2\2\20\u008f\3\2\2\2\22\u00eb\3\2\2\2\24"+
-		"\u0124\3\2\2\2\26\u0126\3\2\2\2\30\u0134\3\2\2\2\32\u014b\3\2\2\2\34\u01a3"+
-		"\3\2\2\2\36\u01a5\3\2\2\2 \u01b3\3\2\2\2\"#\t\2\2\2#$\b\2\1\2$\3\3\2\2"+
-		"\2%\64\b\3\1\2&\61\7&\2\2\'(\7\24\2\2(.\b\3\1\2)*\7\35\2\2*+\7\24\2\2"+
-		"+-\b\3\1\2,)\3\2\2\2-\60\3\2\2\2.,\3\2\2\2./\3\2\2\2/\62\3\2\2\2\60.\3"+
-		"\2\2\2\61\'\3\2\2\2\61\62\3\2\2\2\62\63\3\2\2\2\63\65\7\'\2\2\64&\3\2"+
-		"\2\2\64\65\3\2\2\2\65\5\3\2\2\2\66\67\7\25\2\2\678\7\31\2\289\5\f\7\2"+
-		"9:\b\4\1\2:\7\3\2\2\2;<\b\5\1\2<H\7\33\2\2=>\5\6\4\2>E\b\5\1\2?@\7\35"+
+		"\3\uacf5\uee8c\u4f5d\u8b0d\u4a45\u78bd\u1b2f\u3378\3;\u01e9\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\3\2\3"+
+		"\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3-\n\3\f\3\16\3\60\13\3\5\3\62\n\3\3"+
+		"\3\5\3\65\n\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5"+
+		"D\n\5\f\5\16\5G\13\5\5\5I\n\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
+		"\7\6U\n\6\f\6\16\6X\13\6\5\6Z\n\6\3\6\5\6]\n\6\3\7\3\7\3\7\3\7\3\7\3\7"+
+		"\3\7\5\7f\n\7\3\7\3\7\3\7\3\7\3\7\7\7m\n\7\f\7\16\7p\13\7\3\b\3\b\3\b"+
+		"\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3"+
+		"\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u008d\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3"+
+		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00a2\n\t\3\t\3\t\5"+
+		"\t\u00a6\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00ad\n\t\3\t\3\t\5\t\u00b1\n\t\3"+
+		"\t\3\t\3\t\3\t\3\t\5\t\u00b8\n\t\3\t\3\t\5\t\u00bc\n\t\3\t\3\t\3\t\3\t"+
+		"\3\t\3\t\3\t\3\t\5\t\u00c6\n\t\3\t\3\t\5\t\u00ca\n\t\3\t\3\t\3\t\3\t\3"+
+		"\t\5\t\u00d1\n\t\3\t\3\t\5\t\u00d5\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00dc\n"+
+		"\t\3\t\3\t\5\t\u00e0\n\t\3\t\3\t\7\t\u00e4\n\t\f\t\16\t\u00e7\13\t\3\n"+
+		"\3\n\3\n\3\n\3\n\3\n\3\n\7\n\u00f0\n\n\f\n\16\n\u00f3\13\n\5\n\u00f5\n"+
+		"\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3"+
+		"\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13\u010c\n\13\3\13\3\13\3\13"+
+		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
+		"\3\13\3\13\3\13\5\13\u0122\n\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\7\f\u012b"+
+		"\n\f\f\f\16\f\u012e\13\f\5\f\u0130\n\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r"+
+		"\3\r\3\r\3\r\3\r\3\r\3\r\7\r\u0140\n\r\f\r\16\r\u0143\13\r\3\r\3\r\5\r"+
+		"\u0147\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
+		"\7\16\u0155\n\16\f\16\16\16\u0158\13\16\3\16\3\16\5\16\u015c\n\16\3\16"+
+		"\3\16\3\16\3\16\3\16\3\16\7\16\u0164\n\16\f\16\16\16\u0167\13\16\3\16"+
+		"\5\16\u016a\n\16\5\16\u016c\n\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\7"+
+		"\16\u0175\n\16\f\16\16\16\u0178\13\16\3\16\3\16\5\16\u017c\n\16\3\17\3"+
+		"\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3"+
+		"\17\3\17\3\17\3\17\7\17\u0191\n\17\f\17\16\17\u0194\13\17\3\17\3\17\3"+
+		"\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\5\17\u01a1\n\17\3\20\3\20"+
+		"\3\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20\u01ac\n\20\f\20\16\20\u01af\13"+
+		"\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3"+
+		"\21\3\21\3\21\3\21\3\21\7\21\u01c3\n\21\f\21\16\21\u01c6\13\21\3\21\3"+
+		"\21\5\21\u01ca\n\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21"+
+		"\3\21\3\21\3\21\3\21\3\21\7\21\u01db\n\21\f\21\16\21\u01de\13\21\3\21"+
+		"\3\21\5\21\u01e2\n\21\7\21\u01e4\n\21\f\21\16\21\u01e7\13\21\3\21\2\22"+
+		"\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \2\r\4\2\23\23\25\25\4\2\17\20"+
+		"\24\24\4\2%%((\3\2!#\3\2$%\3\2-\60\3\2\61\62\4\2&\'\63\64\3\2\65\66\3"+
+		"\2)*\4\2\t\t\32\32\u021d\2\"\3\2\2\2\4%\3\2\2\2\6\66\3\2\2\2\b;\3\2\2"+
+		"\2\nL\3\2\2\2\fe\3\2\2\2\16q\3\2\2\2\20\u008c\3\2\2\2\22\u00e8\3\2\2\2"+
+		"\24\u0121\3\2\2\2\26\u0123\3\2\2\2\30\u0131\3\2\2\2\32\u0148\3\2\2\2\34"+
+		"\u01a0\3\2\2\2\36\u01a2\3\2\2\2 \u01b0\3\2\2\2\"#\t\2\2\2#$\b\2\1\2$\3"+
+		"\3\2\2\2%\64\b\3\1\2&\61\7&\2\2\'(\7\24\2\2(.\b\3\1\2)*\7\35\2\2*+\7\24"+
+		"\2\2+-\b\3\1\2,)\3\2\2\2-\60\3\2\2\2.,\3\2\2\2./\3\2\2\2/\62\3\2\2\2\60"+
+		".\3\2\2\2\61\'\3\2\2\2\61\62\3\2\2\2\62\63\3\2\2\2\63\65\7\'\2\2\64&\3"+
+		"\2\2\2\64\65\3\2\2\2\65\5\3\2\2\2\66\67\7\25\2\2\678\7\31\2\289\5\f\7"+
+		"\29:\b\4\1\2:\7\3\2\2\2;<\b\5\1\2<H\7\33\2\2=>\5\6\4\2>E\b\5\1\2?@\7\35"+
 		"\2\2@A\5\6\4\2AB\b\5\1\2BD\3\2\2\2C?\3\2\2\2DG\3\2\2\2EC\3\2\2\2EF\3\2"+
 		"\2\2FI\3\2\2\2GE\3\2\2\2H=\3\2\2\2HI\3\2\2\2IJ\3\2\2\2JK\7\34\2\2K\t\3"+
 		"\2\2\2L\\\b\6\1\2MY\7&\2\2NO\5\f\7\2OV\b\6\1\2PQ\7\35\2\2QR\5\f\7\2RS"+
 		"\b\6\1\2SU\3\2\2\2TP\3\2\2\2UX\3\2\2\2VT\3\2\2\2VW\3\2\2\2WZ\3\2\2\2X"+
 		"V\3\2\2\2YN\3\2\2\2YZ\3\2\2\2Z[\3\2\2\2[]\7\'\2\2\\M\3\2\2\2\\]\3\2\2"+
-		"\2]\13\3\2\2\2^_\b\7\1\2_`\t\3\2\2`i\b\7\1\2ab\7\23\2\2bf\b\7\1\2cd\5"+
-		"\n\6\2de\b\7\1\2eg\3\2\2\2fc\3\2\2\2fg\3\2\2\2gi\3\2\2\2h^\3\2\2\2ha\3"+
-		"\2\2\2iq\3\2\2\2jk\6\7\2\3kl\7)\2\2lm\5\f\7\2mn\b\7\1\2np\3\2\2\2oj\3"+
-		"\2\2\2ps\3\2\2\2qo\3\2\2\2qr\3\2\2\2r\r\3\2\2\2sq\3\2\2\2tu\5\4\3\2uv"+
-		"\5\b\5\2vw\7\31\2\2wx\5\f\7\2xy\b\b\1\2y\17\3\2\2\2z{\b\t\1\2{|\7\25\2"+
-		"\2|\u0090\b\t\1\2}~\5\2\2\2~\177\5\n\6\2\177\u0080\5\22\n\2\u0080\u0081"+
-		"\b\t\1\2\u0081\u0090\3\2\2\2\u0082\u0083\7\27\2\2\u0083\u0084\5\22\n\2"+
-		"\u0084\u0085\7\30\2\2\u0085\u0086\b\t\1\2\u0086\u0090\3\2\2\2\u0087\u0088"+
-		"\7\21\2\2\u0088\u0090\b\t\1\2\u0089\u008a\7\22\2\2\u008a\u0090\b\t\1\2"+
-		"\u008b\u008c\7\26\2\2\u008c\u0090\b\t\1\2\u008d\u008e\7\3\2\2\u008e\u0090"+
-		"\b\t\1\2\u008fz\3\2\2\2\u008f}\3\2\2\2\u008f\u0082\3\2\2\2\u008f\u0087"+
-		"\3\2\2\2\u008f\u0089\3\2\2\2\u008f\u008b\3\2\2\2\u008f\u008d\3\2\2\2\u0090"+
-		"\u00e8\3\2\2\2\u0091\u0092\6\t\3\3\u0092\u0093\7,\2\2\u0093\u0094\5\20"+
-		"\t\2\u0094\u0095\b\t\1\2\u0095\u00e7\3\2\2\2\u0096\u0097\6\t\4\3\u0097"+
-		"\u0098\7\25\2\2\u0098\u0099\5\n\6\2\u0099\u009a\7\33\2\2\u009a\u009b\5"+
-		"\22\n\2\u009b\u009c\7\34\2\2\u009c\u009d\b\t\1\2\u009d\u00e7\3\2\2\2\u009e"+
-		"\u009f\6\t\5\3\u009f\u00a0\t\4\2\2\u00a0\u00e7\b\t\1\2\u00a1\u00a2\6\t"+
-		"\6\3\u00a2\u00a4\t\5\2\2\u00a3\u00a5\7\33\2\2\u00a4\u00a3\3\2\2\2\u00a4"+
-		"\u00a5\3\2\2\2\u00a5\u00a6\3\2\2\2\u00a6\u00a8\5\20\t\2\u00a7\u00a9\7"+
-		"\34\2\2\u00a8\u00a7\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9\u00aa\3\2\2\2\u00aa"+
-		"\u00ab\b\t\1\2\u00ab\u00e7\3\2\2\2\u00ac\u00ad\6\t\7\3\u00ad\u00af\t\6"+
-		"\2\2\u00ae\u00b0\7\33\2\2\u00af\u00ae\3\2\2\2\u00af\u00b0\3\2\2\2\u00b0"+
-		"\u00b1\3\2\2\2\u00b1\u00b3\5\20\t\2\u00b2\u00b4\7\34\2\2\u00b3\u00b2\3"+
-		"\2\2\2\u00b3\u00b4\3\2\2\2\u00b4\u00b5\3\2\2\2\u00b5\u00b6\b\t\1\2\u00b6"+
-		"\u00e7\3\2\2\2\u00b7\u00b8\6\t\b\3\u00b8\u00ba\t\7\2\2\u00b9\u00bb\7\33"+
-		"\2\2\u00ba\u00b9\3\2\2\2\u00ba\u00bb\3\2\2\2\u00bb\u00bc\3\2\2\2\u00bc"+
-		"\u00be\5\20\t\2\u00bd\u00bf\7\34\2\2\u00be\u00bd\3\2\2\2\u00be\u00bf\3"+
-		"\2\2\2\u00bf\u00c0\3\2\2\2\u00c0\u00c1\b\t\1\2\u00c1\u00e7\3\2\2\2\u00c2"+
-		"\u00c3\6\t\t\3\u00c3\u00c4\t\b\2\2\u00c4\u00e7\b\t\1\2\u00c5\u00c6\6\t"+
-		"\n\3\u00c6\u00c8\t\t\2\2\u00c7\u00c9\7\33\2\2\u00c8\u00c7\3\2\2\2\u00c8"+
-		"\u00c9\3\2\2\2\u00c9\u00ca\3\2\2\2\u00ca\u00cc\5\20\t\2\u00cb\u00cd\7"+
-		"\34\2\2\u00cc\u00cb\3\2\2\2\u00cc\u00cd\3\2\2\2\u00cd\u00ce\3\2\2\2\u00ce"+
-		"\u00cf\b\t\1\2\u00cf\u00e7\3\2\2\2\u00d0\u00d1\6\t\13\3\u00d1\u00d3\t"+
-		"\n\2\2\u00d2\u00d4\7\33\2\2\u00d3\u00d2\3\2\2\2\u00d3\u00d4\3\2\2\2\u00d4"+
-		"\u00d5\3\2\2\2\u00d5\u00d7\5\20\t\2\u00d6\u00d8\7\34\2\2\u00d7\u00d6\3"+
-		"\2\2\2\u00d7\u00d8\3\2\2\2\u00d8\u00d9\3\2\2\2\u00d9\u00da\b\t\1\2\u00da"+
-		"\u00e7\3\2\2\2\u00db\u00dc\6\t\f\3\u00dc\u00de\t\13\2\2\u00dd\u00df\7"+
-		"\33\2\2\u00de\u00dd\3\2\2\2\u00de\u00df\3\2\2\2\u00df\u00e0\3\2\2\2\u00e0"+
-		"\u00e2\5\20\t\2\u00e1\u00e3\7\34\2\2\u00e2\u00e1\3\2\2\2\u00e2\u00e3\3"+
-		"\2\2\2\u00e3\u00e4\3\2\2\2\u00e4\u00e5\b\t\1\2\u00e5\u00e7\3\2\2\2\u00e6"+
-		"\u0091\3\2\2\2\u00e6\u0096\3\2\2\2\u00e6\u009e\3\2\2\2\u00e6\u00a1\3\2"+
-		"\2\2\u00e6\u00ac\3\2\2\2\u00e6\u00b7\3\2\2\2\u00e6\u00c2\3\2\2\2\u00e6"+
-		"\u00c5\3\2\2\2\u00e6\u00d0\3\2\2\2\u00e6\u00db\3\2\2\2\u00e7\u00ea\3\2"+
-		"\2\2\u00e8\u00e6\3\2\2\2\u00e8\u00e9\3\2\2\2\u00e9\21\3\2\2\2\u00ea\u00e8"+
-		"\3\2\2\2\u00eb\u00f7\b\n\1\2\u00ec\u00ed\5\20\t\2\u00ed\u00f4\b\n\1\2"+
-		"\u00ee\u00ef\7\35\2\2\u00ef\u00f0\5\20\t\2\u00f0\u00f1\b\n\1\2\u00f1\u00f3"+
-		"\3\2\2\2\u00f2\u00ee\3\2\2\2\u00f3\u00f6\3\2\2\2\u00f4\u00f2\3\2\2\2\u00f4"+
-		"\u00f5\3\2\2\2\u00f5\u00f8\3\2\2\2\u00f6\u00f4\3\2\2\2\u00f7\u00ec\3\2"+
-		"\2\2\u00f7\u00f8\3\2\2\2\u00f8\23\3\2\2\2\u00f9\u00fa\7\37\2\2\u00fa\u00fb"+
-		"\5\26\f\2\u00fb\u00fc\7 \2\2\u00fc\u00fd\b\13\1\2\u00fd\u0125\3\2\2\2"+
-		"\u00fe\u00ff\7\25\2\2\u00ff\u0100\7\67\2\2\u0100\u0101\5\20\t\2\u0101"+
-		"\u0102\7\36\2\2\u0102\u0103\b\13\1\2\u0103\u0125\3\2\2\2\u0104\u0105\7"+
-		"\4\2\2\u0105\u0106\7\33\2\2\u0106\u0107\5\20\t\2\u0107\u0108\7\34\2\2"+
-		"\u0108\u0109\5\24\13\2\u0109\u010e\b\13\1\2\u010a\u010b\7\5\2\2\u010b"+
-		"\u010c\5\24\13\2\u010c\u010d\b\13\1\2\u010d\u010f\3\2\2\2\u010e\u010a"+
-		"\3\2\2\2\u010e\u010f\3\2\2\2\u010f\u0125\3\2\2\2\u0110\u0111\7\6\2\2\u0111"+
-		"\u0112\7\33\2\2\u0112\u0113\5\20\t\2\u0113\u0114\7\34\2\2\u0114\u0115"+
-		"\5\24\13\2\u0115\u0116\b\13\1\2\u0116\u0125\3\2\2\2\u0117\u0118\7\7\2"+
-		"\2\u0118\u0119\7\33\2\2\u0119\u011a\7\25\2\2\u011a\u011b\7\b\2\2\u011b"+
-		"\u011c\5\20\t\2\u011c\u011d\7\34\2\2\u011d\u011e\5\24\13\2\u011e\u011f"+
-		"\b\13\1\2\u011f\u0125\3\2\2\2\u0120\u0121\t\f\2\2\u0121\u0122\5\20\t\2"+
-		"\u0122\u0123\b\13\1\2\u0123\u0125\3\2\2\2\u0124\u00f9\3\2\2\2\u0124\u00fe"+
-		"\3\2\2\2\u0124\u0104\3\2\2\2\u0124\u0110\3\2\2\2\u0124\u0117\3\2\2\2\u0124"+
-		"\u0120\3\2\2\2\u0125\25\3\2\2\2\u0126\u0132\b\f\1\2\u0127\u0128\5\24\13"+
-		"\2\u0128\u012f\b\f\1\2\u0129\u012a\7\35\2\2\u012a\u012b\5\24\13\2\u012b"+
-		"\u012c\b\f\1\2\u012c\u012e\3\2\2\2\u012d\u0129\3\2\2\2\u012e\u0131\3\2"+
-		"\2\2\u012f\u012d\3\2\2\2\u012f\u0130\3\2\2\2\u0130\u0133\3\2\2\2\u0131"+
-		"\u012f\3\2\2\2\u0132\u0127\3\2\2\2\u0132\u0133\3\2\2\2\u0133\27\3\2\2"+
-		"\2\u0134\u0135\7\n\2\2\u0135\u0136\7\23\2\2\u0136\u0137\5\4\3\2\u0137"+
-		"\u0149\b\r\1\2\u0138\u0139\7\13\2\2\u0139\u013a\5\f\7\2\u013a\u013b\b"+
-		"\r\1\2\u013b\u0144\7\37\2\2\u013c\u013d\7\f\2\2\u013d\u013e\7\25\2\2\u013e"+
-		"\u013f\5\16\b\2\u013f\u0140\7\36\2\2\u0140\u0141\b\r\1\2\u0141\u0143\3"+
-		"\2\2\2\u0142\u013c\3\2\2\2\u0143\u0146\3\2\2\2\u0144\u0142\3\2\2\2\u0144"+
-		"\u0145\3\2\2\2\u0145\u0147\3\2\2\2\u0146\u0144\3\2\2\2\u0147\u0148\7 "+
-		"\2\2\u0148\u014a\3\2\2\2\u0149\u0138\3\2\2\2\u0149\u014a\3\2\2\2\u014a"+
-		"\31\3\2\2\2\u014b\u014c\7\r\2\2\u014c\u014d\7\23\2\2\u014d\u014e\5\4\3"+
-		"\2\u014e\u014f\5\b\5\2\u014f\u017e\b\16\1\2\u0150\u0151\7\13\2\2\u0151"+
-		"\u0152\5\f\7\2\u0152\u0153\b\16\1\2\u0153\u0159\7\37\2\2\u0154\u0155\5"+
-		"\24\13\2\u0155\u0156\b\16\1\2\u0156\u0158\3\2\2\2\u0157\u0154\3\2\2\2"+
-		"\u0158\u015b\3\2\2\2\u0159\u0157\3\2\2\2\u0159\u015a\3\2\2\2\u015a\u016e"+
-		"\3\2\2\2\u015b\u0159\3\2\2\2\u015c\u015e\7\16\2\2\u015d\u015f\7\33\2\2"+
-		"\u015e\u015d\3\2\2\2\u015e\u015f\3\2\2\2\u015f\u0160\3\2\2\2\u0160\u0161"+
-		"\5\20\t\2\u0161\u0168\b\16\1\2\u0162\u0163\7\35\2\2\u0163\u0164\5\20\t"+
-		"\2\u0164\u0165\b\16\1\2\u0165\u0167\3\2\2\2\u0166\u0162\3\2\2\2\u0167"+
-		"\u016a\3\2\2\2\u0168\u0166\3\2\2\2\u0168\u0169\3\2\2\2\u0169\u016c\3\2"+
-		"\2\2\u016a\u0168\3\2\2\2\u016b\u016d\7\34\2\2\u016c\u016b\3\2\2\2\u016c"+
-		"\u016d\3\2\2\2\u016d\u016f\3\2\2\2\u016e\u015c\3\2\2\2\u016e\u016f\3\2"+
-		"\2\2\u016f\u0170\3\2\2\2\u0170\u0179\7\36\2\2\u0171\u0172\7\f\2\2\u0172"+
-		"\u0173\7\25\2\2\u0173\u0174\5\16\b\2\u0174\u0175\5\24\13\2\u0175\u0176"+
-		"\b\16\1\2\u0176\u0178\3\2\2\2\u0177\u0171\3\2\2\2\u0178\u017b\3\2\2\2"+
-		"\u0179\u0177\3\2\2\2\u0179\u017a\3\2\2\2\u017a\u017c\3\2\2\2\u017b\u0179"+
-		"\3\2\2\2\u017c\u017d\7 \2\2\u017d\u017f\3\2\2\2\u017e\u0150\3\2\2\2\u017e"+
-		"\u017f\3\2\2\2\u017f\33\3\2\2\2\u0180\u0181\5\24\13\2\u0181\u0182\b\17"+
-		"\1\2\u0182\u01a4\3\2\2\2\u0183\u0184\5\24\13\2\u0184\u0185\5\26\f\2\u0185"+
-		"\u0186\5\34\17\2\u0186\u0187\b\17\1\2\u0187\u01a4\3\2\2\2\u0188\u0189"+
-		"\7\f\2\2\u0189\u018a\7\25\2\2\u018a\u018b\5\16\b\2\u018b\u018c\5\24\13"+
-		"\2\u018c\u0195\b\17\1\2\u018d\u018e\7\f\2\2\u018e\u018f\7\25\2\2\u018f"+
-		"\u0190\5\16\b\2\u0190\u0191\5\24\13\2\u0191\u0192\b\17\1\2\u0192\u0194"+
-		"\3\2\2\2\u0193\u018d\3\2\2\2\u0194\u0197\3\2\2\2\u0195\u0193\3\2\2\2\u0195"+
-		"\u0196\3\2\2\2\u0196\u0198\3\2\2\2\u0197\u0195\3\2\2\2\u0198\u0199\5\34"+
-		"\17\2\u0199\u019a\b\17\1\2\u019a\u01a4\3\2\2\2\u019b\u019c\5\30\r\2\u019c"+
-		"\u019d\5\34\17\2\u019d\u019e\b\17\1\2\u019e\u01a4\3\2\2\2\u019f\u01a0"+
-		"\5\32\16\2\u01a0\u01a1\5\34\17\2\u01a1\u01a2\b\17\1\2\u01a2\u01a4\3\2"+
-		"\2\2\u01a3\u0180\3\2\2\2\u01a3\u0183\3\2\2\2\u01a3\u0188\3\2\2\2\u01a3"+
-		"\u019b\3\2\2\2\u01a3\u019f\3\2\2\2\u01a4\35\3\2\2\2\u01a5\u01a6\b\20\1"+
-		"\2\u01a6\u01a7\b\20\1\2\u01a7\u01b0\3\2\2\2\u01a8\u01a9\6\20\r\3\u01a9"+
-		"\u01aa\7\35\2\2\u01aa\u01ab\5\2\2\2\u01ab\u01ac\5\16\b\2\u01ac\u01ad\b"+
-		"\20\1\2\u01ad\u01af\3\2\2\2\u01ae\u01a8\3\2\2\2\u01af\u01b2\3\2\2\2\u01b0"+
-		"\u01ae\3\2\2\2\u01b0\u01b1\3\2\2\2\u01b1\37\3\2\2\2\u01b2\u01b0\3\2\2"+
-		"\2\u01b3\u01b4\b\21\1\2\u01b4\u01b5\b\21\1\2\u01b5\u01e8\3\2\2\2\u01b6"+
-		"\u01b7\6\21\16\3\u01b7\u01b8\7\35\2\2\u01b8\u01b9\7\n\2\2\u01b9\u01ba"+
-		"\7\23\2\2\u01ba\u01bb\5\4\3\2\u01bb\u01cc\b\21\1\2\u01bc\u01bd\7\13\2"+
-		"\2\u01bd\u01be\5\f\7\2\u01be\u01bf\b\21\1\2\u01bf\u01c7\7\37\2\2\u01c0"+
-		"\u01c1\7\25\2\2\u01c1\u01c2\5\16\b\2\u01c2\u01c3\7\36\2\2\u01c3\u01c4"+
-		"\b\21\1\2\u01c4\u01c6\3\2\2\2\u01c5\u01c0\3\2\2\2\u01c6\u01c9\3\2\2\2"+
-		"\u01c7\u01c5\3\2\2\2\u01c7\u01c8\3\2\2\2\u01c8\u01ca\3\2\2\2\u01c9\u01c7"+
-		"\3\2\2\2\u01ca\u01cb\7 \2\2\u01cb\u01cd\3\2\2\2\u01cc\u01bc\3\2\2\2\u01cc"+
-		"\u01cd\3\2\2\2\u01cd\u01e7\3\2\2\2\u01ce\u01cf\6\21\17\3\u01cf\u01d0\7"+
-		"\35\2\2\u01d0\u01d1\7\r\2\2\u01d1\u01d2\7\23\2\2\u01d2\u01d3\5\4\3\2\u01d3"+
-		"\u01e4\b\21\1\2\u01d4\u01d5\7\13\2\2\u01d5\u01d6\5\f\7\2\u01d6\u01d7\b"+
-		"\21\1\2\u01d7\u01df\7\37\2\2\u01d8\u01d9\7\25\2\2\u01d9\u01da\5\16\b\2"+
-		"\u01da\u01db\7\36\2\2\u01db\u01dc\b\21\1\2\u01dc\u01de\3\2\2\2\u01dd\u01d8"+
-		"\3\2\2\2\u01de\u01e1\3\2\2\2\u01df\u01dd\3\2\2\2\u01df\u01e0\3\2\2\2\u01e0"+
-		"\u01e2\3\2\2\2\u01e1\u01df\3\2\2\2\u01e2\u01e3\7 \2\2\u01e3\u01e5\3\2"+
-		"\2\2\u01e4\u01d4\3\2\2\2\u01e4\u01e5\3\2\2\2\u01e5\u01e7\3\2\2\2\u01e6"+
-		"\u01b6\3\2\2\2\u01e6\u01ce\3\2\2\2\u01e7\u01ea\3\2\2\2\u01e8\u01e6\3\2"+
-		"\2\2\u01e8\u01e9\3\2\2\2\u01e9!\3\2\2\2\u01ea\u01e8\3\2\2\2\64.\61\64"+
-		"EHVY\\fhq\u008f\u00a4\u00a8\u00af\u00b3\u00ba\u00be\u00c8\u00cc\u00d3"+
-		"\u00d7\u00de\u00e2\u00e6\u00e8\u00f4\u00f7\u010e\u0124\u012f\u0132\u0144"+
-		"\u0149\u0159\u015e\u0168\u016c\u016e\u0179\u017e\u0195\u01a3\u01b0\u01c7"+
-		"\u01cc\u01df\u01e4\u01e6\u01e8";
+		"\2]\13\3\2\2\2^_\b\7\1\2_`\t\3\2\2`f\b\7\1\2ab\7\23\2\2bc\5\n\6\2cd\b"+
+		"\7\1\2df\3\2\2\2e^\3\2\2\2ea\3\2\2\2fn\3\2\2\2gh\6\7\2\3hi\7)\2\2ij\5"+
+		"\f\7\2jk\b\7\1\2km\3\2\2\2lg\3\2\2\2mp\3\2\2\2nl\3\2\2\2no\3\2\2\2o\r"+
+		"\3\2\2\2pn\3\2\2\2qr\5\4\3\2rs\5\b\5\2st\7\31\2\2tu\5\f\7\2uv\b\b\1\2"+
+		"v\17\3\2\2\2wx\b\t\1\2xy\7\25\2\2y\u008d\b\t\1\2z{\5\2\2\2{|\5\n\6\2|"+
+		"}\5\22\n\2}~\b\t\1\2~\u008d\3\2\2\2\177\u0080\7\27\2\2\u0080\u0081\5\22"+
+		"\n\2\u0081\u0082\7\30\2\2\u0082\u0083\b\t\1\2\u0083\u008d\3\2\2\2\u0084"+
+		"\u0085\7\21\2\2\u0085\u008d\b\t\1\2\u0086\u0087\7\22\2\2\u0087\u008d\b"+
+		"\t\1\2\u0088\u0089\7\26\2\2\u0089\u008d\b\t\1\2\u008a\u008b\7\3\2\2\u008b"+
+		"\u008d\b\t\1\2\u008cw\3\2\2\2\u008cz\3\2\2\2\u008c\177\3\2\2\2\u008c\u0084"+
+		"\3\2\2\2\u008c\u0086\3\2\2\2\u008c\u0088\3\2\2\2\u008c\u008a\3\2\2\2\u008d"+
+		"\u00e5\3\2\2\2\u008e\u008f\6\t\3\3\u008f\u0090\7,\2\2\u0090\u0091\5\20"+
+		"\t\2\u0091\u0092\b\t\1\2\u0092\u00e4\3\2\2\2\u0093\u0094\6\t\4\3\u0094"+
+		"\u0095\7\25\2\2\u0095\u0096\5\n\6\2\u0096\u0097\7\33\2\2\u0097\u0098\5"+
+		"\22\n\2\u0098\u0099\7\34\2\2\u0099\u009a\b\t\1\2\u009a\u00e4\3\2\2\2\u009b"+
+		"\u009c\6\t\5\3\u009c\u009d\t\4\2\2\u009d\u00e4\b\t\1\2\u009e\u009f\6\t"+
+		"\6\3\u009f\u00a1\t\5\2\2\u00a0\u00a2\7\33\2\2\u00a1\u00a0\3\2\2\2\u00a1"+
+		"\u00a2\3\2\2\2\u00a2\u00a3\3\2\2\2\u00a3\u00a5\5\20\t\2\u00a4\u00a6\7"+
+		"\34\2\2\u00a5\u00a4\3\2\2\2\u00a5\u00a6\3\2\2\2\u00a6\u00a7\3\2\2\2\u00a7"+
+		"\u00a8\b\t\1\2\u00a8\u00e4\3\2\2\2\u00a9\u00aa\6\t\7\3\u00aa\u00ac\t\6"+
+		"\2\2\u00ab\u00ad\7\33\2\2\u00ac\u00ab\3\2\2\2\u00ac\u00ad\3\2\2\2\u00ad"+
+		"\u00ae\3\2\2\2\u00ae\u00b0\5\20\t\2\u00af\u00b1\7\34\2\2\u00b0\u00af\3"+
+		"\2\2\2\u00b0\u00b1\3\2\2\2\u00b1\u00b2\3\2\2\2\u00b2\u00b3\b\t\1\2\u00b3"+
+		"\u00e4\3\2\2\2\u00b4\u00b5\6\t\b\3\u00b5\u00b7\t\7\2\2\u00b6\u00b8\7\33"+
+		"\2\2\u00b7\u00b6\3\2\2\2\u00b7\u00b8\3\2\2\2\u00b8\u00b9\3\2\2\2\u00b9"+
+		"\u00bb\5\20\t\2\u00ba\u00bc\7\34\2\2\u00bb\u00ba\3\2\2\2\u00bb\u00bc\3"+
+		"\2\2\2\u00bc\u00bd\3\2\2\2\u00bd\u00be\b\t\1\2\u00be\u00e4\3\2\2\2\u00bf"+
+		"\u00c0\6\t\t\3\u00c0\u00c1\t\b\2\2\u00c1\u00e4\b\t\1\2\u00c2\u00c3\6\t"+
+		"\n\3\u00c3\u00c5\t\t\2\2\u00c4\u00c6\7\33\2\2\u00c5\u00c4\3\2\2\2\u00c5"+
+		"\u00c6\3\2\2\2\u00c6\u00c7\3\2\2\2\u00c7\u00c9\5\20\t\2\u00c8\u00ca\7"+
+		"\34\2\2\u00c9\u00c8\3\2\2\2\u00c9\u00ca\3\2\2\2\u00ca\u00cb\3\2\2\2\u00cb"+
+		"\u00cc\b\t\1\2\u00cc\u00e4\3\2\2\2\u00cd\u00ce\6\t\13\3\u00ce\u00d0\t"+
+		"\n\2\2\u00cf\u00d1\7\33\2\2\u00d0\u00cf\3\2\2\2\u00d0\u00d1\3\2\2\2\u00d1"+
+		"\u00d2\3\2\2\2\u00d2\u00d4\5\20\t\2\u00d3\u00d5\7\34\2\2\u00d4\u00d3\3"+
+		"\2\2\2\u00d4\u00d5\3\2\2\2\u00d5\u00d6\3\2\2\2\u00d6\u00d7\b\t\1\2\u00d7"+
+		"\u00e4\3\2\2\2\u00d8\u00d9\6\t\f\3\u00d9\u00db\t\13\2\2\u00da\u00dc\7"+
+		"\33\2\2\u00db\u00da\3\2\2\2\u00db\u00dc\3\2\2\2\u00dc\u00dd\3\2\2\2\u00dd"+
+		"\u00df\5\20\t\2\u00de\u00e0\7\34\2\2\u00df\u00de\3\2\2\2\u00df\u00e0\3"+
+		"\2\2\2\u00e0\u00e1\3\2\2\2\u00e1\u00e2\b\t\1\2\u00e2\u00e4\3\2\2\2\u00e3"+
+		"\u008e\3\2\2\2\u00e3\u0093\3\2\2\2\u00e3\u009b\3\2\2\2\u00e3\u009e\3\2"+
+		"\2\2\u00e3\u00a9\3\2\2\2\u00e3\u00b4\3\2\2\2\u00e3\u00bf\3\2\2\2\u00e3"+
+		"\u00c2\3\2\2\2\u00e3\u00cd\3\2\2\2\u00e3\u00d8\3\2\2\2\u00e4\u00e7\3\2"+
+		"\2\2\u00e5\u00e3\3\2\2\2\u00e5\u00e6\3\2\2\2\u00e6\21\3\2\2\2\u00e7\u00e5"+
+		"\3\2\2\2\u00e8\u00f4\b\n\1\2\u00e9\u00ea\5\20\t\2\u00ea\u00f1\b\n\1\2"+
+		"\u00eb\u00ec\7\35\2\2\u00ec\u00ed\5\20\t\2\u00ed\u00ee\b\n\1\2\u00ee\u00f0"+
+		"\3\2\2\2\u00ef\u00eb\3\2\2\2\u00f0\u00f3\3\2\2\2\u00f1\u00ef\3\2\2\2\u00f1"+
+		"\u00f2\3\2\2\2\u00f2\u00f5\3\2\2\2\u00f3\u00f1\3\2\2\2\u00f4\u00e9\3\2"+
+		"\2\2\u00f4\u00f5\3\2\2\2\u00f5\23\3\2\2\2\u00f6\u00f7\7\37\2\2\u00f7\u00f8"+
+		"\5\26\f\2\u00f8\u00f9\7 \2\2\u00f9\u00fa\b\13\1\2\u00fa\u0122\3\2\2\2"+
+		"\u00fb\u00fc\7\25\2\2\u00fc\u00fd\7\67\2\2\u00fd\u00fe\5\20\t\2\u00fe"+
+		"\u00ff\7\36\2\2\u00ff\u0100\b\13\1\2\u0100\u0122\3\2\2\2\u0101\u0102\7"+
+		"\4\2\2\u0102\u0103\7\33\2\2\u0103\u0104\5\20\t\2\u0104\u0105\7\34\2\2"+
+		"\u0105\u0106\5\24\13\2\u0106\u010b\b\13\1\2\u0107\u0108\7\5\2\2\u0108"+
+		"\u0109\5\24\13\2\u0109\u010a\b\13\1\2\u010a\u010c\3\2\2\2\u010b\u0107"+
+		"\3\2\2\2\u010b\u010c\3\2\2\2\u010c\u0122\3\2\2\2\u010d\u010e\7\6\2\2\u010e"+
+		"\u010f\7\33\2\2\u010f\u0110\5\20\t\2\u0110\u0111\7\34\2\2\u0111\u0112"+
+		"\5\24\13\2\u0112\u0113\b\13\1\2\u0113\u0122\3\2\2\2\u0114\u0115\7\7\2"+
+		"\2\u0115\u0116\7\33\2\2\u0116\u0117\7\25\2\2\u0117\u0118\7\b\2\2\u0118"+
+		"\u0119\5\20\t\2\u0119\u011a\7\34\2\2\u011a\u011b\5\24\13\2\u011b\u011c"+
+		"\b\13\1\2\u011c\u0122\3\2\2\2\u011d\u011e\t\f\2\2\u011e\u011f\5\20\t\2"+
+		"\u011f\u0120\b\13\1\2\u0120\u0122\3\2\2\2\u0121\u00f6\3\2\2\2\u0121\u00fb"+
+		"\3\2\2\2\u0121\u0101\3\2\2\2\u0121\u010d\3\2\2\2\u0121\u0114\3\2\2\2\u0121"+
+		"\u011d\3\2\2\2\u0122\25\3\2\2\2\u0123\u012f\b\f\1\2\u0124\u0125\5\24\13"+
+		"\2\u0125\u012c\b\f\1\2\u0126\u0127\7\35\2\2\u0127\u0128\5\24\13\2\u0128"+
+		"\u0129\b\f\1\2\u0129\u012b\3\2\2\2\u012a\u0126\3\2\2\2\u012b\u012e\3\2"+
+		"\2\2\u012c\u012a\3\2\2\2\u012c\u012d\3\2\2\2\u012d\u0130\3\2\2\2\u012e"+
+		"\u012c\3\2\2\2\u012f\u0124\3\2\2\2\u012f\u0130\3\2\2\2\u0130\27\3\2\2"+
+		"\2\u0131\u0132\7\n\2\2\u0132\u0133\7\23\2\2\u0133\u0134\5\4\3\2\u0134"+
+		"\u0146\b\r\1\2\u0135\u0136\7\13\2\2\u0136\u0137\5\f\7\2\u0137\u0138\b"+
+		"\r\1\2\u0138\u0141\7\37\2\2\u0139\u013a\7\f\2\2\u013a\u013b\7\25\2\2\u013b"+
+		"\u013c\5\16\b\2\u013c\u013d\7\36\2\2\u013d\u013e\b\r\1\2\u013e\u0140\3"+
+		"\2\2\2\u013f\u0139\3\2\2\2\u0140\u0143\3\2\2\2\u0141\u013f\3\2\2\2\u0141"+
+		"\u0142\3\2\2\2\u0142\u0144\3\2\2\2\u0143\u0141\3\2\2\2\u0144\u0145\7 "+
+		"\2\2\u0145\u0147\3\2\2\2\u0146\u0135\3\2\2\2\u0146\u0147\3\2\2\2\u0147"+
+		"\31\3\2\2\2\u0148\u0149\7\r\2\2\u0149\u014a\7\23\2\2\u014a\u014b\5\4\3"+
+		"\2\u014b\u014c\5\b\5\2\u014c\u017b\b\16\1\2\u014d\u014e\7\13\2\2\u014e"+
+		"\u014f\5\f\7\2\u014f\u0150\b\16\1\2\u0150\u0156\7\37\2\2\u0151\u0152\5"+
+		"\24\13\2\u0152\u0153\b\16\1\2\u0153\u0155\3\2\2\2\u0154\u0151\3\2\2\2"+
+		"\u0155\u0158\3\2\2\2\u0156\u0154\3\2\2\2\u0156\u0157\3\2\2\2\u0157\u016b"+
+		"\3\2\2\2\u0158\u0156\3\2\2\2\u0159\u015b\7\16\2\2\u015a\u015c\7\33\2\2"+
+		"\u015b\u015a\3\2\2\2\u015b\u015c\3\2\2\2\u015c\u015d\3\2\2\2\u015d\u015e"+
+		"\5\20\t\2\u015e\u0165\b\16\1\2\u015f\u0160\7\35\2\2\u0160\u0161\5\20\t"+
+		"\2\u0161\u0162\b\16\1\2\u0162\u0164\3\2\2\2\u0163\u015f\3\2\2\2\u0164"+
+		"\u0167\3\2\2\2\u0165\u0163\3\2\2\2\u0165\u0166\3\2\2\2\u0166\u0169\3\2"+
+		"\2\2\u0167\u0165\3\2\2\2\u0168\u016a\7\34\2\2\u0169\u0168\3\2\2\2\u0169"+
+		"\u016a\3\2\2\2\u016a\u016c\3\2\2\2\u016b\u0159\3\2\2\2\u016b\u016c\3\2"+
+		"\2\2\u016c\u016d\3\2\2\2\u016d\u0176\7\36\2\2\u016e\u016f\7\f\2\2\u016f"+
+		"\u0170\7\25\2\2\u0170\u0171\5\16\b\2\u0171\u0172\5\24\13\2\u0172\u0173"+
+		"\b\16\1\2\u0173\u0175\3\2\2\2\u0174\u016e\3\2\2\2\u0175\u0178\3\2\2\2"+
+		"\u0176\u0174\3\2\2\2\u0176\u0177\3\2\2\2\u0177\u0179\3\2\2\2\u0178\u0176"+
+		"\3\2\2\2\u0179\u017a\7 \2\2\u017a\u017c\3\2\2\2\u017b\u014d\3\2\2\2\u017b"+
+		"\u017c\3\2\2\2\u017c\33\3\2\2\2\u017d\u017e\5\24\13\2\u017e\u017f\b\17"+
+		"\1\2\u017f\u01a1\3\2\2\2\u0180\u0181\5\24\13\2\u0181\u0182\5\26\f\2\u0182"+
+		"\u0183\5\34\17\2\u0183\u0184\b\17\1\2\u0184\u01a1\3\2\2\2\u0185\u0186"+
+		"\7\f\2\2\u0186\u0187\7\25\2\2\u0187\u0188\5\16\b\2\u0188\u0189\5\24\13"+
+		"\2\u0189\u0192\b\17\1\2\u018a\u018b\7\f\2\2\u018b\u018c\7\25\2\2\u018c"+
+		"\u018d\5\16\b\2\u018d\u018e\5\24\13\2\u018e\u018f\b\17\1\2\u018f\u0191"+
+		"\3\2\2\2\u0190\u018a\3\2\2\2\u0191\u0194\3\2\2\2\u0192\u0190\3\2\2\2\u0192"+
+		"\u0193\3\2\2\2\u0193\u0195\3\2\2\2\u0194\u0192\3\2\2\2\u0195\u0196\5\34"+
+		"\17\2\u0196\u0197\b\17\1\2\u0197\u01a1\3\2\2\2\u0198\u0199\5\30\r\2\u0199"+
+		"\u019a\5\34\17\2\u019a\u019b\b\17\1\2\u019b\u01a1\3\2\2\2\u019c\u019d"+
+		"\5\32\16\2\u019d\u019e\5\34\17\2\u019e\u019f\b\17\1\2\u019f\u01a1\3\2"+
+		"\2\2\u01a0\u017d\3\2\2\2\u01a0\u0180\3\2\2\2\u01a0\u0185\3\2\2\2\u01a0"+
+		"\u0198\3\2\2\2\u01a0\u019c\3\2\2\2\u01a1\35\3\2\2\2\u01a2\u01a3\b\20\1"+
+		"\2\u01a3\u01a4\b\20\1\2\u01a4\u01ad\3\2\2\2\u01a5\u01a6\6\20\r\3\u01a6"+
+		"\u01a7\7\35\2\2\u01a7\u01a8\5\2\2\2\u01a8\u01a9\5\16\b\2\u01a9\u01aa\b"+
+		"\20\1\2\u01aa\u01ac\3\2\2\2\u01ab\u01a5\3\2\2\2\u01ac\u01af\3\2\2\2\u01ad"+
+		"\u01ab\3\2\2\2\u01ad\u01ae\3\2\2\2\u01ae\37\3\2\2\2\u01af\u01ad\3\2\2"+
+		"\2\u01b0\u01b1\b\21\1\2\u01b1\u01b2\b\21\1\2\u01b2\u01e5\3\2\2\2\u01b3"+
+		"\u01b4\6\21\16\3\u01b4\u01b5\7\35\2\2\u01b5\u01b6\7\n\2\2\u01b6\u01b7"+
+		"\7\23\2\2\u01b7\u01b8\5\4\3\2\u01b8\u01c9\b\21\1\2\u01b9\u01ba\7\13\2"+
+		"\2\u01ba\u01bb\5\f\7\2\u01bb\u01bc\b\21\1\2\u01bc\u01c4\7\37\2\2\u01bd"+
+		"\u01be\7\25\2\2\u01be\u01bf\5\16\b\2\u01bf\u01c0\7\36\2\2\u01c0\u01c1"+
+		"\b\21\1\2\u01c1\u01c3\3\2\2\2\u01c2\u01bd\3\2\2\2\u01c3\u01c6\3\2\2\2"+
+		"\u01c4\u01c2\3\2\2\2\u01c4\u01c5\3\2\2\2\u01c5\u01c7\3\2\2\2\u01c6\u01c4"+
+		"\3\2\2\2\u01c7\u01c8\7 \2\2\u01c8\u01ca\3\2\2\2\u01c9\u01b9\3\2\2\2\u01c9"+
+		"\u01ca\3\2\2\2\u01ca\u01e4\3\2\2\2\u01cb\u01cc\6\21\17\3\u01cc\u01cd\7"+
+		"\35\2\2\u01cd\u01ce\7\r\2\2\u01ce\u01cf\7\23\2\2\u01cf\u01d0\5\4\3\2\u01d0"+
+		"\u01e1\b\21\1\2\u01d1\u01d2\7\13\2\2\u01d2\u01d3\5\f\7\2\u01d3\u01d4\b"+
+		"\21\1\2\u01d4\u01dc\7\37\2\2\u01d5\u01d6\7\25\2\2\u01d6\u01d7\5\16\b\2"+
+		"\u01d7\u01d8\7\36\2\2\u01d8\u01d9\b\21\1\2\u01d9\u01db\3\2\2\2\u01da\u01d5"+
+		"\3\2\2\2\u01db\u01de\3\2\2\2\u01dc\u01da\3\2\2\2\u01dc\u01dd\3\2\2\2\u01dd"+
+		"\u01df\3\2\2\2\u01de\u01dc\3\2\2\2\u01df\u01e0\7 \2\2\u01e0\u01e2\3\2"+
+		"\2\2\u01e1\u01d1\3\2\2\2\u01e1\u01e2\3\2\2\2\u01e2\u01e4\3\2\2\2\u01e3"+
+		"\u01b3\3\2\2\2\u01e3\u01cb\3\2\2\2\u01e4\u01e7\3\2\2\2\u01e5\u01e3\3\2"+
+		"\2\2\u01e5\u01e6\3\2\2\2\u01e6!\3\2\2\2\u01e7\u01e5\3\2\2\2\63.\61\64"+
+		"EHVY\\en\u008c\u00a1\u00a5\u00ac\u00b0\u00b7\u00bb\u00c5\u00c9\u00d0\u00d4"+
+		"\u00db\u00df\u00e3\u00e5\u00f1\u00f4\u010b\u0121\u012c\u012f\u0141\u0146"+
+		"\u0156\u015b\u0165\u0169\u016b\u0176\u017b\u0192\u01a0\u01ad\u01c4\u01c9"+
+		"\u01dc\u01e1\u01e3\u01e5";
 	public static final ATN _ATN =
 		ATNSimulator.deserialize(_serializedATN.toCharArray());
 	static {
 		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
+		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
+			_decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
+		}
 	}
 }

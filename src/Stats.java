@@ -5,15 +5,11 @@ import java.util.List;
 public class Stats extends CuStat{
 	private ArrayList<CuStat> al;
 	public Stats (List<CuStat> cu) {
-		al = (ArrayList<CuStat>) cu;		
-	}
-	public String toString() {
-		String name;
-		name = "{ ";
+		al = (ArrayList<CuStat>) cu;
+		text = "{ ";
 		for (CuStat cs : al) {
-			name += cs.toString() + " ";
+			text += cs.toString() + " ";
 		}
-		name += "}";
-		return name;
+		text += "}";
 	}
 }
