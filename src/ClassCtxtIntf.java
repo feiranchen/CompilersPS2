@@ -13,10 +13,12 @@ public class ClassCtxtIntf extends CuClassC {
 		this.c = c;
 		this.clsintf = ci;
 		this.kc = kc;
+		text = String.format("%s , interface %s %s extends", c.toString(), clsintf, listKC(kc));
 	}
 	
 	public void add (CuType t) {
 		this.t = t;
+		text += " " +t.toString();
 	}
 	
 	public void add (String vv, CuTypeScheme ts) {
@@ -25,7 +27,8 @@ public class ClassCtxtIntf extends CuClassC {
 	}
 	
 	@Override public String toString() {
-		return String.format("%s , interface %s %s extends %s %s", c.toString(), clsintf, listKC(kc), t.toString(), listVvTypeScheme(VvTypeScheme));
+		text +=  " " +listVvTypeScheme(VvTypeScheme);
+		return text;
 	}
 	
 	private String listKC(List<String> es) {
