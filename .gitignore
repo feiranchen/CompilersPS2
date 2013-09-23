@@ -13,4 +13,9 @@
 *.out
 .classpath
 .project
-
+CubexLexer2.class  
+CubexLexer2.java 
+CubexLexer2.tokens 
+CubexParser2.class  
+CubexParser2.java 
+CubexParser2.tokens   
