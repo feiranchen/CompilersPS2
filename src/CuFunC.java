@@ -4,4 +4,8 @@ public abstract class CuFunC {
 	@Override public String toString() {
 		return text;
 	}
+	public void add(CuVvc v, CuTypeScheme ts) {
+		// TODO Auto-generated method stub
+		
+	}
 }

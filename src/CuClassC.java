@@ -1,3 +1,5 @@
+import java.util.List;
+
 
 public abstract class CuClassC {
 	protected String text = "";
@@ -9,6 +11,10 @@ public abstract class CuClassC {
 		
 	}
 	public void add(String vv, CuTypeScheme ts) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void add(String k, String ci, List<String> kc) {
 		// TODO Auto-generated method stub
 		
 	}

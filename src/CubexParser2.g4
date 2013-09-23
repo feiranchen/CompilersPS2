@@ -20,8 +20,8 @@ type returns [CuType t]
 typescheme returns [CuTypeScheme ts]
 	: kc=kindcontext tc=typecontext COLON t=type {$ts = new TypeScheme($kc.kc, $tc.tc, $t.t);};
 expr returns [CuExpr e]
-	: VAR {$e = new VvExp($VAR.text);}
-	| v=vvc pt=paratype es=exprs {$e = new VvcExp($v.v, $pt.pt, $es.cu);}
+	: VAR {$e = new VvExp($VAR.text);} (pt=paratype LPAREN es=exprs RPAREN {$e.add($pt.pt, $es.cu);})?
+	| CLSINTF pt=paratype LPAREN es=exprs RPAREN {$e = new VcExp($CLSINTF.text, $pt.pt, $es.cu);}
 	| ex=expr DOT VAR pt=paratype LPAREN es=exprs RPAREN {$e = new VarExpr($ex.e, $VAR.text, $pt.pt, $es.cu);} 
 	| ex=expr op=(DASH | BANG) 
 		{$e = ($op.type == DASH) ? new NegativeExpr($ex.e) : new NegateExpr($ex.e);}
@@ -67,9 +67,6 @@ program returns [CuProgr p]
 	| c=cls pr=program {$p = new ClassPrg($c.c, $pr.p);};
 top : program EOF;
 functxt returns [CuFunC f]
-	: {$f = new FunCtxtEmpty();}
-	| fc=functxt COMMA v=vvc ts=typescheme {$f = new FuncTxt($fc.f, $v.v, $ts.ts);};
+	: {$f = new FunCtxt();} (COMMA v=vvc ts=typescheme {$f.add($v.v, $ts.ts);})*;
 clsctxt returns [CuClassC c]
-	: {$c = new ClassCtxtEmpty();}
-	| cl=clsctxt COMMA INTERFACE CLSINTF p=kindcontext {$c = new ClassCtxtIntf($cl.c, $CLSINTF.text, $p.kc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (VAR ts=typescheme SEMICOLON {$c.add($VAR.text, $ts.ts);})* RBRACE)? 
-	| cl=clsctxt COMMA CLASS CLSINTF p=kindcontext {$c = new ClassCtxtCls($cl.c, $CLSINTF.text, $p.kc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (VAR ts=typescheme SEMICOLON {$c.add($VAR.text, $ts.ts);})* RBRACE)?;
+	: {$c = new ClassCtxt();} (COMMA k=(INTERFACE | CLASS) CLSINTF p=kindcontext {$c.add($k.text, $CLSINTF.text, $p.kc);} (EXTENDS t=type {$c.add($t.t);} LBRACE (VAR ts=typescheme SEMICOLON {$c.add($VAR.text, $ts.ts);})* RBRACE)?)*;

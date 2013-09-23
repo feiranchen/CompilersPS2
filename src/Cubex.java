@@ -14,12 +14,12 @@ public class Cubex {
 		CubexParser2 parser = new CubexParser2(tokens);
 		parser.setBuildParseTree(true);
 		RuleContext tree = parser.program();
-/*		try {
+		try {
 			System.out.println(parser.program().p.toString());
 		} catch (Exception e) {
 			System.out.println("parser error");
 		}
-*/		
+		
 		/////RuleContext tree = parser.fundef();
 		tree.inspect(parser); // show in gui
 		//tree.save(parser, "/tmp/R.ps"); // Generate postscript
