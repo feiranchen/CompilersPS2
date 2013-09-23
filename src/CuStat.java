@@ -4,5 +4,5 @@ public abstract class CuStat {
 	@Override public String toString() {
 		return text;
 	}
-	public abstract void add (CuStat st);
+	public void add (CuStat st){};
 }
