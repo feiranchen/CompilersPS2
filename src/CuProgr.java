@@ -11,5 +11,9 @@ public abstract class CuProgr {
 	public void add(List<CuStat> cu, CuProgr p) {
 		// TODO Auto-generated method stub
 		
+	}
+	public void add(CuStat s) {
+		// TODO Auto-generated method stub
+		
 	};
 }
