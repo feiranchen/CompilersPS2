@@ -9,14 +9,6 @@ public class VcExp extends CuExpr {
 		this.data_pt=pt;
 		this.data_es=es;
 		
-		super.text=v.toString()+" < "+printLst(pt)+" > ("+printLst(es)+" )";
-	}
-	
-	private <T>String printLst(List<T> es) {
-		String s = "";
-		for (T e : es) {
-			s += e.toString() + " ";
-		}
-		return s;
+		super.text=v.toString()+CuMethod.printList("<", pt, ">", ",")+CuMethod.printList("(", es, ")", ",");
 	}
 }

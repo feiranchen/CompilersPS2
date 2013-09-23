@@ -20,8 +20,8 @@ type returns [CuType t]
 typescheme returns [CuTypeScheme ts]
 	: kc=kindcontext tc=typecontext COLON t=type {$ts = new TypeScheme($kc.kc, $tc.tc, $t.t);};
 expr returns [CuExpr e]
-	: VAR {$e = new VvExp($VAR.text);}
-	| v=vvc pt=paratype es=exprs {$e = new VvcExp($v.v, $pt.pt, $es.cu);}
+	: VAR {$e = new VvExp($VAR.text);} (pt=paratype LPAREN es=exprs RPAREN {$e.add($pt.pt, $es.cu);})?
+	| CLSINTF pt=paratype LPAREN es=exprs RPAREN {$e = new VcExp($CLSINTF.text, $pt.pt, $es.cu);}
 	| ex=expr DOT VAR pt=paratype LPAREN es=exprs RPAREN {$e = new VarExpr($ex.e, $VAR.text, $pt.pt, $es.cu);} 
 	| ex=expr op=(DASH | BANG) 
 		{$e = ($op.type == DASH) ? new NegativeExpr($ex.e) : new NegateExpr($ex.e);}

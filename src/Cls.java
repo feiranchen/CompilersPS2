@@ -36,55 +36,7 @@ public class Cls extends CuClass {
 	
 	@Override public String toString() {
 		return String.format("class %s %s %s extends %s { %s super ( %s ) ; %s }", 
-				clsintf, listKindContext(kc), listTypeContext(tc), type, listStat(ss), listExpr(es), listFun(fun));
-	}
-	
-	private String listTypeContext(List<CuVvt> es) {
-		String s = "( ";
-		for (CuVvt e : es) {
-			s += e.toString() + " , ";
-		}
-		int l = s.lastIndexOf(", ");
-		if (l > 0) s = s.substring(0, l);
-		s += ")";
-		return s;
-	}
-	
-	private String listExpr(List<CuExpr> es) {
-		String s = "( ";
-		for (CuExpr e : es) {
-			s += e.toString() + " , ";
-		}
-		int l = s.lastIndexOf(", ");
-		if (l > 0) s = s.substring(0, l);
-		s += ")";
-		return s;
-	}
-	
-	private String listStat(List<CuStat> es) {
-		String s = "";
-		for (CuStat e : es) {
-			s += e.toString() + " ";
-		}
-		return s;
-	}
-	
-	private String listFun(List<String> es) {
-		String s = "";
-		for (String e : es) {
-			s += e.toString() + " ";
-		}
-		return s;
-	}
-	
-	private String listKindContext(List<String> es) {
-		String s = "< ";
-		for (String e : es) {
-			s += e.toString() + " , ";
-		}
-		int l = s.lastIndexOf(", ");
-		if (l > 0) s = s.substring(0, l);
-		s += ">";
-		return s;
+				clsintf, CuMethod.printList("<", kc, ">", ","), CuMethod.printList("(", tc, ")", ","), type, 
+				CuMethod.printList("", ss, "", ""), CuMethod.printList("(", es, ")", ","), CuMethod.printList("", fun, "", ""));
 	}
 }

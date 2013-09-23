@@ -9,28 +9,6 @@ public class TypeScheme extends CuTypeScheme {
 		data_kc=kc;
 		data_tc=tc;
 		data_t=t;
-		super.text=listString(data_kc)+" "+listTypes(data_tc)+" : "+t.toString();
-	}
-
-	private String listString(List<String> es) {
-		String s = "< ";
-		for (String e : es) {
-			s += e.toString() + " , ";
-		}
-		int l = s.lastIndexOf(", ");
-		if (l > 0) s = s.substring(0, l);
-		s += ">";
-		return s;
-	}
-	
-	private String listTypes(List<CuVvt> es) {
-		String s = "( ";
-		for (CuVvt e : es) {
-			s += e.toString() + " , ";
-		}
-		int l = s.lastIndexOf(", ");
-		if (l > 0) s = s.substring(0, l);
-		s += ")";
-		return s;
+		super.text=CuMethod.printList("<", data_kc, ">", ",")+" "+CuMethod.printList("(", data_tc, ")", ",")+" : "+t.toString();
 	}
 }
