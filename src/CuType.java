@@ -1,6 +1,4 @@
-public class CuType {
-	protected String text = "";
-	@Override public String toString() {
-		return text;
-	}
+
+public abstract class CuType {
+
 }
