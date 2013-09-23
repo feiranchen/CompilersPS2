@@ -65,6 +65,7 @@ program returns [CuProgr p]
 	| FUN VAR ts=typescheme s=stat {$p = new FunPrg($VAR.text, $ts.ts, $s.s);} (FUN VAR ts=typescheme s=stat {$p.add($VAR.text, $ts.ts, $s.s);})* pr=program {$p.add($pr.p);}
 	| i=intf pr=program {$p = new IntfPrg($i.i, $pr.p);}
 	| c=cls pr=program {$p = new ClassPrg($c.c, $pr.p);};
+top : program EOF;
 functxt returns [CuFunC f]
 	: {$f = new FunCtxtEmpty();}
 	| fc=functxt COMMA v=vvc ts=typescheme {$f = new FuncTxt($fc.f, $v.v, $ts.ts);};
