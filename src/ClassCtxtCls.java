@@ -12,6 +12,7 @@ public class ClassCtxtCls extends CuClassC {
 		this.c = c;
 		this.clsintf = ci;
 		this.kc = kc;
+		text = String.format("%s , class %s %s extends %s %s", c.toString(), clsintf, listKC(kc), t.toString(), listVvTypeScheme(VvTypeScheme));
 	}
 	
 	public void add (CuType t) {

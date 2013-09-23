@@ -5,8 +5,6 @@ public class WhileStat extends CuStat{
 	public WhileStat (CuExpr ex, CuStat st){
 		e = ex;
 		s1 = st;
-	}
-	public String toString() {
-		return "while ( " + e.toString() + " ) " + s1.toString();
+		text = "while ( " + e.toString() + " ) " + s1.toString();
 	}
 }
