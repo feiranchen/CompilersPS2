@@ -13,6 +13,7 @@
 *.out
 .classpath
 .project
+.class
 CubexLexer2.class  
 CubexLexer2.java 
 CubexLexer2.tokens 
