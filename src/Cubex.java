@@ -16,10 +16,9 @@ public class Cubex {
 		RuleContext tree = parser.program();
 //		System.out.println(parser.program().p.toString());
 		
-		//RuleContext tree = parser.fundef();
+		/////RuleContext tree = parser.fundef();
 		tree.inspect(parser); // show in gui
 		//tree.save(parser, "/tmp/R.ps"); // Generate postscript
-		//System.out.println(tree.toString());
 
 		System.out.println(tree.toStringTree(parser));
 	}

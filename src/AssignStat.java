@@ -5,6 +5,6 @@ public class AssignStat extends CuStat{
 	public AssignStat (String t, CuExpr e) {
 		var = t;
 		ee = e;
-		super.text = var + " := " + ee.toString();
+		super.text = var + " := " + ee.toString() + " ;";
 	}
 }
