@@ -12,13 +12,14 @@ public class VarExpr extends CuExpr{
 		this.data_pt=pt;
 		this.data_es=es;
 		
-		super.text=e.toString()+" "+text+" < "+printLst(pt)+" > ("+printLst(es)+" )";
+		super.text=e.toString()+" "+text+" < "+printLst(pt)+"> ("+printLst(es)+")";
 	}
 	private <T>String printLst(List<T> pt){
+		if (pt.isEmpty()) return "";
 		StringBuilder stB=new StringBuilder();
 		for( T t : pt){
 			stB.append(pt.toString()+ " ");
 		}
-		return stB.substring(0,stB.length()-2);
+		return stB.substring(0,stB.length()-1);
 	}
 }
