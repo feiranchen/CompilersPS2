@@ -172,7 +172,7 @@ public class CubexParser2 extends Parser {
 	}
 
 	public static class VvtContext extends ParserRuleContext {
-		public CuVvT cu;
+		public CuVvt cu;
 		public Token VAR;
 		public TypeContext t;
 		public TerminalNode COLON() { return getToken(CubexParser2.COLON, 0); }
@@ -212,7 +212,6 @@ public class CubexParser2 extends Parser {
 	public static class TypecontextContext extends ParserRuleContext {
 		public List<CuVvt> tc;
 		public VvtContext v;
-		public VvtContext vvt;
 		public List<VvtContext> vvt() {
 			return getRuleContexts(VvtContext.class);
 		}
@@ -244,8 +243,8 @@ public class CubexParser2 extends Parser {
 			_la = _input.LA(1);
 			if (_la==VAR) {
 				{
-				setState(59); ((TypecontextContext)_localctx).v = ((TypecontextContext)_localctx).vvt = vvt();
-				 _localctx.tc.add(((TypecontextContext)_localctx).vvt.cu); 
+				setState(59); ((TypecontextContext)_localctx).v = vvt();
+				 _localctx.tc.add(((TypecontextContext)_localctx).v.cu); 
 				setState(67);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
@@ -253,8 +252,8 @@ public class CubexParser2 extends Parser {
 					{
 					{
 					setState(61); match(COMMA);
-					setState(62); ((TypecontextContext)_localctx).v = ((TypecontextContext)_localctx).vvt = vvt();
-					 _localctx.tc.add(((TypecontextContext)_localctx).vvt.cu); 
+					setState(62); ((TypecontextContext)_localctx).v = vvt();
+					 _localctx.tc.add(((TypecontextContext)_localctx).v.cu); 
 					}
 					}
 					setState(69);

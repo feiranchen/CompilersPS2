@@ -9,7 +9,7 @@ kindcontext returns [List<String> kc]
 vvt returns [CuVvt cu]
 	: VAR COLON t=type { $cu = new Vvt($VAR.text, $t.t); };
 typecontext returns [List<CuVvt> tc]
-	: { $tc = new ArrayList<CuVvt>(); } LPAREN (v=vvt { $tc.add($vvt.cu); } (COMMA v=vvt { $tc.add($vvt.cu); })*)? RPAREN;
+	: { $tc = new ArrayList<CuVvt>(); } LPAREN (v=vvt { $tc.add($v.cu); } (COMMA v=vvt { $tc.add($v.cu); })*)? RPAREN;
 
 paratype returns [List<CuType> pt]
 	: {$pt = new ArrayList<CuType>(); } (LANGLE (t=type {$pt.add($t.t);} (COMMA t=type {$pt.add($t.t);})*)? RANGLE)?;	
