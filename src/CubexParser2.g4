@@ -23,22 +23,31 @@ expr returns [CuExpr e]
 	: VAR {$e = new VvExp($VAR.text);} (pt=paratype LPAREN es=exprs RPAREN {$e.add($pt.pt, $es.cu);})?
 	| CLSINTF pt=paratype LPAREN es=exprs RPAREN {$e = new VcExp($CLSINTF.text, $pt.pt, $es.cu);}
 	| ex=expr DOT VAR pt=paratype LPAREN es=exprs RPAREN {$e = new VarExpr($ex.e, $VAR.text, $pt.pt, $es.cu);} 
-	| ex=expr op=(DASH | BANG) 
-		{$e = ($op.type == DASH) ? new NegativeExpr($ex.e) : new NegateExpr($ex.e);}
-	| l=expr op=(STAR | SLASH | PERCENT) LPAREN? r=expr RPAREN?
-		{$e = ($op.type == STAR) ? new TimesExpr($l.e, $r.e) : ($op.type == SLASH) ? new DivideExpr($l.e, $r.e) : new ModuloExpr($l.e, $r.e);}
-	| l=expr op=(PLUS | DASH) LPAREN? r=expr RPAREN?
-		{$e = ($op.type == PLUS) ? new PlusExpr($l.e, $r.e) : new MinusExpr($l.e, $r.e);}
-	| l=expr op=(THR | LTHR | RTHR | LRTHR) LPAREN? r=expr RPAREN?
+     | op=(DASH | BANG) ex=expr
+       { $e = $op.type == DASH ? new NegativeExpr($ex.e) : new NegateExpr($ex.e); }
+     | l=expr op=(STAR | SLASH | PERCENT) r=expr
+       { $e = $op.type == STAR
+               ? new TimesExpr($l.e, $r.e)
+               : $op.type == SLASH
+               ? new DivideExpr($l.e, $r.e)
+               : new ModuloExpr($l.e, $r.e); }
+     | l=expr (PLUS | DASH) r=expr
+       { $e = $op.type == PLUS
+             ? new PlusExpr($l.e, $r.e)
+             : new MinusExpr($l.e, $r.e); }
+	| l=expr op=(THR | LTHR | RTHR | LRTHR) r=expr
 		{$e = ($op.type == THR) ? new ThroughExpr($l.e, $r.e, true, true) : ($op.type == LTHR) ? new ThroughExpr($l.e, $r.e, false, true) : ($op.type == RTHR) ? new ThroughExpr($l.e, $r.e, true, false) : new ThroughExpr($l.e, $r.e, false, false);}
 	| ex=expr op=(ONW | LONW) 
 		{$e = ($op.type == ONW) ? new OnwardsExpr($ex.e, true) : new OnwardsExpr($ex.e, false);}
-	| l=expr op=(LANGLE | LTE | RANGLE | GTE) LPAREN? r=expr RPAREN?
+	| l=expr op=(LANGLE | LTE | RANGLE | GTE) r=expr
 		{$e = ($op.type == LANGLE) ? new LessThanExpr($l.e, $r.e, true) : ($op.type == LTE) ? new LessThanExpr($l.e, $r.e, false) : ($op.type == RANGLE) ? new GreaterThanExpr($l.e, $r.e, true) : new GreaterThanExpr($l.e, $r.e, false);}
-	| l=expr op=(EQEQUAL | INEQUAL) LPAREN? r=expr RPAREN?
+	| l=expr op=(EQEQUAL | INEQUAL) r=expr
 		{$e = ($op.type == EQEQUAL) ? new EqualExpr($l.e, $r.e, true) : new EqualExpr($l.e, $r.e, false);}
-	| l=expr op=(AMPERSAND | PIPE) LPAREN? r=expr RPAREN?
-		{$e = ($op.type == AMPERSAND) ? new AndExpr($l.e, $r.e) : new OrExpr($l.e, $r.e);}
+	
+    | l=expr AMPERSAND r=expr { $e = new AndExpr($l.e, $r.e); }
+    | l=expr PIPE r=expr  { $e = new OrExpr($l.e, $r.e); }
+	
+	
 	| LBRACKET es=exprs RBRACKET {$e = new BrkExpr($es.cu);} 
 	| l=expr APPEND r=expr {$e = new AppExpr($l.e, $r.e);} 
 	| TRUE {$e = new CBoolean(true);}

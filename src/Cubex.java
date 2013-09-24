@@ -12,16 +12,16 @@ public class Cubex {
 		CubexLexer2 lexer = new CubexLexer2(new ANTLRFileStream(fn));
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		CubexParser2 parser = new CubexParser2(tokens);
-		parser.setBuildParseTree(true);
-		RuleContext tree = parser.program();
-/*		try {
+//		parser.setBuildParseTree(true);
+//		RuleContext tree = parser.program();
+		try {
 			System.out.println(parser.program().p.toString());
 		} catch (Exception e) {
 			System.out.println("parser error");
 		}
-*/		
+		
 		/////RuleContext tree = parser.fundef();
-		tree.inspect(parser); // show in gui
+//		tree.inspect(parser); // show in gui
 		//tree.save(parser, "/tmp/R.ps"); // Generate postscript
 
 		//System.out.println(tree.toStringTree(parser));
