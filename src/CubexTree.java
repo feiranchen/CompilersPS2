@@ -1,7 +1,6 @@
 import java.io.IOException;
 
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.tree.ParseTree;
 
 public class CubexTree {
 	public static void main (String args[]) throws IOException {
