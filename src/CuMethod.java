@@ -10,7 +10,7 @@ public class CuMethod {
 		}
 		int j = s.lastIndexOf(i+" ");
 		if (j > 1) s = s.substring(0, j);
-		s += r+" ";
+		s +=( r+" " );
 		return s;
 	}
 	
@@ -24,7 +24,7 @@ public class CuMethod {
 		return s;
 	}
 	
-	protected static void p(String s) {
+	protected static void p1(String s) {
 		System.out.println(s);
 	}
 }

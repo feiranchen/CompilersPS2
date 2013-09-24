@@ -9,7 +9,7 @@ public class Cls extends CuClass {
 	List<CuVvt> tc;
 	String type;
 	List<CuStat> ss = new ArrayList<CuStat>();
-	List<CuExpr> es = new ArrayList<CuExpr>();
+	List<CuExpr> es;
 	List<String> fun = new ArrayList<String>();
 	
 	public Cls(String clsintf, List<String> kc, List<CuVvt> tc) {
@@ -25,8 +25,8 @@ public class Cls extends CuClass {
 		ss.add(s);
 	}
 	
-	@Override public void add (CuExpr s) {
-		es.add(s);
+	@Override public void add (List<CuExpr> s) {
+		es = s;
 	}
 	
 	@Override public void add(String v, CuTypeScheme ts, CuStat s) {
