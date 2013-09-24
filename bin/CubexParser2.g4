@@ -20,7 +20,8 @@ type returns [CuType t]
 typescheme returns [CuTypeScheme ts]
 	: kc=kindcontext tc=typecontext COLON t=type {$ts = new TypeScheme($kc.kc, $tc.tc, $t.t);};
 expr returns [CuExpr e]
-	: VAR {$e = new VvExp($VAR.text);} (pt=paratype LPAREN es=exprs RPAREN {$e.add($pt.pt, $es.cu);})?
+	: LPAREN ex=expr RPAREN {$e = $ex.e;}
+	| VAR {$e = new VvExp($VAR.text);} (pt=paratype LPAREN es=exprs RPAREN {$e.add($pt.pt, $es.cu);})?
 	| CLSINTF pt=paratype LPAREN es=exprs RPAREN {$e = new VcExp($CLSINTF.text, $pt.pt, $es.cu);}
 	| ex=expr DOT VAR pt=paratype LPAREN es=exprs RPAREN {$e = new VarExpr($ex.e, $VAR.text, $pt.pt, $es.cu);} 
      | op=(DASH | BANG) ex=expr
@@ -31,8 +32,13 @@ expr returns [CuExpr e]
                : $op.type == SLASH
                ? new DivideExpr($l.e, $r.e)
                : new ModuloExpr($l.e, $r.e); }
+<<<<<<< HEAD
      | l=expr op=(PLUS | DASH) r=expr
        { $e = ($op.type == PLUS)
+=======
+     | l=expr (PLUS | DASH) r=expr
+       { $e = $op.type == PLUS
+>>>>>>> 7b3af2cfa0a474c9c26ddc6d474f623867ec6ada
              ? new PlusExpr($l.e, $r.e)
              : new MinusExpr($l.e, $r.e); }
 	| l=expr op=(THR | LTHR | RTHR | LRTHR) r=expr
