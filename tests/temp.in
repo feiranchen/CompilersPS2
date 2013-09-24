@@ -1,3 +1,20 @@
 #if(z(z)) {{=b;}{a:=z;}{}{}}
-while(3+-2) return 1+2*3;
+#fun foo(y : Integer) : Integer return y * 2;
+#while(3+-2) { return 1%(2+3)*2--3/2; return 1+2<..3*4;}
+#{=1+1;}
 #{a:=b;}{c:=d;}
+
+## GCD
+
+# Note: a>b
+fun gcd(a : Integer, b : Integer)
+{
+	if(b=0)
+	{
+		return a;
+	}
+	else
+	{
+		return gcd(b,a%b);
+	}
+}
