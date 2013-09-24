@@ -1,6 +1,6 @@
 return {3;
 #should fail w/o return
-return 3++4;}
+return 3++4;};
 return 4+ "haha";
 return "haha" +4;
 return nothing;
