@@ -25,4 +25,8 @@ public class CuMethod {
 		}
 		return s;
 	}
+	
+	protected static void P(String s) {
+		System.out.println(s);
+	}
 }

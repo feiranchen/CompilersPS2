@@ -694,9 +694,13 @@ public class CubexParser2 extends Parser {
 						consume();
 						setState(163); ((ExprContext)_localctx).r = expr(15);
 						 ((ExprContext)_localctx).e =  (((ExprContext)_localctx).op!=null?((ExprContext)_localctx).op.getType():0) == STAR
+
 						                         ? new TimesExpr(((ExprContext)_localctx).l.e, ((ExprContext)_localctx).r.e)
+
 						                         : (((ExprContext)_localctx).op!=null?((ExprContext)_localctx).op.getType():0) == SLASH
+
 						                         ? new DivideExpr(((ExprContext)_localctx).l.e, ((ExprContext)_localctx).r.e)
+
 						                         : new ModuloExpr(((ExprContext)_localctx).l.e, ((ExprContext)_localctx).r.e); 
 						}
 						break;
@@ -717,7 +721,9 @@ public class CubexParser2 extends Parser {
 						consume();
 						setState(168); ((ExprContext)_localctx).r = expr(14);
 						 ((ExprContext)_localctx).e =  ((((ExprContext)_localctx).op!=null?((ExprContext)_localctx).op.getType():0) == PLUS)
+
 						                       ? new PlusExpr(((ExprContext)_localctx).l.e, ((ExprContext)_localctx).r.e)
+
 						                       : new MinusExpr(((ExprContext)_localctx).l.e, ((ExprContext)_localctx).r.e); 
 						}
 						break;

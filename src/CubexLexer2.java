@@ -87,7 +87,7 @@ public class CubexLexer2 extends Lexer {
 	}
 	private void ERROR_action(RuleContext _localctx, int actionIndex) {
 		switch (actionIndex) {
-		case 0: System.out.println("lexer error"); System.exit(0); break;
+		case 0: System.out.println("lexer error"); System.exit(-1); break;
 		}
 	}
 	private void SPACE_action(RuleContext _localctx, int actionIndex) {

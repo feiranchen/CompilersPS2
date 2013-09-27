@@ -12,10 +12,12 @@ public class CubexTree {
 		}
 	}
 	
-	protected static void tree(String fn) throws IOException {
+	protected static void tree(String fn) throws Exception {
 		CubexLexer2 lexer = new CubexLexer2(new ANTLRFileStream(fn));
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		CubexParser2 parser = new CubexParser2(tokens);
+//		parser.removeErrorListeners(); // remove ConsoleErrorListener 
+//		parser.addErrorListener(new ParserErrorListener(true)); // add ours 
 		parser.setBuildParseTree(true);
 		RuleContext tree = parser.top();
 		tree.inspect(parser); // show in gui
