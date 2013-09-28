@@ -12,14 +12,13 @@ public class ParserErrorListener extends BaseErrorListener
 { 
 	Boolean debug = false;
 	ParserErrorListener (boolean d) {
-		super();
 		debug = d;
 	}
 	
 	@Override public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, 
 			int line, int charPositionInLine, String msg, RecognitionException e)
 	{
-		if(debug) {
+		if(debug) { // print additional info for debugging
 			CuMethod.P("syntaxError:");
 			List<String> stack = ((Parser)recognizer).getRuleInvocationStack(); 
 			Collections.reverse(stack);
@@ -67,4 +66,4 @@ public class ParserErrorListener extends BaseErrorListener
 		throw new UnsupportedOperationException();
 	}
 	
-	}
+}

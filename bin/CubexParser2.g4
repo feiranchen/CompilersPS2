@@ -152,7 +152,7 @@ program returns [CuProgr p]
 
 	| c=cls pr=program {$p = new ClassPrg($c.c, $pr.p);};
 
-top : program EOF;
+top returns [CuTop cu]: p=program EOF {$cu = new Top($p.p);};
 
 functxt returns [CuFunC f]
 
